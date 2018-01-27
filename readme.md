@@ -24,7 +24,7 @@ Verder zal in deze bachelorproef de beschikbare literatuur ook grondig worden ge
 
   - [Docker for Windows Server](https://www.docker.com/docker-windows-server#/)
   - [Introducing Docker for WindowsServer 2016](https://blog.docker.com/2016/09/dockerforws2016/)
-  - [Windows Containers on Windows Server](https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick- start/quickstart-windows-server)
+  - [Windows Containers on Windows Server](https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quickstart-windows-server)
   
 Deze zullen één voor één bekeken en getest worden op hun compleetheid.
 
