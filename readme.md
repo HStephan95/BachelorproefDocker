@@ -30,6 +30,33 @@ Deze zullen één voor één bekeken en getest worden op hun compleetheid.
 
 ## Plan van aanpak 
 
-1. GitHub repo, Skype, ...
-2. Afspraken
-3. Iteraties
+### Tools
+
+1. [GitHub repo](link)
+2. [Discord](link)
+3. [Teamviewer](link)
+4. [AWS](link)
+5. [VirtualBox](link)
+6. [Hyper-V](link)
+7. [Vagrant](link)
+8. [Brackets](link)
+9. [Docker](link)
+
+### Afspraken
+
+*to do*
+
+### Iteraties
+
+1. Literatuurstudie:
+  - Docker (Windows/Linux)
+  - Containers (Sandboxing)
+  - Beveiliging
+  - Documentatie
+2. Installatie Dockerservers
+3. 
+4. Testen:
+  - Integratietesten
+  - Performatietesten
+  - Beveiligingstesten
+5. Besluit
