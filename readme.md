@@ -51,14 +51,14 @@ Deze zullen één voor één bekeken en getest worden op hun compleetheid.
 ### Iteraties
 
 1. Literatuurstudie:
-  - Docker (Windows/Linux)
-  - Containers (Sandboxing)
-  - Beveiliging
-  - Documentatie
+    - Docker (Windows/Linux)
+    - Containers (Sandboxing)
+    - Beveiliging
+    - Documentatie
 2. Installatie Dockerservers
 3. Testen:
-  - Integratietesten
-  - Performatietesten
-  - Beveiligingstesten
+    - Integratietesten
+    - Performatietesten
+    - Beveiligingstesten
 4. Vergelijking Windows - Linux
 5. Besluit
