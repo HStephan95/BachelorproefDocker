@@ -32,19 +32,21 @@ Deze zullen één voor één bekeken en getest worden op hun compleetheid.
 
 ### Tools
 
-1. [GitHub repo](link)
-2. [Discord](link)
-3. [Teamviewer](link)
-4. [AWS](link)
-5. [VirtualBox](link)
-6. [Hyper-V](link)
-7. [Vagrant](link)
-8. [Brackets](link)
-9. [Docker](link)
+1. [GitHub repo](https://github.com/HStephan95/BachelorproefDocker)
+2. [Discord](https://discordapp.com/)
+3. [Teamviewer](https://www.teamviewer.com/nl/)
+4. [AWS](https://aws.amazon.com/)
+5. [VirtualBox](https://www.virtualbox.org/)
+6. [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)
+7. [Vagrant](https://www.vagrantup.com/)
+8. [Brackets](http://brackets.io/)
+9. [Docker](https://www.docker.com/)
 
 ### Afspraken
 
-*to do*
+1. Oplevering van elke iteraties aan de promotor (Steven Vermeulen) om de 2-3-4 weken voor nakijken kwaliteit.
+2. Elke week minimum 1x samenzitten met de copromotor (Gert Schepens).
+3. ...
 
 ### Iteraties
 
@@ -54,9 +56,9 @@ Deze zullen één voor één bekeken en getest worden op hun compleetheid.
   - Beveiliging
   - Documentatie
 2. Installatie Dockerservers
-3. 
-4. Testen:
+3. Testen:
   - Integratietesten
   - Performatietesten
   - Beveiligingstesten
+4. Vergelijking Windows - Linux
 5. Besluit
