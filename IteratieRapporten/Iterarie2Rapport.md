@@ -21,8 +21,11 @@
 ## Documentation
 
 AWS opgesteld als optie.
+
 Virtualbox voorbeeld getoont.
+
 Hyper-V saucen.
+
 Scripts aanpassen:
   - Set-Executionpolicy
   - Stop/Start-Service
