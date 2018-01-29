@@ -1,3 +1,10 @@
+* Boeken
+
+** Boek placeholder
+
+* Artikels
+
+** Artikel placeholder
 
 * Links
 
