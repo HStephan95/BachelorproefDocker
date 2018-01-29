@@ -1,14 +1,14 @@
-* Boeken
+# Boeken
 
-** Boek placeholder
+## Boek placeholder
 
-* Artikels
+# Artikels
 
-** Artikel placeholder
+## Artikel placeholder
 
-* Links
+# Links
 
-** Bachelorproef
+## Bachelorproef
 
 [An introduction to Dockerfor reproducible research, with examples from the Renvironment](https://arxiv.org/abs/1410.0846)
 
@@ -20,7 +20,7 @@
 
 [Windows Containers on Windows Server](https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quickstart-windows-server)
 
-** Docker
+## Docker
 
 [Docker](https://www.docker.com/)
 
@@ -34,7 +34,7 @@
 
 [Docker deploying your app](https://docs.docker.com/get-started/part6/)
 
-** Windows Server 2016
+## Windows Server 2016
 
 [Windows Server](https://www.microsoft.com/en-us/cloud-platform/windows-server)
 
@@ -46,7 +46,7 @@
 
 [Windows Server containers - deploying](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/deploy-containers-on-server)
 
-** Vagrant
+## Vagrant
 
 [Vagrant](https://www.vagrantup.com/)
 
@@ -56,7 +56,7 @@
 
 [Windows Server 2016 box](https://app.vagrantup.com/mwrock/boxes/Windows2016)
 
-** Chocolatey
+## Chocolatey
 
 [Chocolatey](https://chocolatey.org/)
 
