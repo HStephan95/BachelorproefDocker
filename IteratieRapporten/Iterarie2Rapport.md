@@ -16,7 +16,7 @@
 |---------|------------------|-------|
 |Docker for Windows|Het opzetten van een Dockeromgeving op een Windows Server 2016||
 |Docker for Linux|Het opzetten van een Dockeromgeving op een CentOS||
-|Applicatiedeployen|Het deployen van een applicatie met beide omgevingen||
+|Applicatie deployen|Het deployen van een applicatie met beide omgevingen||
 
 ## Documentation
 
