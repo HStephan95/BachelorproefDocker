@@ -8,7 +8,7 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'hyperv'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "jacqinthebox/windowsserver2016"
+  config.vm.box = "gusztavvargadr/w16s"
 
   config.vm.network "private_network", ip: "192.168.56.10"
   

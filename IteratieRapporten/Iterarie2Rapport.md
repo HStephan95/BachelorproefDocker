@@ -29,7 +29,7 @@ Hyper-V saucen.
 Scripts aanpassen:
   - Set-Executionpolicy
   - Stop/Start-Service
-  - Scheiden scripts
+  - Scheiden scripts !
 
 ## Test rapport
 
