@@ -15,27 +15,16 @@ Write-Host "#GOING to INSTALL DOCKER#"
 # Installeren Docker
 Install-Module DockerProvider -Force
 Install-Package Docker -ProviderName DockerProvider -Force
-Write-Host "#GOING to START DOCKER#"
+# Start Docker
+<#
+Install-Module -Name DockerMsftProvider -Force
+Install-Package -Name docker -ProviderName DockerMsftProvider -Force
+
+Restart-Computer -Force
+
+#>
+Write-Host "#GOING to Reboot#"
+
+
 # Start Docker
 
-
-
-Start-Service $ServiceToStart
-
-Start-Sleep -Seconds 5
-
-Get-Service -Name Docker
-
-Start-Sleep -Seconds 5
-
-Write-Host "#SHIT WENT DOWN HERE#"
-
-
-# Installeren posh-docker PowerShell module voor auto-completion
-Install-Module posh-docker
-
-# Enable auto-completion
-Import-Module posh-docker
-
-# Testen installatie
-docker container run hello-world:nanoserver
