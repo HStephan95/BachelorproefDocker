@@ -24,12 +24,21 @@ AWS opgesteld als optie.
 
 Virtualbox voorbeeld getoont.
 
-Hyper-V saucen.
+Hyper-V saucen:
+  - [gusztavvargadr/w16s Vagrant box](https://app.vagrantup.com/gusztavvargadr/boxes/w16s)
 
 Scripts aanpassen:
   - Set-Executionpolicy
   - Stop/Start-Service
   - Scheiden scripts
+  
+Nog andere box.
+
+Ssh problemen, terug naar vorige.
+
+Connection string aanpassen (appsettings.json).
+
+Pair programming.
 
 ## Test rapport
 
