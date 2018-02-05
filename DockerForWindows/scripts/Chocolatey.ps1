@@ -1,5 +1,15 @@
 # Aanpassen Windows PowerShell execution policy naar onbeperkt
-Set-ExecutionPolicy Unrestricted
+
+$CurrentPolicy = get-ExecutionPolicy
+
+Write-Host "CURRENT POLICY IS $CurrentPolicy"
+
+if($CurrentPolicy -ne "Bypass")
+{
+    Write-Host "SETTING CURRENT POLICY TO Bypass"
+    Set-ExecutionPolicy Bypass
+}
+
 
 # Installeren Chocolatey
 iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex

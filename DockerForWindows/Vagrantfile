@@ -4,16 +4,22 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
-ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'hyperv'
+
+# require reboot package
+require './vagrant-provision-reboot-plugin'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "mwrock/Windows2016"
+  config.vm.box = "gusztavvargadr/w16s"
 
   config.vm.network "private_network", ip: "192.168.56.10"
   
   config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
   
-  config.vm.provision :shell, path: "scripts/Docker.ps1"
+  config.vm.provision :shell, path: "scripts/Docker-P1.ps1"
   
+  config.vm.provision :windows_reboot
+  
+  config.vm.provision :shell, path: "scripts/Docker-P2.ps1"
 end

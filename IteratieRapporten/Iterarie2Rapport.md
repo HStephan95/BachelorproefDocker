@@ -30,6 +30,7 @@ Hyper-V saucen:
 Scripts aanpassen:
   - Set-Executionpolicy
   - Stop/Start-Service
+<<<<<<< HEAD
   - Scheiden scripts
   
 Nog andere box.
@@ -39,12 +40,16 @@ Ssh problemen, terug naar vorige.
 Connection string aanpassen (appsettings.json).
 
 Pair programming.
+=======
+  - Scheiden scripts !
+>>>>>>> bea69d0ba4565665558efb6fcec7401d1a82b6e4
 
 ## Test rapport
 
 
 
 ## Bronnen
+https://github.com/exratione/vagrant-provision-reboot
 
 ### Vagrant
 
