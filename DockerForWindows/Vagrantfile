@@ -14,6 +14,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
   
+  config.vm.provision :docker
+  
   config.vm.provision :shell, path: "scripts/Docker.ps1"
   
 end
