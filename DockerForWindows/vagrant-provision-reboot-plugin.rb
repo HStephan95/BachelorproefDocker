@@ -117,7 +117,7 @@ class RebootPlugin < Vagrant.plugin('2')
         end
 
         begin
-          sleep 5
+          sleep 40
         end until @machine.communicate.ready?
 
         # Now the machine is up again, perform the necessary tasks.
@@ -160,12 +160,12 @@ class RebootPlugin < Vagrant.plugin('2')
         end
 
         begin
-          sleep 5
+          sleep 40
         end until @machine.communicate.ready?
 
         # Now the machine is up again, perform the necessary tasks.
-        @machine.ui.info("Launching remount_synced_folders action...")
-        @machine.action('remount_synced_folders')
+        #@machine.ui.info("Launching remount_synced_folders action...")
+        #@machine.action('remount_synced_folders')
       end
 
       # Nothing needs to be done on cleanup.

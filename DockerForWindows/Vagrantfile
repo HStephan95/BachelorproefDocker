@@ -11,10 +11,10 @@ require './vagrant-provision-reboot-plugin'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+  #config.vm.network "private_network", ip: "192.168.1.158"
+  
   config.vm.box = "gusztavvargadr/w16s"
 
-  config.vm.network "private_network", ip: "192.168.56.10"
-  
   config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
   
   config.vm.provision :shell, path: "scripts/Docker-P1.ps1"
