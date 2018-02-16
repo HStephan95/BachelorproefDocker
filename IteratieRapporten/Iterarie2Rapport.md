@@ -30,7 +30,6 @@ Hyper-V saucen:
 Scripts aanpassen:
   - Set-Executionpolicy
   - Stop/Start-Service
-<<<<<<< HEAD
   - Scheiden scripts
   
 Nog andere box.
@@ -40,17 +39,39 @@ Ssh problemen, terug naar vorige.
 Connection string aanpassen (appsettings.json).
 
 Pair programming.
-=======
-  - Scheiden scripts !
->>>>>>> bea69d0ba4565665558efb6fcec7401d1a82b6e4
+
+Solo test : GS - 12/02/2018
+--
+wijzigingen aangebracht in originele vagrantfile van basebox.
+ -	CPU's 1--> 2
+
+Wijziging aan windows_reboot script 
+- Sleep 5 --> 40
+- comment out : remount syced folders
+
+Reboot success!
+
+Wijziging aan Docker-installp2 script
+- Startservice verwijderen, start bij reboot.
+--
+
+Reload-plugin in plaats van reboot provision-plugin
+
+Eerste keer installatie succesvol afgerond!
+
+OpenSSH toevoegen via Chocolatey
+
+Enviroment Variable, dus gewoon aanroepen
+
+OpenSSH geïnstalleerd
+
+
 
 ## Test rapport
 
 
 
 ## Bronnen
-https://github.com/exratione/vagrant-provision-reboot
-
 ### Vagrant
 
 [Vagrant documentatie](https://www.vagrantup.com/docs/index.html)
@@ -58,3 +79,7 @@ https://github.com/exratione/vagrant-provision-reboot
 [Vagrant boxes](https://app.vagrantup.com/boxes/search)
 
 [Windows Server 2016 box aanpassen](https://app.vagrantup.com/mwrock/boxes/Windows2016)
+
+[Vagrant reboot provision](https://github.com/exratione/vagrant-provision-reboot)
+
+[Vagrant Reload plugin](https://github.com/aidanns/vagrant-reload)
