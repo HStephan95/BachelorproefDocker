@@ -17,3 +17,10 @@ choco upgrade chocolatey
 
 # Chocolatey globable uitvoerrechten geven
 chocolatey feature enable -n=allowGlobalConfirmation
+
+#installeren OpenSSH 
+Write-Host "getting OpenSSHfiles and extract"
+
+choco install openssh
+
+
