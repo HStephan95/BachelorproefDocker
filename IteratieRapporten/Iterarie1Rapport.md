@@ -6,7 +6,7 @@
 
 ## Vereisten
 
-- Doel: Het opleveren van een transscript over de literatuurstudie
+- Doel: Het verzamelen en lezen van 12 bronnen zodat er tegen 19/02 een eerste oplevering van een transscript over de literatuurstudie kan gebeuren.
 - Geschatte tijd: 29/01/2018
 - Benodige tijd: 19/02/2018
 
@@ -14,10 +14,10 @@
 
 |Objectief|Korte beschrijving|Behaald|
 |---------|------------------|-------|
-|Links|Het verzamelen en bundelen van online documentatie||
-|Beeldmateriaal|Het verzamelen en bundelen van praktische 'How to's '||
-|Boeken|Het verzamelen en bundelen van geschreven materiaal||
-|Artikels|Het verzamelen en bundelen van losse artikels voor verdere documentatie||
+|Links|Het verzamelen en bundelen van online documentatie|X|
+|Beeldmateriaal|Het verzamelen en bundelen van praktische 'How to's '|X|
+|Boeken|Het verzamelen en bundelen van geschreven materiaal|X|
+|Artikels|Het verzamelen en bundelen van losse artikels voor verdere documentatie|X|
 |Transscript|Uitschrijven van een eerste transscript over de literatuurstudie ||
 
 ## Documentation
@@ -50,6 +50,15 @@ Verder ben ik ook van om een exemplaar van dit boek te bematigen: [The Docker Bo
 
 ## Test rapport
 
-
+Buiten een afgewerkt transscript, zijn alle streefdoelen behaald. Het falen van dit laatste doel valt te wijten aan het feit dat ik geen rekening had gehouden met het IP Project en de trajectweek.
 
 ## Bronnen
+[Docker](https://www.docker.com/)
+
+[Microsoft technet](https://technet.microsoft.com)
+
+[HoGent bibliotheek](https://bib.hogent.be/)
+
+[YouTube](https://www.youtube.com)
+
+[Bibliotheek Lokeren](https://lokeren.bibliotheek.be/)
