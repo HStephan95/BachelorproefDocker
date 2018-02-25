@@ -45,14 +45,14 @@ Het eerste dat we oplosten was de Vagrant-box. Deze bleek niet geschikt genoeg e
 Hierna ging de installatie al een pak vlotter, maar wel niet meer 100% automatisch.
 
 Daarna zijn we de PowerShell scripts beginne troubleshooten. Onder andere:
-    - Set-Exectionpolicy is in essentie niet nodig, omdat default uitvoermethode ´BYPASS´ is
+    - Set-Exectionpolicy is in essentie niet nodig, omdat default uitvoermethode `BYPASS` is
     - Windows Server vereist een reboot na de installatie. Dit wouden we oplossen aan de hand van een plug-in, maar deze werkte nog niet feilloos.
     - Hierdoor hebben we bepaalde functionaliteit gescheiden
     
 Waardoor we even geprobeert hebben of we al deze problemen niet konden oplossen door nóg een betere box te vinden.
 Maar, we ondervonden al snel dat het niet daaraan lag en zijn we dus teruggegaan naar de 2de.
 
-Na deze kinks in de installatie te hebben uitgewerkt zagen we ook dat ´vagrant ssh´ niet ging. Dit word op de 'to-do'-lijst gezet, want het heeft momenteel nog geen al te grote prioriteit.
+Na deze kinks in de installatie te hebben uitgewerkt zagen we ook dat `vagrant ssh` niet ging. Dit word op de 'to-do'-lijst gezet, want het heeft momenteel nog geen al te grote prioriteit
 
 --
 
@@ -60,8 +60,8 @@ Op 12/02 heeft mr. Schepens dan even solo verder gewerkt, zonder mij, aan de opd
 Hierna heeft hij verslag uitgebracht aan mij de volgende keer dat we samen zaten:
 - Hij heeft zijn basebox aagepast van 1 naar 2 cores. Deze performantie verhoging door een kleine aanpassing is zeker de moeite waard om mee te nemen.
 - Hij heeft ook enkele wachttijden in het script gestoken voor het bevorderen van rebooten.
-- Hij heeft verder nog enkele problemen gevonden bij ´remount synced folders´. Deze zullen we nog verder moeten bekijken.
-- Hij heeft tenslotte nog de commandlet ´start-service´ verwijdert, aangezien de daemon nu automatisch wakker wordt en dus overbodig is.
+- Hij heeft verder nog enkele problemen gevonden bij `remount synced folders`. Deze zullen we nog verder moeten bekijken.
+- Hij heeft tenslotte nog de commandlet `start-service` verwijdert, aangezien de daemon nu automatisch wakker wordt en dus overbodig is.
 
 --
 
@@ -73,7 +73,7 @@ Vervolgens hebben het SSH-probleem aangemaakt door via Chocolatey OpenSSH toe te
 Want, we ontdekten dat we hierna de Enviroment Variabele konden aanroepen die Docker toevoegt aan de installatie.
 
 Hierna gingen we al een stap verder en deployden we een eerste container met MSSQL.
-Aan de hand van de gevonden bronnen ging deze installatie vrij vlot. We hebben alleen nog de gebruikte ´images´ van [Docker Hub](https://hub.docker.com/) moeten aanpassen.
+Aan de hand van de gevonden bronnen ging deze installatie vrij vlot. We hebben alleen nog de gebruikte `images` van [Docker Hub](https://hub.docker.com/) moeten aanpassen.
 
 ## Test rapport
 
