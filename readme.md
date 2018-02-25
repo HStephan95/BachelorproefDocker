@@ -45,8 +45,10 @@ Deze zullen één voor één bekeken en getest worden op hun compleetheid.
 ### Afspraken
 
 1. Oplevering van elke iteraties aan de promotor (Steven Vermeulen) om de 2-3-4 weken voor nakijken kwaliteit.
-2. Elke week minimum 1x samenzitten met de copromotor (Gert Schepens).
-3. ...
+2. Elke week minimaal 1x samenzitten met de copromotor (Gert Schepens).
+3. Pair programming
+4. Automatisatie
+5. ...
 
 ### Iteraties
 
