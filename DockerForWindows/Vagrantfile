@@ -26,6 +26,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   #config.vm.provision :shell, path: "scripts/Docker-P2.ps1"
   
-  config.vm.provision :shell, path: "provisioning/images.ps1"
+  #config.vm.provision :shell, path: "provisioning/images.ps1"
+  
+  config.vm.provision :shell, path: "provisioning/applicaties.ps1"
   
 end

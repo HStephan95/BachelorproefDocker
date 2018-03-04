@@ -6,34 +6,42 @@
 # don't mask errors in piped commands
 #set -o pipefail
 
-cd 'C:\Users\P&G\Documents\BP-SH\DockerForWindows\sol10MvcInDepth\src\DienstenCheques'
+#cd "C:\Users\P&G\Documents\BP-SH\DockerForWindows\sol10MvcInDepth\src\DienstenCheques"
+
+#cd "C:\Users\vagrant"
+
+#Get-ChildItem
 
 
 #MS Equivalent
 
-new-item ".\Dockerfile" -Force
+#Get-ChildItem -Directory
 
-$DockerCommands = '
-FROM microsoft/dotnet:1.0.1-sdk-projectjson 
+cd ../../Users/vagrant
 
-RUN mkdir -p /app
+#New-Item app -ItemType Directory
 
-WORKDIR /app
+new-item ".\app\Dockerfile" -Force 
 
-COPY . /app
+$DockerCommands = 'FROM microsoft/dotnet:2.0.5-sdk-2.1.4'
+ $DockerCommands | Add-Content ".\app\Dockerfile"
+$DockerCommands = 'WORKDIR /app'
+$DockerCommands | Add-Content ".\app\Dockerfile"
+$DockerCommands = "ADD 'C:/sol10MvcInDepth' ."
+ $DockerCommands | Add-Content ".\app\Dockerfile"
+$DockerCommands = 'RUN dotnet restore'
+ $DockerCommands | Add-Content ".\app\Dockerfile"
+$DockerCommands = 'RUN dotnet build'
+ $DockerCommands | Add-Content ".\app\Dockerfile"
+$DockerCommands = 'EXPOSE 5000/tcp'
+ $DockerCommands | Add-Content ".\app\Dockerfile"
+$DockerCommands = 'ENV ASPNETCORE_URLS http://*:5000'
+ $DockerCommands | Add-Content ".\app\Dockerfile"
+$DockerCommands = 'ENTRYPOINT ["dotnet", "run"] ' 
+ $DockerCommands | Add-Content ".\app\Dockerfile"
 
-RUN dotnet restore
 
-RUN dotnet build
-
-EXPOSE 5000/tcp
-
-ENV ASPNETCORE_URLS http://*:5000
-
-ENTRYPOINT ["dotnet", "run"] ' 
-
-
-$DockerCommands > .\Dockerfile
+cd ../../Users/vagrant/app
 
 
 docker build -t sol10mvcindepth:myapp .
