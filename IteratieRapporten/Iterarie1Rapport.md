@@ -12,13 +12,17 @@
 
 ## Test plan
 
-|Objectief|Korte beschrijving|Behaald|
-|---------|------------------|-------|
-|Links|Het verzamelen en bundelen van online documentatie|X|
-|Beeldmateriaal|Het verzamelen en bundelen van praktische 'How to's '|X|
-|Boeken|Het verzamelen en bundelen van geschreven materiaal|X|
-|Artikels|Het verzamelen en bundelen van losse artikels voor verdere documentatie|X|
-|Transscript|Uitschrijven van een eerste transscript over de literatuurstudie ||
+- Links
+    - Een drietal online bronnen verzamelen
+- Beeldmateriaal
+    - Een drietal instructievideos verzamelen van betrouwbare kwaliteit
+- Boeken
+    - Een boek opzoeken dat ik kan aankopen en lezen tijdens mijn uren offline
+- Artikels
+    - Een drietal losstaande artikels opzoeken verzamelen
+- Transcript
+    - Het grondig lezen en begrijpen van al deze bronnen, plus andere die nodig zijn doorheen de weken
+    - Het opleveren van een eerste deel van de bachelorproef
 
 ## Documentation
 
@@ -51,6 +55,14 @@ Verder ben ik ook van om een exemplaar van dit boek te bematigen: [The Docker Bo
 ## Test rapport
 
 Buiten een afgewerkt transscript, zijn alle streefdoelen behaald. Het falen van dit laatste doel valt te wijten aan het feit dat ik geen rekening had gehouden met het IP Project en de trajectweek.
+
+|Objectief|Korte beschrijving|Behaald|
+|---------|------------------|-------|
+|Links|Het verzamelen en bundelen van online documentatie|X|
+|Beeldmateriaal|Het verzamelen en bundelen van praktische 'How to's '|X|
+|Boeken|Het verzamelen en bundelen van geschreven materiaal|X|
+|Artikels|Het verzamelen en bundelen van losse artikels voor verdere documentatie|X|
+|Transscript|Uitschrijven van een eerste transscript over de literatuurstudie ||
 
 ## Bronnen
 [Docker](https://www.docker.com/)

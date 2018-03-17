@@ -2,14 +2,18 @@
 
 ## Vereisten
 
-- Doel: XXXXX
-- Geschatte tijd: XX/XX/XXXX
-- Benodige tijd: XX/XX/XXXX
+- Doel: Het afwerken van enkele onafgewerkte puntjes uit vorige iteraties en het uitzoeken van hoe het systeem op een methodologische manier getest kan worden.
+- Geschatte tijd: 05/03/2018
+- Benodige tijd: 25/03/2018
 
 ## Test plan
 
-"Het testplan is eigenlijk het scenario van de demo die je geeft aan de lector om aan te tonen dat je alle aspecten van de opdracht correct hebt uitgevoerd. Dit bestaat uit concrete handelingen of commando’s die je moet uitvoeren, en een beschrijving van het verwachte resultaat."
-
+- Applicatie deployen
+    - Overgeerft van iteratie 2. Het opzetten van een applicatie blijkt nog relatief lastig te zijn
+- Transcript
+    - Doel van deze iteratie is om het transcripts tot de inleiding volledig af is
+- Testing
+    - Uitzoeken van hoe alle verschillende testen uitgevoerd kunnen worden op een zo objectief mogelijke manier
 
 ## Documentation
 
@@ -21,7 +25,9 @@
 
 |Objectief|Korte beschrijving|Behaald|
 |---------|------------------|-------|
-|XXXXX|XXXXX||
+|Applicatie deployen|XXXXX||
+|Transcript|XXXXX||
+|Testing|XXXXX||
 
 ## Bronnen
 

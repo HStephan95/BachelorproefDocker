@@ -6,17 +6,18 @@
 
 ## Vereisten
 
-- Doel: Het installeren van Docker op een Windows- en Linuxomgeving
+- Doel: Het installeren van Docker en een applicatie ermee op een Windows- en Linuxomgeving
 - Geschatte tijd: 29/01/2018
 - Benodige tijd: 19/02/2018
 
 ## Test plan
 
-|Objectief|Korte beschrijving|Behaald|
-|---------|------------------|-------|
-|Docker for Windows|Het opzetten van een Dockeromgeving op een Windows Server 2016|X|
-|Docker for Linux|Het opzetten van een Dockeromgeving op een CentOS|X|
-|Applicatie deployen|Het deployen van een applicatie met beide omgevingen||
+- Docker for Windows
+     - Het opzetten van een Docker-omgeving op een Windows Server 2016
+- Docker for Linux
+     - Het opzetten van een Docker-omgeving op een CentOS 7.4.
+- Applicatie deployen
+    - Het schrijven van een Dockerfile zodat deze gebruikt kan worden om één en dezelde applicatie te deployen op beide servers
 
 ## Documentation
 
@@ -75,10 +76,21 @@ Want, we ontdekten dat we hierna de Enviroment Variabele konden aanroepen die Do
 Hierna gingen we al een stap verder en deployden we een eerste container met MSSQL.
 Aan de hand van de gevonden bronnen ging deze installatie vrij vlot. We hebben alleen nog de gebruikte `images` van [Docker Hub](https://hub.docker.com/) moeten aanpassen.
 
+Dockerfile layout overnemen en aanpassen.
+CD problemen
+WORKDIR problemen
+COPY/ADD problemen `//?/`
+
 ## Test rapport
 
 Ook hier is er weer een streefdoel dat ik zal moeten meenemen naar de volgende iteratie. Want, hoewel we een Linux- en Windowsomgeving voor Docker hebben kunnen uitrollen, had ik helaas niet genoeg tijd om samen te zitten met mr. Schepens om de applicatie nog rond te krijgen.
 Maar, in het algemeen ben ik wel tevreden met het resultaat. Het laatste streefdoel is niet al te ver meer en we hebben al ideeën hoe we het kunnen bereiken en er zelfs op kunnen verbeteren.
+
+|Objectief|Korte beschrijving|Behaald|
+|---------|------------------|-------|
+|Docker for Windows|Het opzetten van een Dockeromgeving op een Windows Server 2016|X|
+|Docker for Linux|Het opzetten van een Dockeromgeving op een CentOS|X|
+|Applicatie deployen|Het deployen van een applicatie met beide omgevingen||
 
 ## Bronnen
 ### Vagrant
@@ -92,3 +104,9 @@ Maar, in het algemeen ben ik wel tevreden met het resultaat. Het laatste streefd
 [Vagrant reboot provision](https://github.com/exratione/vagrant-provision-reboot)
 
 [Vagrant Reload plugin](https://github.com/aidanns/vagrant-reload)
+
+[Dockercontainers for Windows](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)
+
+[Dockerbuild](https://docs.docker.com/engine/reference/commandline/build/#examples)
+
+[Deploying a .Net-application](https://stormpath.com/blog/tutorial-deploy-asp-net-core-on-linux-with-docker)
