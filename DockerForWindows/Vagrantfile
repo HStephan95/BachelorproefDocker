@@ -10,12 +10,15 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'hyperv'
 # require './vagrant-provision-reboot-plugin'
 
 
+
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   #config.vm.network "private_network", ip: "192.168.1.158"
   
-  config.vm.box = "gusztavvargadr/w16s"
-
+   config.vm.box = "gusztavvargadr/w16s"
+   
+   #config.vm.hostname = "DockerForWinVM"
+   
   #config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
  
   #config.vm.provision :shell, path: "scripts/Docker-P1.ps1"
@@ -25,6 +28,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.provision :reload
   
   #config.vm.provision :shell, path: "scripts/Docker-P2.ps1"
+  
+  #config.vm.provision "file", source: "C:/Users/P&G/Documents/BP-SH/DockerForWindows/VoorbeeldProject", destination: "C:/Users/vagrant/app/VoorbeeldProject"
   
   #config.vm.provision :shell, path: "provisioning/images.ps1"
   
