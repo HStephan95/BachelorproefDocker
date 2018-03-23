@@ -1,0 +1,50 @@
+%%=============================================================================
+%% Samenvatting
+%%=============================================================================
+
+%% TODO: De "abstract" of samenvatting is een kernachtige (~ 1 blz. voor een
+%% thesis) synthese van het document.
+%%
+%% Deze aspecten moeten zeker aan bod komen:
+%% - Context: waarom is dit werk belangrijk?
+%% - Nood: waarom moest dit onderzocht worden?
+%% - Taak: wat heb je precies gedaan?
+%% - Object: wat staat in dit document geschreven?
+%% - Resultaat: wat was het resultaat?
+%% - Conclusie: wat is/zijn de belangrijkste conclusie(s)?
+%% - Perspectief: blijven er nog vragen open die in de toekomst nog kunnen
+%%    onderzocht worden? Wat is een mogelijk vervolg voor jouw onderzoek?
+%%
+%% LET OP! Een samenvatting is GEEN voorwoord!
+
+%%---------- Nederlandse samenvatting -----------------------------------------
+%%
+%% TODO: Als je je bachelorproef in het Engels schrijft, moet je eerst een
+%% Nederlandse samenvatting invoegen. Haal daarvoor onderstaande code uit
+%% commentaar.
+%% Wie zijn bachelorproef in het Nederlands schrijft, kan dit negeren en heel
+%% deze sectie verwijderen.
+
+\IfLanguageName{english}{%
+\selectlanguage{dutch}
+\chapter*{Samenvatting}
+\lipsum[1-4]
+\selectlanguage{english}
+}{}
+
+%%---------- Samenvatting -----------------------------------------------------
+%%
+%% De samenvatting in de hoofdtaal van het document
+
+\chapter*{\IfLanguageName{dutch}{Samenvatting}{Abstract}}
+
+Docker for Windows Server 2016 is uit beta gekomen op 22 februari 2017. Maar, ondanks het feit dat dit platform nu al een ruime tijd beschikbaar is, heeft het nog steeds geen tractie gevonden bij DevOps-teams. Dit ondanks het feit dat dit een krachtige tool kan zijn voor organisaties die ook Microsoft Certified Partners willen zijn. In een notendop, er zal dus gekeken worden of Docker for Windows Server 2016 een goed alternatief is voor het draaien van Docker in een Linux omgeving. Om dit op een methodologische manier uit te testen zal er vertrokken worden van een standaard Windows Server 2016 en CentOS 7.4 installatie waarop Docker geïnstalleerd zal worden. Waarna beide omgevingen getest zullen door middel van performatie-, integratie- en beveiligingstesten, om zo een vergelijking te maken van beide omgevingen. Daarbovenop zal ook de documentatie voor beide platformen bekeken worden op vlak van compleetheid.
+\par
+De verwachting is dat het verschil tussen beide systemen minimaal zal zijn, waarbij de CentOS server beter zal presteren op vlak van beveiliging en performantie, en dat Windows Server 2016 beter zal presteren op vlak van integratie. De documentatie voor CentOS zal ook meer compleet zijn, maar dat zowel Windows als Docker een grote inhaalbeweging aan het maken zijn.
+\par
+Verdere vragen die men hierna nog zou kunnen stellen zijn:
+\begin{itemize}[noitemsep]
+	\item Hoe goed scoren beide op vlak van user-friendliness?
+	\item Hoe goed ondersteunen beide Cloud platforms?
+	\item Hoe stabiel draaien beide omgevingen?
+\end{itemize}

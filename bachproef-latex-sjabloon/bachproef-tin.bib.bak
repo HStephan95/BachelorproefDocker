@@ -1,0 +1,127 @@
+% Encoding: UTF-8
+@book{Knuth1998,
+ author = {Knuth, Donald E.},
+ title = {The art of computer programming,  volume 3: (2nd ed.) sorting and searching},
+ year = {1998},
+ publisher = {Addison Wesley Longman Publishing Co., Inc.},
+ address = {Redwood City, CA, USA}
+}
+
+@book{Pollefliet2011,
+  author = {Pollefliet, Leen},
+  title = {Schrijven van verslag tot eindwerk: do's en don'ts},
+  year = {2011},
+  publisher = {Academia Press},
+  address = {Gent}
+}
+
+@article{Creeger2009,
+  author = {Creeger, Mache},
+  journal = {Communications of the ACM},
+  number = {8},
+  pages = {50--56},
+  title = {{CTO Roundtable: Cloud Computing}},
+  volume = {52},
+  year = {2009}
+}
+
+@Electronic{OpenSourceContainers,
+  title = {What are Linux containers?},
+  url   = {https://opensource.com/resources/what-are-linux-containers?intcmp=7016000000127cYAAQ},
+}
+
+@Electronic{OpenSourceDocker,
+  title = {What is Docker?},
+  url   = {https://opensource.com/resources/what-docker},
+}
+
+@Electronic{DockerContainer,
+  title = {What is a container?},
+  url   = {https://www.docker.com/what-container},
+}
+
+@Electronic{SoftwareTesting,
+  title = {Software Testing: Quality From the Beginning},
+  url   = {https://www.atlassian.com/software-testing},
+}
+
+@Electronic{PerformanceTesting,
+  title = {Performance Testing Tutorial: Types, Process \& Important Metrics},
+  url   = {https://www.guru99.com/performance-testing.html},
+}
+
+@Electronic{IntegrationTesting,
+  title = {INTEGRATION Testing Tutorial: Big Bang, Top Down \& Bottom Up},
+  url   = {https://www.guru99.com/integration-testing.html},
+}
+
+@Electronic{SecurityTesting,
+  title = {What is Security Testing: Complete Tutorial},
+  url   = {https://www.guru99.com/what-is-security-testing.html},
+}
+
+@Electronic{Docker,
+  title = {What is Docker?},
+  url   = {https://www.docker.com/what-docker},
+}
+
+@Electronic{DockerDevOps,
+  title = {Docker Datacenter Enables DevOps},
+  url   = {https://www.docker.com/use-cases/devops#/quote},
+}
+
+@Electronic{DockerFAQ,
+  title = {Frequently asked questions (FAQ)},
+  url   = {https://docs.docker.com/docker-for-windows/faqs/#can-i-use-virtualbox-alongside-docker-4-windows},
+}
+
+@Electronic{ContainerVsVM,
+  title = {Containers are not VMs},
+  url   = {https://blog.docker.com/2016/03/containers-are-not-vms/},
+}
+
+@Electronic{WhatIsDevOps,
+  title = {What Is DevOps?},
+  url   = {https://theagileadmin.com/what-is-devops/},
+}
+
+@Electronic{CemKaner2006,
+  title = {Exploratory Testing},
+  url   = {http://www.kaner.com/pdfs/ETatQAI.pdf},
+}
+
+@Article{Maes2017,
+  author  = {Jean-François Maes},
+  title   = {Een introductie tot Docker, veelgemaakte fouten en hoe ze te voorkomen},
+  journal = {Scriptie},
+  year    = {2017},
+}
+
+@Article{Cassaert2017,
+  author  = {Thomas Cassaert},
+  title   = {Docker security en orchestration},
+  journal = {Scriptie},
+  year    = {2017},
+}
+
+@Electronic{DevOpsContainers,
+  title = {What Do Containers Have to Do with DevOps, Anyway?},
+  url   = {https://containerjournal.com/2017/01/11/containers-devops-anyway/},
+}
+
+@Electronic{DockerNumbers,
+  title = {Docker by the Numbers: DockerCon Shines Light on Containers in the Enterprise},
+  url   = {http://electric-cloud.com/blog/2017/05/docker-numbers-dockercon-shines-light-containers-enterprise/},
+}
+
+@Electronic{DockerEE,
+  title = {Docker Enterprise Edition (EE)},
+  url   = {https://www.docker.com/enterprise-edition},
+}
+
+@Electronic{DockerCE,
+  title = {Docker Community Edition},
+  url   = {https://www.docker.com/community-edition},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

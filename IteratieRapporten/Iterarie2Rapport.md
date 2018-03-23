@@ -76,7 +76,7 @@ Want, we ontdekten dat we hierna de Enviroment Variabele konden aanroepen die Do
 Hierna gingen we al een stap verder en deployden we een eerste container met MSSQL.
 Aan de hand van de gevonden bronnen ging deze installatie vrij vlot. We hebben alleen nog de gebruikte `images` van [Docker Hub](https://hub.docker.com/) moeten aanpassen.
 
-Dockerfile layout overnemen en aanpassen.
+Dockerfile layout overgenomen en aangepast
 CD problemen
 WORKDIR problemen
 COPY/ADD problemen `//?/`

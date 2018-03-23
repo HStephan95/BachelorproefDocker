@@ -14,10 +14,25 @@
     - Doel van deze iteratie is om het transcripts tot de inleiding volledig af is
 - Testing
     - Uitzoeken van hoe alle verschillende testen uitgevoerd kunnen worden op een zo objectief mogelijke manier
+- Documentatie
+    - Updaten van de gebruikte bronnen
+    - Updaten van de meeste gebruikte commando's
 
 ## Documentation
 
 "In detail beschrijven hoe je de iteratie hebt afgewerkt, met de focus op het manuele werk. Zo min-mogelijk code, gebruik hyperlinks zoveel mogelijk als verwijzing."
+
+Copy-VMFile (appproject.ps1)
+
+Vagrant provision file
+
+MSBuild error
+
+Andere SDK zitten zoeken
+
+Ander .Net-project
+
+Compose?
 
 ## Test rapport
 
@@ -28,13 +43,7 @@
 |Applicatie deployen|XXXXX||
 |Transcript|XXXXX||
 |Testing|XXXXX||
+|Documentatie||
 
 ## Bronnen
 
-### Vagrant
-
-[Vagrant documentatie](https://www.vagrantup.com/docs/index.html)
-
-[Vagrant boxes](https://app.vagrantup.com/boxes/search)
-
-[Windows Server 2016 box aanpassen](https://app.vagrantup.com/mwrock/boxes/Windows2016)
