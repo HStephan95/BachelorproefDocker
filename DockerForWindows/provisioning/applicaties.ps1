@@ -14,13 +14,13 @@ $DockerCommands = 'RUN dotnet restore'
  $DockerCommands | Add-Content "Dockerfile"
 $DockerCommands = 'RUN dotnet build'
  $DockerCommands | Add-Content "Dockerfile"
-$DockerCommands = 'EXPOSE 5000/tcp'
+$DockerCommands = 'EXPOSE 80/tcp'
  $DockerCommands | Add-Content "Dockerfile"
-$DockerCommands = 'ENV ASPNETCORE_URLS http://*:5000'
+$DockerCommands = 'ENV ASPNETCORE_URLS http://*:80'
  $DockerCommands | Add-Content "Dockerfile"
 $DockerCommands = 'ENTRYPOINT ["dotnet", "run"] ' 
  $DockerCommands | Add-Content "Dockerfile"
 
 docker build -t voorbeeldproject:myapp .
 
-docker run -d -p 8080:5000 -t voorbeeldproject:myapp
+docker run -d -p 80:80 -t voorbeeldproject:myapp
