@@ -11,5 +11,25 @@
 %% mogelijke manier toegepast hebt om een antwoord te vinden op de
 %% onderzoeksvraag.
 
-\lipsum[21-25]
+\section{Literatuurstudie}
+Het startpunt van deze bachelorproef was een literatuurstudie over Docker for Windows, waarvan u het resultaat kan zien in de inleiding. Specifiek werd er opgezocht hoe Docker werkt en de requirements om het succesvol te installeren op een Windows Server 2016 en CentOS 7.4.
 
+\section{Bekijken van documentatie}
+Vervolgens werd de verzamelde documentatie voor beide omgevingen bekeken en beoordeeld op volledigheid. Aan de hand hiervan werd dan een conclusie getrokken.
+
+\section{Opzetten van de servers}
+Hierna werd er een Windows Server 2016 en CentOS 7.4 gemaakt, met op beide Docker, door middel van Vagrant en PowerShell (voor Windows Server) en Bash (voor CentOS). Op deze twee omgevingen werden uiteindelijk ook de software tests uitgevoerd. Deze omgevingen werden daarna geüpload op GitHub zodat de code vrij beschikbaar was voor iedereen.
+
+\section{Uitvoeren van de verschillende tests}
+Nadat het opstellen van beide omgevingen was afgerond en de systemen volledig automatisch vanaf nul naar draaiend met een werkende applicatie konden worden gebracht, werden op beide 3 manieren van software testing uitgevoerd:
+\begin{itemize}[noitemsep]
+	\item Performance testing
+	\item Integration testing
+	\item Performance testing
+\end{itemize}
+Deze manieren werden verschillende malen uitgevoerd, zodanig dat het populatiegemiddelde groot genoeg was dat het resultaat een kleinere invloed ondervond van outliers.
+
+\section{Vergelijkende studie uitvoeren}
+Tenslotte werden alle resultaten van de testresultaten genomen en verwerkt, om zo het
+gemiddelde, de variantie en de standaardafwijking te verkrijgen. Deze waarden werden
+dan gebruikt om een grafische weergave te creëren van de resultaten.
