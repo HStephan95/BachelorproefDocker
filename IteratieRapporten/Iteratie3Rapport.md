@@ -3,8 +3,8 @@
 ## Vereisten
 
 - Doel: Het afwerken van enkele onafgewerkte puntjes uit vorige iteraties en het uitzoeken van hoe het systeem op een methodologische manier getest kan worden.
-- Geschatte tijd: 05/03/2018
-- Benodige tijd: 25/03/2018
+- Van tijd: 05/03/2018
+- Tot tijd: 25/03/2018
 
 ## Test plan
 
@@ -20,30 +20,24 @@
 
 ## Documentation
 
-"In detail beschrijven hoe je de iteratie hebt afgewerkt, met de focus op het manuele werk. Zo min-mogelijk code, gebruik hyperlinks zoveel mogelijk als verwijzing."
+Eerste hebben we geprobeerd om via PowerShell of andere doeleinden de bronbestanden van de applicatie op de VM te krijgen. Dit tevergeefs. Het is té afgesloten van het systeem. Wat normaal een positiefpunt is. Maar, hiermee geraken we natuurlijk niet verder.
 
-Copy-VMFile (appproject.ps1)
+We hebben uiteindelijk geopteerd om het bestand mee te geven tijdens de provision-fase. Dit lukte bijna direct. Alleen moesten we het pad nog op punt stellen. Maar, dit is bijzaak die rap recht getrokken werd.
 
-Vagrant provision file
+Hierna kregen we een eerste BUILD-error van het .NET-project. Dit kwam omdat we een oudere legacy manier van .NET gebruikten. We zijn dan beginnen zoeken achter eventuele nog ondersteunde legacy SDK's. Maar, we opteerden al vrij gauw voor het alternatief: Namelijk het zoeken naar een meer up to date project.
 
-MSBuild error
+Dit konden we vinden van de HoGent Web3 GitHub repository. Hier vonden we een volledig project dat klaar was om te deployen.
 
-Andere SDK zitten zoeken
-
-Ander .Net-project
-
-Compose?
+We hebben tijdens het deployen van dit project dan even kort de mogelijkheden van Compose besproken en of we dit zouden opnemen in het project. We gaan ons nu eest focussen op de kern en komen hier later op terug.
 
 ## Test rapport
 
-"Door het lezen van het testrapport moet het duidelijk zijn in hoeverre de opdracht is uitgevoerd, wat het effectieve resultaat van de tests was. Je kan transcripties toevoegen van de terminal (gebruikhiervoor Markdown codeblokken). Het testrapport zou evenveel informatie moeten bevatten als de demo."
-
 |Objectief|Korte beschrijving|Behaald|
 |---------|------------------|-------|
-|Applicatie deployen|XXXXX||
-|Transcript|XXXXX||
-|Testing|XXXXX||
-|Documentatie||
+|Applicatie deployen|Applicatie is gedeployed. Duidelijk zichtbaar, maar nog problemen met deze te bereiken.||
+|Transcript|Eerste transscript uitgevonden|X|
+|Testing|Opgezocht en genoteerd.|X|
+|Documentatie|In orde, maar gaat beter opgevolgd moeten worden|X|
 
 ## Bronnen
 

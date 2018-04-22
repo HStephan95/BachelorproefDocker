@@ -6,14 +6,9 @@
 \label{ch:opstelling}
 
 %% intro
-
-\section{CentOS 7.4}
-%% hardware
-%% software
-%% vagrant (code + foto)
-%% Bash (code + foto)
-
-\lipsum[21-25]
+De set-up van beide machines werden geautomatiseerd door middel van Hyper-V, Vagrant en scripts. Hiermee kon er gegarandeerd worden dat, telkens er gewerkt werd aan de machines, deze consistent op dezelfde manier geïnstalleerd en aangepast werden.
+Een uitdaging hierbij was het vinden van gepaste Vagrant Boxes voor beide platformen. Want, hoewel CentOS wel een officiële Vagrant Image voorzag op Vagrant Cloud, de opslagplek van alle publieke images. Deed Microsoft dit niet. Hierdoor werd men gedwongen gebruik te maken van een onofficiële bron.
+Tenslotte, werd er ook aandacht besteed dat de middelen en werklading van beide machines evenredig was waar mogelijk. Natuurlijk waren er subtiele verschillen, maar waar het een optie was werden deze zoveel mogelijk weg gewerkt.
 
 \section{Windows Server 2016}
 
@@ -22,5 +17,77 @@
 %% vagrant (code + plug-in + foto)
 %% PowerShell (code + foto)
 
-\lipsum[21-25]
+\subsection{Vagrant}
+Voor de Windows-opstelling werd er gekozen om de 'w16s'-image te gebruiken van de gebruiker 'gusztavvargadr'. Deze Vagrant Image bevatte een Windows Server 2016 Standard 1607 (14393.2155). Verder stond op deze image ook al Chocolatey. Wat maakte dat er alleen nog maar gekeken moest worden of Chocolatey up to date was.
+
+Chocolatey was een community-driven packet manager voor Windows, APT voor Debian er bijvoorbeeld er een was. Met een packet manager kan men het installeren en beheren van applicaties automatiseren.
+
+Vervolgens werd er ingesteld dat deze Vagrant Box 2GB RAM en 2 cores kreeg bij het uitrollen. Zodat de installatie van Docker en uiteindelijke de containers vlot en snel zou kunnen verlopen. Daarnaast stelden we ook een naam in voor de VM en een host-naam. Dit maakte het makkelijker om de VM later aan te spreken.
+
+%% foto + code box en configuratie
+
+Uitzonderlijk voor de Windows Server werd er ook gebruik gemaakt van een plug-in voor Vagrant. Namelijk, de 'Vagrant-Reload'-plug-in van Aidan Nagorcka-Smith. Hiermee kon men het Vagrant Reload commando uitvoeren tijdens het uitrollen van de Vagrant Image naar een Box. Dit was een voorwaarde, want de Windows Server dient heropgestart te worden naar de installatie van Docker.
+
+%% foto + code provision
+
+Tenslotte werd ook gebruik gemaakt van een reeks provision-commando's om het systeem te voorzien van de nodige scripts en een voorbeeld-project. Het voorbeeld-project bevatte een .Net-webapplicatie. Die deze startpagina zou moeten tonen:
+
+%% foto start pagina
+
+\subsection{PowerShell}
+6 powershell scripts:
+
+\begin{itemize}[noitemsep]
+	\item Chocolatey
+\end{itemize}
+
+Checken installatie Chocolatey en updaten indien nodig
+
+\begin{itemize}[noitemsep]
+	\item OpenSSH
+\end{itemize}
+
+Installeren OpenSSH, firewall regel toevoegen en agent installeren
+
+\begin{itemize}[noitemsep]
+	\item Docker \#1
+\end{itemize}
+
+Installeren docker en melden reboot
+
+Reload
+
+\begin{itemize}[noitemsep]
+	\item Docker \#2
+\end{itemize}
+
+Installeren Posh Docker voor extra functionaliteit
+Uitvoeren test container
+
+\begin{itemize}[noitemsep]
+	\item Images
+\end{itemize}
+
+Installeren databank (vervangen door compose)
+
+\begin{itemize}[noitemsep]
+	\item Application
+\end{itemize}
+
+Aanmaken Dockerfile
+Daarna bouwen en geven naam aan Docker Image
+Vervolgens bouwen Docker Container, port forwarding toevoegen naam geven aan de hand van de Image
+Tenslotte, melden welk IP adres de container naar luistert want Windows heeft nog problemen met port forwarding
+
+\section{CentOS 7.4}
+%% hardware
+%% software
+%% vagrant (code + foto)
+%% Bash (code + foto)
+
+\subsection{Vagrant}
+
+
+\subsection{PowerShell}
+
 

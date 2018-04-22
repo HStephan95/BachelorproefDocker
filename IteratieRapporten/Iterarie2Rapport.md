@@ -7,8 +7,8 @@
 ## Vereisten
 
 - Doel: Het installeren van Docker en een applicatie ermee op een Windows- en Linuxomgeving
-- Geschatte tijd: 29/01/2018
-- Benodige tijd: 19/02/2018
+- Van tijd: 29/01/2018
+- Tot tijd: 19/02/2018
 
 ## Test plan
 
