@@ -27,11 +27,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    
     config.vm.hostname = "DockerForWinVM"
   
-    # config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
+    config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
  
-    config.vm.provision :shell, path: "scripts/Docker-P1.ps1"
-  
     config.vm.provision :shell, path: "scripts/OpenSSH.ps1" 
+
+    config.vm.provision :shell, path: "scripts/Docker-P1.ps1"
     
     config.vm.provision :reload
   

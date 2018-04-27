@@ -20,7 +20,7 @@ Tenslotte, werd er ook aandacht besteed dat de middelen en werklading van beide 
 \subsection{Vagrant}
 Voor de Windows-opstelling werd er gekozen om de 'w16s'-image te gebruiken van de gebruiker 'gusztavvargadr'. Deze Vagrant Image bevatte een Windows Server 2016 Standard 1607 (14393.2155). Verder stond op deze image ook al Chocolatey. Wat maakte dat er alleen nog maar gekeken moest worden of Chocolatey up to date was.
 
-Chocolatey was een community-driven packet manager voor Windows, APT voor Debian er bijvoorbeeld er een was. Met een packet manager kan men het installeren en beheren van applicaties automatiseren.
+Want, Chocolatey was een community-driven packet manager voor Windows, zoals APT voor Debian er bijvoorbeeld er een was. Met een packet manager kan men het installeren en beheren van applicaties automatiseren. Hiermee kon men de installatie vereenvoudigen.
 
 Vervolgens werd er ingesteld dat deze Vagrant Box 2GB RAM en 2 cores kreeg bij het uitrollen. Zodat de installatie van Docker en uiteindelijke de containers vlot en snel zou kunnen verlopen. Daarnaast stelden we ook een naam in voor de VM en een host-naam. Dit maakte het makkelijker om de VM later aan te spreken.
 
@@ -30,54 +30,51 @@ Uitzonderlijk voor de Windows Server werd er ook gebruik gemaakt van een plug-in
 
 %% foto + code provision
 
-Tenslotte werd ook gebruik gemaakt van een reeks provision-commando's om het systeem te voorzien van de nodige scripts en een voorbeeld-project. Het voorbeeld-project bevatte een .Net-webapplicatie. Die deze startpagina zou moeten tonen:
+Tenslotte werd ook gebruik gemaakt van een reeks provision-commando's om het systeem te voorzien van de nodige scripts en een voorbeeld-project. Het voorbeeld-project bevatte een .NET-webapplicatie. Die deze startpagina zou moeten tonen:
 
 %% foto start pagina
 
 \subsection{PowerShell}
-6 powershell scripts:
+De 6 scripts die voorzien werden configureren elk een component dat nodig was om de omgeving af te werken.
 
 \begin{itemize}[noitemsep]
 	\item Chocolatey
 \end{itemize}
 
-Checken installatie Chocolatey en updaten indien nodig
+In dit scripts werd er gekeken of Chocolatey als geïnstalleerd was. Zoja, werd er een check uitgevoerd of ze up to date was. Anders, installeerde het de packet manager.
 
 \begin{itemize}[noitemsep]
 	\item OpenSSH
 \end{itemize}
 
-Installeren OpenSSH, firewall regel toevoegen en agent installeren
+Vervolgens werd het OpenSSH-scripts uitgevoerd. Dit installeerde OpenSSH op het systeem, voegde de nodige firewall rules toe en maakte dat de service opstart tezamen met het systeem.
 
 \begin{itemize}[noitemsep]
 	\item Docker \#1
 \end{itemize}
 
-Installeren docker en melden reboot
+Hierna werd het eerste deel van de Docker installatiescripts uitgevoerd. Dit installeerde Docker en gaf een melding dat er hierna een reboot eraan kwam.
 
-Reload
+Want, nadat Docker geïnstalleerd werd vereist het systeem dat het heropgestart werd. Deze plug-in was de makkelijkst gevonden manier, zonder in te grijpen in het automatisatie-proces.
 
 \begin{itemize}[noitemsep]
 	\item Docker \#2
 \end{itemize}
 
-Installeren Posh Docker voor extra functionaliteit
-Uitvoeren test container
+Daarna werd er Posh-Docker geïnstalleerd. Deze tool voorzag autocompletion van Docker-commanod's in de PowerShell terminal.
 
 \begin{itemize}[noitemsep]
 	\item Images
 \end{itemize}
 
-Installeren databank (vervangen door compose)
+Vervolgens werd het Images.ps1-script uitgevoerd. Dit script was verantwoordelijk voor het installeren van de container waarin de databank werd gehost die de applicatie nodig had. Dit gebeurde aan de hand van een Microsoft SQL server Docker Image die van het internet werd gehaald en waar er vervolgens een container mee werd gebouwd. Uiteindelijk kon dit beter vervangen worden door Docker Compose.
 
 \begin{itemize}[noitemsep]
 	\item Application
 \end{itemize}
 
-Aanmaken Dockerfile
-Daarna bouwen en geven naam aan Docker Image
-Vervolgens bouwen Docker Container, port forwarding toevoegen naam geven aan de hand van de Image
-Tenslotte, melden welk IP adres de container naar luistert want Windows heeft nog problemen met port forwarding
+Tenslotte, haalde het laatste script die .NET-sdk Docker Image op die nodig was om de container te bouwen die de webapplicatie vereiste. Daarna maakte het script de Dockerfile aan en vulde deze op met de vereiste tekst die nodig was om de container te bouwen.
+Alsook de commando's om daarna de Docker Image en Container te bouwen.
 
 \section{CentOS 7.4}
 %% hardware
@@ -86,8 +83,34 @@ Tenslotte, melden welk IP adres de container naar luistert want Windows heeft no
 %% Bash (code + foto)
 
 \subsection{Vagrant}
+Om de CentOS-server te installeren werd er gebruik gemaakt van de officiële Vagrant Image die beschikbaar werd gesteld door de organisatie achter CentOS, Red Hat Enterprise Linux (RHEL). Deze voorzag alleen een basis installatie van een CentOS 7.4 server, voorzag wel de mogelijkheid om uitgerold te worden op alle populaire platformen.
 
+%% foto + code
 
-\subsection{PowerShell}
+Ook hier kreeg het systeem 2GB RAM en 2 cores. Zodat er op een eerlijke manier naar de performantie van beide systemen kon gekeken worden. Verder kreeg het systeem ook een hostname en VMName.
 
+%% foto + code
 
+Tenslotte werden er 3 primaire scripts voorzien bij het provision-gedeelte, zodanig dat alle componenten die nodig waren geïnstalleerd konden worden. Waaronder een script om die dezelfde webapplicatie voorzag als voor Windows.
+
+\subsection{Bash}
+
+\begin{itemize}[noitemsep]
+	\item Dockerhost
+\end{itemize}
+
+In dit gedeelte van het script worden alle functionaliteiten voorzien die er nodig waren voordat we konden beginnen aan het uitrollen van de applicatie. Onder andere, werd hier ook Docker geïnstalleerd. Maar, verder ook nano, patch en git.
+Daarnaast werden er ook regels toegevoegd aan de firewall, zodanig dat de container beschikbaar zou zijn nadat deze was opgesteld.
+
+\begin{itemize}[noitemsep]
+	\item Images
+\end{itemize}
+
+Bij het volgende script werden alle Docker Images van Docker Hub, de officiële online repository van Docker waar alle beschikbare Docker Images op stonden.
+
+\begin{itemize}[noitemsep]
+	\item Applicatie
+\end{itemize}
+
+Tenslotte, werd in het laatste script de benodigde databank en applicatie omhoog gebracht aan de hand van een Dockerfile, docker run- en docker build-commando's.
+De Dockerfile werd opgevuld met een 'EOF' identifier. Hierdoor bleef Bash de invoer pipen in de Dockerfile tot hij 'EOF' tegenkwam. Ook hier kon de databank beter gebouwd worden door gebruik te maken van docker compose.
