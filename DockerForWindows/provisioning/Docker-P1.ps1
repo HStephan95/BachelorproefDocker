@@ -11,8 +11,8 @@ if($CurrentPolicy -ne "Bypass")
 
 # Installeren Docker
 Write-Host "#INSTALLING DOCKER#"
-Install-Module DockerProvider -Force
-Install-Package Docker -ProviderName DockerProvider -Force
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+Install-Package -Name docker -ProviderName DockerMsftProvider
 Write-Host "#DOCKER INSTALLED#"
 
-Write-Host "#GOING to Reboot#"
+Write-Host "#REBOOTING#"

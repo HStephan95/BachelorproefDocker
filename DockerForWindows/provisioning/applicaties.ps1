@@ -1,8 +1,8 @@
-docker pull microsoft/dotnet:2.0.5-sdk-2.1.4
+sl ../../Users/vagrant/VoorbeeldProject/DienstenCheques
 
-cd ../../Users/vagrant/VoorbeeldProject/DienstenCheques
+docker run -d -p 1433:1433 -e sa_password=$password -e ACCEPT_EULA=Y microsoft/mssql-server-windows-developer
 
-new-item "Dockerfile" -Force 
+New-item "Dockerfile" -Force 
 New-Item "app" -ItemType Directory -Force
 
 $DockerCommands = 'FROM microsoft/dotnet:2.0.5-sdk-2.1.4'

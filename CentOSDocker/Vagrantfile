@@ -12,9 +12,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
     config.vm.box = "centos/7"
   
+    config.vm.network "public_network"
+  
     config.vm.provider "hyperv" do |v|
         v.name = "CentOSDocker"
-        v.memory = 4048
+        v.memory = 4096
         v.cpus = 2
     end
    
