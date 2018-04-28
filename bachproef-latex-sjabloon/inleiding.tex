@@ -12,9 +12,9 @@
 
 %%\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
 
-Voor 22 februari 2017 kon men dus enkel Docker installeren op Linux besturingssystemen. Dit dwong een onderneming die wou evolueren naar een DevOps manier van werken die geen kennis had van Linux om, ofwel iemand aan te schaffen die dit wel had of dat er een spoedcursus Linux moest gevolgd worden. Maar, met de komst van Windows 10 en Windows Server 2016, en de daarmee gepaard gaande groei van PowerShell en Hyper-V, is Docker nu ook toegankelijk voor organisaties die meer Windows gezind willen zijn. ~\autocite{DockerFAQ}
+Voor 22 februari 2017 kon men enkel Docker installeren op Linux-besturingssystemen. Ondernemingen zonder Linux-kennis die wilden evolueren naar DevOps werden op die manier gedwongen om iemand in dienst te nemen die deze kennis wel had, ofwel om zelf een spoedcursus te volgen. Echter met de komst van Windows 10 en Windows Server 2016, en de daarmee gepaard gaande groei van PowerShell en Hyper-V, is Docker nu ook toegankelijk voor organisaties die meer Windows-gezind willen zijn.
 
-Want, het zou een vergissing zijn om Docker zomaar te negeren als je de DevOps richting uit wilt gaan. Het biedt immers verschillende gereedschappen aan voor zowel je developers als je sys admins. Bijvoorbeeld, Containers as a Service (CaaS) en role-based access control voor Operations, en een zelfbedienings-manier van werken voor Developers waarbij ze services kunnen opvragen wanneer zij ze nodig hebben. Momenteel wordt Docker dan ook gebruikt in 44 procent van de ondernemingen die van plan zijn om de DevOps richting in te slaan. ~\autocite{DockerDevOps}
+Het zou namelijk een vergissing zijn om Docker zomaar te negeren als men de DevOpsrichting wil uitgaan. Het biedt immers verschillende tools aan voor zowel developers als system administrators. Bijvoorbeeld: Containers as a Service (CaaS) en role-based access control voor Operations (system administrators), en een zelfbedieningsmanier van werken voor Developers waarbij ze services kunnen opvragen wanneer ze die nodig hebben. Momenteel wordt Docker gebruikt in 44 procent van de ondernemingen die van plan zijn om de DevOps-richting uit te gaan.
 
 \section{Stand van zaken}
 \label{sec:stand-van-zaken}
@@ -23,15 +23,13 @@ Want, het zou een vergissing zijn om Docker zomaar te negeren als je de DevOps r
 %% literatuurstudie. Vergeet niet telkens je bronnen te vermelden!
 \subsection{DevOps}
 \label{sec:devops-uitleg}
-DevOps is een geclipte verbinding van de woorden 'Development' en 'Operations', je ontwikkeling en beheer. Voorheen werkte deze IT groepering strikt gescheiden, waardoor je ofwel bij de ene groep zat ofwel bij de andere. Dit zorgt ervoor dat, als men een applicatie wil maken, de developers het ontwikkelen en die dan richting de systeembeheerders werpen zodra de applicatie klaar is. Als de systeem beheerders hierna nog problemen hebben met de applicatie uitgerold te krijgen op hun servers, verloopt de communicatie altijd stroef door al het vinger wijzen dat er zal gebeuren. De applicatie werkte immers op de computers van de developers, de systeem beheerders moeten nu maar zien dat alles werkt op hun servers. Aangezien beide kanten dus niet veel weet hebben van elkaars werk, zorgt dit al snel voor wrevel.
+DevOps is een samenstelling van de woorden ’Development’ en ’Operations’: ontwikkeling en beheer. Voorheen werkten deze IT-groeperingen strikt gescheiden, waardoor je ofwel bij de ene groep zat ofwel bij de andere. Dit zorgde ervoor dat, als men een applicatie wou maken, de developers deze dan eerst ontwikkelden, waarna de systeembeheerders de applicatie uitrolden. Als de systeembeheerders hierna nog problemen hadden met het uitrollen, verliep de communicatie veelal stroef. De applicatie werkte immers op de computers van de developers, dus waarom zou dat niet het geval zijn bij de systeembeheerders? Echter, aangezien beide groeperingen onvoldoende kennis hadden over elkaars werkveld, was er veel onbegrip.
 
 \begin{center}
 	\includegraphics[scale=0.5]{img/devopsmuur.jpg}
 \end{center}
 
-Bij DevOps worden deze groepen gedwongen om samen te werken in één team. Zodat je samengevoegd een som krijgt die groter is dan het geheel. In praktijk vertaald dit zich naar een cultuur die gestimuleerd dient te worden, waarin het automatiseren van zoveel mogelijk zaken centraal staat met een focus op continue ontwikkeling en oplevering. Waarbij leren en het delen van informatie, en communicatie in het algemeen, zeer belangrijk is. Er worden ook verschillende manieren voorzien om informatie te verzamelen uit de applicatie, door methodes te implementeren die men gebruikt om zo een doorzichtiger systeem te hebben. Het is dus eerder een groep van concepten en ideeën dat gegroeid is tot een beweging dat snel tractie aan het winnen is.
-
-Als éénduidige definitie voor DevOps kom je er het dichts bij met het acroniem 'CALMS'.
+Als éénduidige definitie voor DevOps gebruikt met het acroniem 'CALMS'.
 \begin{itemize}[noitemsep]
 	\item Culture (Cultuur)
 	\item Automatisation (Automatisatie)
@@ -40,7 +38,7 @@ Als éénduidige definitie voor DevOps kom je er het dichts bij met het acroniem
 	\item Sharing (Delen)
 \end{itemize}
 
- ~\autocite{WhatIsDevOps}
+Bij DevOps worden deze groepen gedwongen om samen te werken in één team, zodat het geheel groter wordt dan de som. In praktijk vertaalt dit zich naar een cultuur die gestimuleerd dient te worden, waarin het automatiseren van zoveel mogelijk zaken centraal staat met een focus op continue ontwikkeling en oplevering (cfr. CI/CD). Hierbij is het leren, delen van informatie, en communicatie in het algemeen, heel belangrijk. Er worden verschillende manieren voorzien om informatie te verzamelen uit de applicatie, door methodes te implementeren die men gebruikt om een doorzichtiger systeem te creëren. Het is dus eerder een groep van concepten en ideeën die uitgegroeid zijn tot een beweging die snel tractie aan het winnen is.
 
 \begin{center}
 \includegraphics[scale=0.5]{img/devops.png}
@@ -48,41 +46,155 @@ Als éénduidige definitie voor DevOps kom je er het dichts bij met het acroniem
 
 \subsection{Docker}
 \label{sec:docker-uitleg}
-Docker is een gereedschap om het uitrollen van applicaties sneller en makkelijker te maken doordat het de applicatie, en alle benodigdheden, ervoor in één geautomatiseerd pakketje verpakt. Dat zal werken los van het host besturingssysteem. Dit pakket in zijn geheel wordt een container genoemd. ~\autocite{OpenSourceDocker}
+De beste manier om de verschillen in werking te beschrijven tussen fysieke servers, virtuele machines (VM’s) en containers, is door ernaar te kijken zoals een woning. Fysieke servers en virtuele machines zijn zoals huizen. Ze werken volledig onafhankelijk en voorzien zelf in al hun noden qua infrastructuur. Een fysieke server wordt bovendien volledig onafhankelijk opgebouwd vanaf nul. Een virtuele machine echter wordt naast een bestaand host besturingssysteem gedraaid, waarbij het een bepaalde hoeveelheid infrastructuur opeist. Een virtuele machine is dus eigenlijk een computer in een computer. Beide systemen hebben hetzelfde grote nadeel, namelijk dat er veel meer infrastructuur nodig is en dat deze niet optimaal wordt gebruikt. Containers zijn eerder te vergelijken met appartementen, namelijk dat de infrastructuur wordt opgedeeld. Alle middelen van de host-machine waar de Docker Daemon op geïnstalleerd wordt, worden verdeeld onder de verschillende containers. Elke container vraagt hierbij alleen de nodige grondstoffen om te voldoen aan de noden van zijn bewoner, net zoals bij een appartement. Containers lijken op het eerste zicht erg op virtuele machines, maar het is belangrijk om te onthouden dat de onderliggende architectuur sterk verschilt tussen beide.
 
-Containers lijken op het eerste zicht hard op virtuele machines. Maar, belangrijk om te onthouden is dat de onderliggende architectuur sterk verschilt tussen de 2. De beste manier om ernaar te kijken is zoals naar appartementen en huizen. Een huis staat volledig op zich, en voorziet zelf in al zijn behoefte qua infrastructuur. Net zoals een huis zal de virtuele machine volledig onafhankelijk opgebouwd worden, los van je eigen host. Containers zijn zoals appartementen in dat ze de bestaande infrastructuur delen. Alle middelen van de host waar de Docker Host op geïnstalleerd wordt zullen worden gedeeld onder de verschillende containers. Waarbij, net zoals een appartement, elk aangeboden container voldoet aan de noden van zijn bewoner. ~\autocite{ContainerVsVM}
-
-Een container zal hierdoor dus een lichtere en onafhankelijke uitvoerbaar software pakket kunnen opbouwen. Met de extra bonus dat het consistentie kan garanderen doordat er telkens gebruik zal gemaakt worden van dezelfde achterliggende images. ~\autocite{DockerContainer}
-
-Doordat elk deel van een applicatie dus in zo'n appartementje zit, is het maken van continue ontwikkeling en oplevering voor de applicatie heel makkelijk te doen. Je moet immers alleen die specifieke container updaten/graden. Hierdoor is het de perfecte technologie om te dienen als productie- en testomgeving. Verder versoepelt het ook de communicatie in het DevOps-team doordat iedereen continue in dezelfde omgeving aan het werken is. Er zijn immers geen grote veranderingen nodig tijdens verschillende stappen van de leveringsketen. Verder maakt het ook nog het leven van iedereen makkelijker doordat je instaat bent op verschillende frameworks te draaien op één platform. Omdat de container vrij agnostisch zijn op vlak van programmeertaal of platform. Containers kunnen ook makkelijk van host besturingssysteem verplaatst worden.  ~\autocite{DevOpsContainers}
+Doordat een Container alleen de benodigde infrastructuur opeist die hij nodig heeft, bouwt die een lichter en onafhankelijk uitvoerbaar softwarepakket op, dat consistentie kan garanderen omdat het telkens dezelfde achterliggende Docker Images en Daemon gebruikt. Een van de meest voorkomende problemen bij het uitrollen van een applicatie is het verschil tussen de test- en productieomgeving, en de hiermee gepaarde infrastructuurlast.
 
 \begin{center}
 	\includegraphics[scale=0.2]{img/containers.png}
 	\includegraphics[scale=0.2]{img/vms.png}
 \end{center}
 
-%% Werking Docker
+Docker is een tool om deze Containers te bouwen. Hiermee kan men het uitrollen van applicaties sneller en makkelijker maken, doordat het de applicatie en al haar benodigdheden eerst in één geautomatiseerd pakket verzamelt. Dit pakket noemt een image. De uitgerolde versie van een image noemt men een Container en deze zal los van het host besturingssysteem werken.
 
-Het door al deze redenen dat Docker jaar na jaar blijft groeien. Tijdens de meest recentste DockerCon heeft de CEO van Docker enkele knallende cijfers kunnen tonen, zoals bijvoorbeeld:
+Om dit klaar te krijgen, maakte men gebruik van de Docker Client. Met de Client kon men communiceren met de Docker Daemon, dit is een proces dat op de achtergrond draaide tot het aangeroepen werd door de gebruiker via de Docker syntaxis. De Docker Daemon zou uiteindelijk degene die de Docker commando's interpreteerde en uitvoerde. Zoals bijvoorbeeld het bouwen, draaien en verdelen van containers.
+
+Concreet waren onderstaande stappen nodig voor het bouwen van een container met Docker:
+\begin{itemize}[noitemsep]
+	\item docker pull
+\end{itemize}
+Hiermee kon men een Docker Image ophalen van de Docker Hub. Deze images waren momentopnames van bijvoorbeeld containers of besturingssystemen. Deze konden, afhankelijk van de gebruiker, uitgebreid worden via een Dockerfile. Het was met deze parent image dat men een container kan bouwen.
+
+\begin{itemize}[noitemsep]
+	\item docker run <options> <image>
+\end{itemize}
+Daarna kon men met het 'docker run'-commando het bevel geven aan de Docker Image om zich te deployen tot een container. Hoe de image zich uitrolde hing af van de bevelen die het commando meekreeg en de image die men gebruikte.
+
+Met het bovenstaande voorbeeld ging men ervan uit dat men een basis container wou draaien. Zoals, bijvoorbeeld, een SQL-server. Deze vereiste alleen een poort, wachtwoord en bevestiging. Als men een volledige applicatie of besturingssysteem wou uitrollen zal men gebruik moeten maken van een Dockerfile. Hierin kon men geavanceerdere instructies meegeven aan de 'docker build'- en 'docker run'-commando's.
+
+\begin{itemize}[noitemsep]
+	\item Dockerfile
+\end{itemize}
+In de Dockerfile kon men, aan de hand van de syntaxis, een gepersonaliseerde Docker Image bouwen. In het bijzonder, moest men hier specifiëren van welke image men wilt beginnen via het 'FROM'-commando. Men hoefde hier niet specifiek een parent image meegeven, maar kon ook van niets beginnen via 'FROM scratch'. Vervolgens kon men environment variables meegeven via 'ENV', 'ADD' of 'EXPOSE'. Daarnast kon men via 'RUN' ook orders meegeven om specifieke commando's uit te voeren die de container zou herkennen zoals Bash of PowerShell. Ten slotte, kon men via 'ENTRYPOINT' declareren of de container uitvoerbaar moet zijn of niet.
+
+\begin{itemize}[noitemsep]
+	\item docker build
+\end{itemize}
+Ten slotte, bouwde men deze met het 'docker build'-commando. Hiermee kon men opnieuw de Docker Daemon aanspreken om de syntaxis te interpreteren en de gepersonaliseerde container te bouwen.
+
+Docker voorzag ook enkele commando's om de Docker Images en Boxes te beheren. De voornaamste staan hieronder gelijst en beschreven.
+\begin{itemize}[noitemsep]
+	\item docker images - Dit commando toonde alle Docker Images beschikbaar op dit systeem.
+	\item docker ps - Hiermee werden alle draaiende containers getoond.
+	\item docker inspect <container> - Daarnaast kon men hiermee ook de specificaties van een specifieke container bekijken.
+	\item docker logs <container> - Met dit commando bekeek men alle logs voor een specifieke container. '--follow' was hier een praktische optie om toe te voegen.
+	\item docker start <container> - Hiermee werd een specifieke container opgestart.
+	\item docker stop <container> - Het alternatief van bovenstaande commando.
+	\item docker rm <container> - Ten slotte, kon men containers hiermee verwijderen.
+\end{itemize}
+
+Doordat elk deel van een applicatie in een 'appartementje' zit, is het maken van continue ontwikkeling en oplevering voor de applicatie heel gemakkelijk. Men moet immers alleen die specifieke Container updaten/graden. Hierdoor is het de perfecte technologie om te dienen als test- en productieomgeving. Daarnaast versoepelt het ook de communicatie binnen het DevOps-team, doordat iedereen continu in dezelfde omgeving werkt. Er zijn immers geen grote veranderingen nodig bij de verschillende stappen binnen de leveringsketen, omdat men in staat is om verschillende frameworks te draaien op één platform. Containers zijn namelijk vrij agnostisch zijn op vlak van programmeertaal of platform. Ten slotte kunnen Containers ook makkelijk van host-besturingssysteem verplaatst worden. Al deze kenmerken van Docker Containers vergemakkelijken het werk van DevOps-teams aanzienlijk.
+
+Door al deze redenen blijft Docker ook jaar na jaar groeien. Tijdens de recentste DockerCon heeft de CEO van Docker dit ook aangetoond met volgend cijfermateriaal:
 \begin{itemize}[noitemsep]
 	\item Meer dan 14 miljoen Docker hosts
 	\item More dan 900.000 applicaties die draaien op Docker
 	\item Een verhoging van 40 procent in het toepassen ervan in 1 jaar
 \end{itemize}
-~\autocite{DockerNumbers}
 
-Docker heeft deze groei ook verdient. Door constant in contact te blijven met zijn gebruikers. In het verleden hadden ze immers de klacht gekregen dat ze ofwel te traag of te snel updates toevoegden aan het systeem. Om dit te remediëren hebben ze naast Docker Community Edition, waarmee alles is begonnen, nu ook Docker Enterprise Edition in het leven geroepen. Met daarbovenop een verschuiving naar een tijdgebaseerde updatesysteem. Waarbij je kunt kiezen tussen elke maand een update, maar zonder garantie op stabiliteit (Edge). Of, elke 4 maand een update, voor gebruikers die stabiliteit prefereren zowel op vlak van onderhoud als beheer (Stable). Daarbovenop heeft de Enterprise Edition ook een uitgebreidere ondersteuning met verschillende gradaties. ~\autocite{EEvCE}
+Docker heeft deze groei ook verdiend door constant in contact te blijven met zijn gebruikers. In het verleden kregen ze immers de klacht dat ze te snel of te traag updates toevoegden aan het systeem. Om dit te remediëren hebben ze naast Docker Community Edition, waarmee alles is begonnen, nu ook Docker Enterprise Edition ontworpen. Daarbovenop is er een verschuiving naar time-based updates. Hierbij kan men kiezen tussen een maandelijkse update, maar zonder garantie op stabiliteit van de runtime (Edge), ofwel voor een viermaandelijkse update voor gebruikers die meer stabiliteit prefereren, zowel op vlak van onderhoud als van beheer (Stable). Daarbovenop heeft de Enterprise Edition ook een meer uitgebreide ondersteuning met verschillende gradaties.
 
 \subsubsection{Docker CE}
-Zoals eerder aangehaald is Docker CE het origineel platform waarmee ze zijn begonnen. Het is ideaal voor kleine teams of onafhankelijke developers die willen experimenteren met container technologie. Beschikbaar voor zowel Linux, Windows als Mac is het perfect als kleine en snelle installatie om direct aan de slag te gaan. Daarbovenop biedt het ook ondersteuning voor het uitrollen naar Cloud omgevingen, zoals Amazone Web Services of Azure. De basis voor Docker for Windows was Docker CE. ~\autocite{DockerCE}
+Zoals eerder aangehaald is Docker Community Edition het originele platform waarmee Docker begonnen is. Het is ideaal voor kleinere teams of onafhankelijke developers die willen experimenteren met Container-technologie. Deze technologie is beschikbaar voor zowel Linux als Windows als Mac, waardoor het perfect is als kleine en snelle installatie waarmee men direct aan de slag kan gaan. Daarbovenop biedt het ook ondersteuning voor het uitrollen naar Cloud-omgevingen, zoals Amazone Web Services of Azure. Ten slotte is Docker CE ook de versie die gebruikt werd voor deze bachelorproef.
 
 \subsubsection{Docker EE}
-Docker Enterprise Edition is volledige pakket voor zij die op een professionele manier met een Containers-as-a-Serivce platform willen werken. Docker EE is dus een geïntegreerd en getest platform voor Linux of Windows Enterprise en Cloud providers, met door Docker gecertificeerde componenten en ondersteuning. In het bijzonder, is voor datacenters een handig dashboard waar ze hun multi-architecturaal orkestratie software supply chain kunnen volgen op een veilig manier. Vooral aan dat laatste heeft Docker extra veel aandacht besteedt met kenmerken zoals trusted delivery. ~\autocite{DockerEE}
+Docker Enterprise Edition is het volledige pakket voor zij die op een professionele manier met een Containers-as-a-Serivce-platform willen werken. Docker EE is een geïntegreerd en getest platform voor Linux- of Windows Enterprise en Cloud-providers, met door Docker gecertificeerde componenten en ondersteuning. In het bijzonder is het voor datacenters een handig dashboard waar men de zogenaamde multi-architecture orchestration, secure software supply chain en infrastructure independence aangeboden krijgt. Vooral aan dat laatste heeft Docker extra veel aandacht besteed., met kenmerken zoals trusted delivery.
 
 \begin{center}
 	\includegraphics[scale=0.2]{img/dockerce.png}
 \end{center}
 
+\subsection{Hyper-V}
+Hyper-V is de technologie die gekozen werd om de twee servers, CentOS en Windows Server 2016, op te laten draaien. Dit is het Microsoft-platform voor het virtualiseren van hardware. Het maakt gebruik van hypervisor-gebaseerde virtualisatie technologie om de interactie tussen de virtuele machine en de hardware te voorzien. Hierdoor is men in staat om een andere computer te laten werken bovenop het host-besturingssysteem. De voornaamste componenten en hun functies van dit platform zijn:
+
+\begin{itemize}[noitemsep]
+	\item Windows Hypercall
+\end{itemize}
+
+Hypercall voorziet communicatie met de Hypervisor.
+
+\begin{itemize}[noitemsep]
+	\item Windows hypervisor
+\end{itemize}
+
+Dit is een softwarelaag wiens primaire verantwoordelijkheid is om geïsoleerde execution enviroments te voorzien. Deze execution enviroments noemen partitions. Hypervisor is gelegen tussen de hardware en één of meer besturingssystemen, zodat het hardwaregebruik kan optimaliseren voor al de partitions.
+
+\begin{itemize}[noitemsep]
+	\item Hyper-V Virtual Machine Management Service
+\end{itemize}
+
+VMMS is verantwoordelijk voor het beheren van de staat van alle virtuele machines in zogenaamde child partitions.
+
+\begin{itemize}[noitemsep]
+	\item Virtual Machine Bus
+\end{itemize}
+
+Dit channel-based communicatiemechanisme voorziet de communicatie tussen verschillende partitions op systemen met meer dan één virtual partition.
+
+\begin{itemize}[noitemsep]
+	\item Virtualization Service Provider
+\end{itemize}
+
+VSP bevindt zich in de root partition en voorziet synthetische ondersteuning aan child partitions over de VMBus.
+
+\begin{itemize}[noitemsep]
+	\item Virtual Infrastructure Driver
+\end{itemize}
+
+De VID voorziet partition-, processor- en memory services.
+
+Daarnaast bevat Hyper-V ook nog andere low level componenten, zoals:
+
+\begin{itemize}[noitemsep]
+	\item APIC - Advanced Programmable Interrupt Controller
+	\item IC - Integration component
+	\item MSR - Memory Service Routine
+	\item VMWP - Virtual Machine Worker Process 
+	\item VSC - Virtualization Service Client
+	\item WinHv  - Windows Hypervisor Interface Library 
+	\item WMI - Virtual Machine Management Service 
+\end{itemize}
+
+Tenslotte heeft Hyper-V ook enkele tools voor het beheren van en verbinden met zijn virtuele machines. Deze kunnen geïnstalleerd worden op zowel computers waar Hyper-V op staat, als op externe computers. Deze zijn meer specifiek:
+
+\begin{itemize}[noitemsep]
+	\item Hyper-V Manager
+	\item Hyper-V module for Windows PowerShell
+	\item Virtual Machine Connection
+	\item Windows PowerShell Direct
+\end{itemize}
+
+Om deze servers te verbinden met het internet werd ook gebruik gemaakt van de Hyper-V
+Virtual Switch. Deze laag 2 Ethernet netwerkswitch voorziet programmeer- en uitbreidbare
+mogelijkheden om het beheren van virtuele en fysieke netwerken te vergemakkelijken.
+Het voorziet veiligheid, isolatie en service levels om de nodige veiligheid af te dwingen.
+
+\subsection{Vagrant}
+Vagrant is een tool voor het bouwen en onderhouden van virtuele machines. Het maakt gebruik van een enkele workflow voor het automatiseren van ontwikkelomgevingen. Doordat het zo makkelijk te gebruiken is, verlaagt het de installatietijd en verhoogt het de productie. Dit is waarom het een geliefde tool is binnen DevOps-teams.
+
+Vagrant werkt aan de hand van yml-configuratiebestanden die uitgelezen moeten worden. Het belangrijkste configuratiebestand dat Vagrant nodig heeft, is een ’Vagrantfile’. Hierin wordt alles gedefinieerd wat nodig is: welke boxes, scripts en andere bestanden er nog nodig zijn voor de installatie. Een 'Vagrant Box' is een base image die een clone is van een virtuele machine. Een base image is het minimum van een besturingssysteem waarop er nog verschillende andere functies gebouwd kunnen worden, zoals bijvoorbeeld een GUI. Met deze boxes wordt gedefinieerd welk besturingssysteem en welke bijbehorende software dient te worden geïnstalleerd. Als de box goed is, maar er moeten nog verdere configuratie of installaties van de software gebeuren, kan men deze ook meegeven met het ’provision’-gedeelte. Met provisioning voegt men verdere configuratiemogelijkheden toe, zoals het uitvoeren van scripts, het uploaden van bestanden of folders tijdens de installatie, of het specificeren van een netwerkadres. Door provisioning kan men ook makkelijk wijzigingen aanbrengen aan het systeem tijdens de run-time. Er wordt ook gebruik gemaakt van een eigen syntax die aangeleerd dient te worden. Deze bestaat uit 'vagrant' en de functie die uitgevoerd dient te worden, bijvoorbeeld: met 'vagrant up' wordt geprobeerd om het systeem online te brengen. De configuratie van de 'Vagrantfile' heeft ook zijn eigen syntax, bestaande uit het woord ’config’ en de functie bepalen wat ermee moet gebeuren.
+
+Vagrant ondersteunt bovendien verschillende platformen om zijn installatie op uit te voeren, gaande van VirtualBox en Hyper-V tot Docker en AWS. Het grote aantal beschikbare platformen om op te releasen is ook een sterkte van Vagrant.
+
+Daarbovenop zijn er mogelijkheden om de functionaliteit van Vagrant zelf uit te breiden aan de hand van plug-ins die geschreven worden door andere gebruikers. Dit gebeurt meestal in de programmeertaal Ruby. Voor de gebruikte Windows Server-opstelling in deze bachelorproef is deze functionaliteit heel handig, omdat de Windows Server herstart dient te worden na de installatie van Docker. Hiervoor kan een plug-in gebruikt worden.
+
+Om al deze redenen werd geopteerd om gebruik te maken van deze technologie. Er zijn gelijkaardige zero-touch installatiemogelijkheden, zoals Chef, Puppet of Terraform. Echter geen van hen biedt hetzelfde gebruiksgemak of dezelfde mogelijkheden.
+
+\subsection{PowerShell}
+De configuratie van de Windows Server gebeurde grotendeels aan de hand van deze command-line inteface. Deze CLI, die bovendien gebruik maakt van het .NET framework om objecten terug te geven, is namelijk speciaal ontwikkeld voor system administrators. Een groot voordeel hierbij is dat objecten veel makkelijker te verwerken zijn, in tegenstelling tot andere CLI’s die vaak tekst gebruiken voor het uitvoeren van commando’s. Daarnaast is de structuur van de command-lets (cmdlet) simpel en makkelijk aan te leren. De commando’s bestaan namelijk altijd uit dezelfde samenstelling, bestaande uit 'werkwoord'-'te behandelen onderwerp', bijvoorbeeld: Get-Service.
+
+\subsection{Bash}
+Als tegenpool voor PowerShell was er Bash. Deze CLI dateerde alweer van 1989, met als volledige naam 'Bourne Again shell'. In essentie werkte Bash hetzelfde als PowerShell. Net zoals PowerShell herkende het een aantal woorden, waardoor je ermee kon 'praten' en het dingen voor men kon laten doen. Het grote verschil lag in de uitvoer: Bash had als in- en uitvoer tekst. Wat het verwerken van opdrachten kan bemoeilijken. Maar, doordat het al geruime tijd bestond, kon deze Unix shell wel genieten van een veel grote gebruiks- en ondersteuningsbasis. Bash was namelijk dé manier van werken voor Linux administrators.
 
 %% Lagen software testing uitleggen
 %% Beter verwoorden
@@ -90,17 +202,21 @@ Docker Enterprise Edition is volledige pakket voor zij die op een professionele 
 
 \subsection{Software testing}
 \label{sec:testing-uitleg}
-In het hart van software testing ligt een focus op kwaliteit in alle delen van de organisatie. Dit is belangrijk om te weten omdat het ontwikkelingsteam verantwoordelijk is voor de kwaliteit. QA teams kunnen misschien op tijd aan de alarmbel trekken op vlak van risico's, maar men kan niet de verantwoordelijkheid van kwaliteit wegnemen van het ontwikkelingsproces. Daarom dat software testing eist dat iedereen, inclusief de gebruiker betrokken is bij het ontwikkelingsproces. ~\autocite{SoftwareTesting}
+Bij software testing ligt de focus op kwaliteit in alle delen van de organisatie. Dit is belangrijk omdat het ontwikkelingsteam verantwoordelijk is voor de kwaliteit. QA-teams kunnen op tijd aan de alarmbel trekken, maar de verantwoordelijkheid van kwaliteit ligt nog steeds bij het ontwikkelingsproces. Daarom eist software testing dat iedereen, inclusief de gebruiker, betrokken is bij het ontwikkelingsproces. Software testing heeft een methodologische manier ontwikkeld om de kwaliteit te waarborgen, waarbij men laag per laag en stap per stap gaat kijken of het systeem voldoet aan de vereisten.
 
 \begin{center}
 	\includegraphics[scale=0.5]{img/testing.png}
 \end{center}
 
-~\textcite{CemKaner2006} zegt over software testing ook dat het een empirische en technische manier is om software of services te testen. Doordat er op een objectieve manier wordt gekeken naar de kwaliteit van een software of service. Het is vooral daarom dat er voor deze methode gekozen is geweest en het sluit ook heel goed aan bij de principes van het DevOps manifesto.
-Specifiek zal er gebruik gemaakt worden van performantie-, integratie- en veiligheidstesten.
-Performantietesten zijn een type van testen waarbij men gaat kijken hoe het systeem presteert wanneer het een bepaalde werkdruk moet verwerken, met een focus op snelheid, schaalbaarheid en stabiliteit. ~\autocite{PerformanceTesting}
-Bij integratietesten ligt de focus op de datacommunicatie tussen de verschillende modules. In dit geval tussen Docker, het besturingssysteem van de host en de uitgerolde applicatie. ~\autocite{IntegrationTesting}
-Bij veiligheidstesten zal er gekeken worden naar al de verschillende veiligheidsmaatregelen, in hoever ze instaat zijn om de zwaktes van het systeem te beschermen. ~\autocite{SecurityTesting}
+Verder zegt REF over software testing dat het een empirische en technische manier is om software of services te testen, doordat men op een objectieve manier kijkt naar de kwaliteit van een software of service. Dit is de voornaamste reden waarom voor deze methode gekozen is in deze bachelorproef. Daarnaast sluit het heel goed aan bij de principes van het DevOps manifesto.
+
+Meer specifiek wordt er gebruik gemaakt worden van performantie-, integratie- en veiligheidstesten.
+
+Performantietesten zijn testen waarbij men gaat kijken hoe het systeem presteert wanneer het een bepaalde werkdruk moet verwerken, met de focus op snelheid, schaalbaarheid en stabiliteit. (PerformanceTesting)
+
+Bij integratietesten ligt de focus op de datacommunicatie tussen de verschillende modules. In dit geval tussen Docker, het besturingssysteem van de host en de uitgerolde applicatie. (IntegrationTesting)
+
+Bij veiligheidstesten wordt er gekeken naar alle verschillende veiligheidsmaatregelen, en in hoeverre ze in staat zijn om de zwaktes van het systeem te beschermen. (SecurityTesting)
 
 \begin{center}
 	\includegraphics[scale=0.5]{img/testingprocess.png}
@@ -117,23 +233,22 @@ Bij veiligheidstesten zal er gekeken worden naar al de verschillende veiligheids
 %% onderzoeksvra(a)g(en). Een onderzoeksvraag is trouwens iets waar nog
 %% niemand op dit moment een antwoord heeft (voor zover je kan nagaan).
 
-De probleemstelling die zich voordoet is dat Docker op zich nog een, relatief, jonge technologie is, met daarbovenop een eigen syntaxis en verandering van werken en denken vereist om het op een goede manier te beheersen. Stap bij stap zijn Linux administrators er ondertussen vertrouwd mee aan het geraken. Maar, voor Windows administrators is dit een gloednieuwe technologie.
+Het grootste probleem bij Docker is dat het op zich nog een relatief jonge technologie is, die bovendien een eigen syntaxis heeft. Daarnaast is er een andere denk- en werkwijze vereist om Docker te beheersen. Doorheen de tijd zijn Linux administrators reeds vertrouwd geraakt met deze technologie, maar voor Windows administrators is deze werkomgeving
+nog gloednieuw.
 
+De onderzoeksvragen die uit deze probleemstelling voortvloeien zijn de volgende:
 
-De onderzoeksvragen die uit deze probleemstelling dan voortvloeien luiden als volgt:
 \begin{itemize}[noitemsep]
-	\item Hoe vlot kan men een Docker opstelling maken op een Windows tegenover op een Linux besturingssysteem?
+	\item Hoe vlot kan men een Docker-opstelling maken op een Windows-besturingssysteem tegenover een Linux-besturingssysteem?
 	\item Hoe is het gesteld met de documentatie voor Docker for Windows tegenover de bestaande documentatie voor Linux?
-	\item Een groot voordeel van Docker is de snelheidswinst. Hoe groot is deze op Windows?
-	\item Hoe goed is technologie geïntegreerd met Hyper-V en het Windows besturingssysteem in het algemeen?
-	\item Hoe is het gesteld met de veiligheid? Hoe pak je deze aan vanuit een Windows administrator perspectief?
+	\item Hoe groot is de snelheidswinst bij Linux tegenover Windows?
+	\item Hoe goed is de technologie geïntegreerd met Hyper-V en met het Windows besturingssysteem in het algemeen?
+	\item Hoe is het gesteld met de veiligheid? Hoe pakt men deze aan vanuit een Windows administrator perspectief?
 \end{itemize}
 
+Op al deze vragen kon tot op heden geen afdoend antwoord worden gegeven. Men heeft in het verleden wel al Docker for Windows uitgetest en vergeleken met Linux, maar nooit op een concrete en methodische manier. Vaak benaderde men deze technologie ook vanuit een bestaande mening, en niet vanuit een neutraal perspectief.
 
-Voor al deze vragen kon er tot op heden nog geen afdoend antwoord voor gevonden worden. Er hebben wel al verschillende gebruikers Docker for Windows uitgetest en vergeleken met Linux. Maar, nooit op een concrete en methodische manier. Vaak benaderden ze deze technologie ook vanuit een bestaande mening, en niet met een neutraal perspectief.
-
-
-Dit onderzoek zal vooral een grote meerwaarde zijn voor DevOps teams die op zoek zijn naar een Windows oplossingen voor hun problemen in verband automatisatie en continue oplevering.
+Dit onderzoek zal vooral een grote meerwaarde zijn voor DevOps-teams die op zoek zijn naar Windows-oplossingen voor hun problemen in verband met automatisatie en continue oplevering.
 
 \section{Opzet van deze bachelorproef}
 \label{sec:opzet-bachelorproef}
@@ -146,17 +261,15 @@ De rest van deze bachelorproef is als volgt opgebouwd:
 
 In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
 
-%% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
+In Hoofdstuk~\ref{ch:documentatie} wordt de documentatie van beide platformen besproken. Er wordt gekeken naar volledigheid, interne en externe bronnen, en hoeveel ondersteuning er is vanuit de hoofdorganisatie.
 
-In Hoofdstuk~\ref{ch:opstelling} worden beide opstellingen bekeken en besproken. Namelijk, we gaan kijken naar de hoe het is om beide op te bouwen, de verschillen en gelijkenissen.
+In Hoofdstuk~\ref{ch:opstelling} worden beide opstellingen bekeken en besproken, meer specifiek hoe het is om beide op te bouwen, en hoe het zit met gelijkenissen en verschillen.
 
-In Hoofdstuk~\ref{ch:documentatie} zal de documentatie van beide platformen besproken worden. Er zal gekeken worden naar volledigheid, interne en externe bronnen en hoeveel ondersteuning er is vanuit de hoofdorganisatie.
+In Hoofdstuk~\ref{ch:performantietest} wordt gekeken naar het resultaat van de werklading dat beide systeem te verduren hebben gekregen en hoe ze beide gepresteerd hebben.
 
-In Hoofdstuk~\ref{ch:performantietest} kijken we naar het resultaat van de werklading dat beide systeem te verduren hebben gekregen en hoe ze het er vanaf gebracht hebben.
+In Hoofdstuk~\ref{ch:integratietest} wordt bekeken hoe goed de Docker-module integreert met het hostsysteem, welke resources Docker beschikbaar heeft op het systeem en hoe Docker hiervan gebruik maakt.
 
-In Hoofdstuk~\ref{ch:integratietest} bekijken we hoe goed de Docker module integreert met het host systeem. Welke resources Docker beschikbaar heeft op het systeem en hoe Docker er gebruik van maakt.
+In Hoofdstuk~\ref{ch:securitytest} worden de beschikbare veiligheidsmaatregelen voor Docker besproken binnen beide systemen en hoe effectief deze zijn.
 
-In Hoofdstuk~\ref{ch:securitytest} bespreken we welke veiligheidsmaatregelen er beschikbaar zijn voor beide systemen om Docker zo goed mogelijk te beveiligen en hoe effectief deze zijn.
-
-In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
+In  Hoofdstuk~\ref{ch:conclusie} wordt ten slotte een conclusie gevormd en wordt er een antwoord geformuleerd op de onderzoeksvragen. Hierbij wordt ook een aanzet gegeven naar mogelijk toekomstig onderzoek binnen dit domein.
 
