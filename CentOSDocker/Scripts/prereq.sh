@@ -14,49 +14,69 @@ set -o pipefail
 readonly docker_admin=vagrant
 
 # Install utilities
-info "Installing utilities"
+echo "Installing utilities"
 
-yum -y install git \
+yum -y install epel-release \
+               git \
                nano \
-               patch
+               patch 
+              
+yum -y install python-pip
 
-# Install Docker
-info "Installing Docker"
+# Install Docker CE
+echo "Installing Docker"
 
 # Docker requires yum-utils and yum-config-manager
 yum install -y yum-utils \
     device-mapper-persistent-data \
     lvm2
     
-yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 # Installing Docker CE stable
-yum install docker-ce
+yum install -y docker-ce
 
 # Optional: Docker CE edge and test repository
 # yum-config-manager --enable docker-ce-edge
 # yum-config-manager --enable docker-ce-test
 
 # Set Dockeradmin
-useradd -G ${docker_admin} docker
+usermod -aG docker ${docker_admin} 
 
 # Service management
-info "Enabling services"
+echo "Enabling services"
+
+systemctl start docker.service
+systemctl start firewalld.service
+
+echo "Starting services"
 
 systemctl enable docker.service
+systemctl enable firewalld.service
 
 # Test docker
-info "Testing Docker installation"
+echo "Testing Docker installation"
 
 docker run hello-world
 
 # Add ports to firewall
-info "Configuring firewall"
+echo "Configuring firewall"
 
 firewall-cmd --add-port=8080/tcp --permanent
 firewall-cmd --add-port=80/tcp --permanent
 firewall-cmd --add-port=5000/tcp --permanent
 firewall-cmd --add-port=1433/tcp --permanent
 firewall-cmd --reload
+
+# Restarting Docker service due to firewall
+systemctl restart docker.service
+
+# Install Docker-Compose
+# sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+
+# chmod +x /usr/local/bin/docker-compose
+
+pip install docker-compose
+
+echo "Testing Docker-compose"
+docker-compose --version

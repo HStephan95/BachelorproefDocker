@@ -57,41 +57,45 @@ Doordat een Container alleen de benodigde infrastructuur opeist die hij nodig he
 
 Docker is een tool om deze Containers te bouwen. Hiermee kan men het uitrollen van applicaties sneller en makkelijker maken, doordat het de applicatie en al haar benodigdheden eerst in één geautomatiseerd pakket verzamelt. Dit pakket noemt een image. De uitgerolde versie van een image noemt men een Container en deze zal los van het host besturingssysteem werken.
 
-Om dit klaar te krijgen, maakte men gebruik van de Docker Client. Met de Client kon men communiceren met de Docker Daemon, dit is een proces dat op de achtergrond draaide tot het aangeroepen werd door de gebruiker via de Docker syntaxis. De Docker Daemon zou uiteindelijk degene die de Docker commando's interpreteerde en uitvoerde. Zoals bijvoorbeeld het bouwen, draaien en verdelen van containers.
+Om een Container op te bouwen van begin tot einde maakt men gebruik van de Docker Client. Via de Client kan men communiceren met de Docker Daemon. De Docker Daemon is een proces dat op de achtergrond draait tot het aangeroepen wordt door de gebruiker via de syntaxis van Docker. De Docker Daemon is uiteindelijk degene die de Docker commando's interpreteert en uitvoert, zoals het bouwen, draaien en onderhouden van containers.
 
-Concreet waren onderstaande stappen nodig voor het bouwen van een container met Docker:
+Bij het bouwen van een container via Docker zijn er 2 werkmethodes te onderscheiden, namelijk een standaardmethode en een minimalistische methode. De minimalistische methode wordt gebruikt bij installaties die geen customisation vereisen, bijvoorbeeld een SQL-server. De standaardmethode wordt gebruikt bij alle andere installaties, bijvoorbeeld een CentOS-server. De standaardmethode bestaat uit 4 stappen die hieronder meer uitgebreid besproken worden. Bij de minimalistische methode worden enkel de eerste en de laatste stap uitgevoerd. 
+
 \begin{itemize}[noitemsep]
 	\item docker pull
 \end{itemize}
-Hiermee kon men een Docker Image ophalen van de Docker Hub. Deze images waren momentopnames van bijvoorbeeld containers of besturingssystemen. Deze konden, afhankelijk van de gebruiker, uitgebreid worden via een Dockerfile. Het was met deze parent image dat men een container kan bouwen.
-
-\begin{itemize}[noitemsep]
-	\item docker run <options> <image>
-\end{itemize}
-Daarna kon men met het 'docker run'-commando het bevel geven aan de Docker Image om zich te deployen tot een container. Hoe de image zich uitrolde hing af van de bevelen die het commando meekreeg en de image die men gebruikte.
-
-Met het bovenstaande voorbeeld ging men ervan uit dat men een basis container wou draaien. Zoals, bijvoorbeeld, een SQL-server. Deze vereiste alleen een poort, wachtwoord en bevestiging. Als men een volledige applicatie of besturingssysteem wou uitrollen zal men gebruik moeten maken van een Dockerfile. Hierin kon men geavanceerdere instructies meegeven aan de 'docker build'- en 'docker run'-commando's.
+De eerste stap is docker pull. Hiermee kan men een Docker Image ophalen van de Docker Hub. Deze images zijn momentopnames van bijvoorbeeld containers of besturingssystemen. Deze kunnen, afhankelijk van de gebruiker, uitgebreid worden via een Dockerfile. Het is met deze parent image dat men een container kan bouwen.
 
 \begin{itemize}[noitemsep]
 	\item Dockerfile
 \end{itemize}
-In de Dockerfile kon men, aan de hand van de syntaxis, een gepersonaliseerde Docker Image bouwen. In het bijzonder, moest men hier specifiëren van welke image men wilt beginnen via het 'FROM'-commando. Men hoefde hier niet specifiek een parent image meegeven, maar kon ook van niets beginnen via 'FROM scratch'. Vervolgens kon men environment variables meegeven via 'ENV', 'ADD' of 'EXPOSE'. Daarnast kon men via 'RUN' ook orders meegeven om specifieke commando's uit te voeren die de container zou herkennen zoals Bash of PowerShell. Ten slotte, kon men via 'ENTRYPOINT' declareren of de container uitvoerbaar moet zijn of niet.
+De tweede stap is Dockerfile, waarin men aan de hand van de syntaxis een gepersonaliseerde Docker Image kan definiëren. Men kan aangeven vanaf welke image men wil beginnen via het 'FROM'-commando. Men hoeft hier echter niet per se een parent image mee te geven, bijvoorbeeld via 'FROM scratch'. Vervolgens kan men environment variables meegeven via 'ENV', 'ADD' of 'EXPOSE'. Daarnaast kan men via 'RUN' ook orders meegeven om specifieke commando's uit te voeren die de container zou herkennen zoals Bash of PowerShell. Ten slotte kan men via 'ENTRYPOINT' aangeven of de container uitvoerbaar moet zijn of niet.
 
 \begin{itemize}[noitemsep]
 	\item docker build
 \end{itemize}
-Ten slotte, bouwde men deze met het 'docker build'-commando. Hiermee kon men opnieuw de Docker Daemon aanspreken om de syntaxis te interpreteren en de gepersonaliseerde container te bouwen.
+De derde stap is docker build, waarmee men opnieuw de Docker Daemon aanspreekt. Op die manier kan die de syntaxis interpreteren en een gepersonaliseerde container bouwen.
 
-Docker voorzag ook enkele commando's om de Docker Images en Boxes te beheren. De voornaamste staan hieronder gelijst en beschreven.
 \begin{itemize}[noitemsep]
-	\item docker images - Dit commando toonde alle Docker Images beschikbaar op dit systeem.
-	\item docker ps - Hiermee werden alle draaiende containers getoond.
-	\item docker inspect <container> - Daarnaast kon men hiermee ook de specificaties van een specifieke container bekijken.
-	\item docker logs <container> - Met dit commando bekeek men alle logs voor een specifieke container. '--follow' was hier een praktische optie om toe te voegen.
-	\item docker start <container> - Hiermee werd een specifieke container opgestart.
-	\item docker stop <container> - Het alternatief van bovenstaande commando.
-	\item docker rm <container> - Ten slotte, kon men containers hiermee verwijderen.
+	\item docker run <options> <image>
 \end{itemize}
+Ten slotte is er docker run, waarmee men het bevel geeft aan de Docker Daemon om de image uit te rollen tot een container. Hoe de image zich uitrolt, hangt af van de bevelen in het commando en van de image die gebruikt wordt. 
+
+Docker voorziet ook enkele commando's om de Docker Images en Boxes te beheren. De voornaamste staan hieronder beschreven.
+
+\begin{tabular}{ll}
+	\hline
+	Commando & Uitleg \\
+	\hline
+	docker images & toont alle Docker Images beschikbaar op dit systeem \\
+	docker ps & toont alle draaiende containers \\
+	docker inspect <container> & toont de specificaties van een specifieke container \\
+	docker logs <container> & toont alle logs voor een specifieke container \\
+	docker start <container> & start een specifieke container op \\
+	docker stop <container> & stopt een specifieke container \\
+	docker rm <container> & verwijdert containers \\
+	\hline
+\end{tabular}
 
 Doordat elk deel van een applicatie in een 'appartementje' zit, is het maken van continue ontwikkeling en oplevering voor de applicatie heel gemakkelijk. Men moet immers alleen die specifieke Container updaten/graden. Hierdoor is het de perfecte technologie om te dienen als test- en productieomgeving. Daarnaast versoepelt het ook de communicatie binnen het DevOps-team, doordat iedereen continu in dezelfde omgeving werkt. Er zijn immers geen grote veranderingen nodig bij de verschillende stappen binnen de leveringsketen, omdat men in staat is om verschillende frameworks te draaien op één platform. Containers zijn namelijk vrij agnostisch zijn op vlak van programmeertaal of platform. Ten slotte kunnen Containers ook makkelijk van host-besturingssysteem verplaatst worden. Al deze kenmerken van Docker Containers vergemakkelijken het werk van DevOps-teams aanzienlijk.
 
@@ -191,10 +195,10 @@ Daarbovenop zijn er mogelijkheden om de functionaliteit van Vagrant zelf uit te 
 Om al deze redenen werd geopteerd om gebruik te maken van deze technologie. Er zijn gelijkaardige zero-touch installatiemogelijkheden, zoals Chef, Puppet of Terraform. Echter geen van hen biedt hetzelfde gebruiksgemak of dezelfde mogelijkheden.
 
 \subsection{PowerShell}
-De configuratie van de Windows Server gebeurde grotendeels aan de hand van deze command-line inteface. Deze CLI, die bovendien gebruik maakt van het .NET framework om objecten terug te geven, is namelijk speciaal ontwikkeld voor system administrators. Een groot voordeel hierbij is dat objecten veel makkelijker te verwerken zijn, in tegenstelling tot andere CLI’s die vaak tekst gebruiken voor het uitvoeren van commando’s. Daarnaast is de structuur van de command-lets (cmdlet) simpel en makkelijk aan te leren. De commando’s bestaan namelijk altijd uit dezelfde samenstelling, bestaande uit 'werkwoord'-'te behandelen onderwerp', bijvoorbeeld: Get-Service.
+De configuratie van de Windows Server gebeurt grotendeels aan de hand van deze command-line inteface. Deze CLI, die bovendien gebruik maakt van het .NET framework om objecten terug te geven, is namelijk speciaal ontwikkeld voor system administrators. Een groot voordeel hierbij is dat objecten veel makkelijker te verwerken zijn, in tegenstelling tot andere CLI’s die vaak tekst gebruiken voor het uitvoeren van commando’s. Daarnaast is de structuur van de command-lets (cmdlet) simpel en makkelijk aan te leren. De commando’s bestaan namelijk altijd uit dezelfde samenstelling, bestaande uit 'werkwoord'-'te behandelen onderwerp', bijvoorbeeld: Get-Service.
 
 \subsection{Bash}
-Als tegenpool voor PowerShell was er Bash. Deze CLI dateerde alweer van 1989, met als volledige naam 'Bourne Again shell'. In essentie werkte Bash hetzelfde als PowerShell. Net zoals PowerShell herkende het een aantal woorden, waardoor je ermee kon 'praten' en het dingen voor men kon laten doen. Het grote verschil lag in de uitvoer: Bash had als in- en uitvoer tekst. Wat het verwerken van opdrachten kan bemoeilijken. Maar, doordat het al geruime tijd bestond, kon deze Unix shell wel genieten van een veel grote gebruiks- en ondersteuningsbasis. Bash was namelijk dé manier van werken voor Linux administrators.
+Als tegenpool is er Bash voor Linux besturingssystemen. Deze CLI dateert al van 1989, met als volledige naam 'Bourne Again shell'. In essentie werkt Bash op dezelfde wijze als PowerShell. Net zoals PowerShell herkent Bash namelijk een aantal woorden, waardoor men ermee kan communiceren en het acties kan laten uitvoeren. Het grote verschil ligt in de uitvoering: Bash heeft namelijk enkel tekst als in- en uitvoer, wat het verwerken van opdrachten kan bemoeilijken. Echter, omdat Bash reeds geruime tijd bestaat, kan deze Unix shell wel genieten van een enorme gebruiks- en ondersteuningsbasis. Bash is namelijk de werkmethode bij uitstek voor Linux administrators.
 
 %% Lagen software testing uitleggen
 %% Beter verwoorden

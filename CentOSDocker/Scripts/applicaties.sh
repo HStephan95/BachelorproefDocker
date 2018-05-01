@@ -14,7 +14,7 @@ export SA_PASSWORD=$password
 
 docker run -e 'ACCEPT_EULA' -e 'SA_PASSWORD' -p 1433:1433 -d microsoft/mssql-server-linux
 
-cd /vagrant/VoorbeeldProject/DienstenCheques
+cd /home/vagrant/VoorbeeldProject/DienstenCheques
 
 cat > Dockerfile << EOF 
 FROM microsoft/dotnet:2.0.5-sdk-2.1.4
@@ -36,6 +36,23 @@ ENV ASPNETCORE_URLS http://*:5000
 ENTRYPOINT ["dotnet", "run"]
 EOF
 
-docker build -t voorbeeldproject:myapp .
+cat > docker-compose.yml << EOF 
+version: "3"
 
-docker run -d -p 8080:5000 -t voorbeeldproject:myapp
+services:
+  web:
+    build: .
+    ports:
+      - "8080:5000"
+    depends_on:
+      - db
+  db:
+    image: "microsoft/mssql-server-linux"
+    environment:
+      SA_PASSWORD: "Vagrant123"
+      ACCEPT_EULA: "Y"
+EOF
+
+docker-compose build
+
+docker-compose up

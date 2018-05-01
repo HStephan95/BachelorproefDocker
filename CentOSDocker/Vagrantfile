@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network "public_network"
   
     config.vm.provider "hyperv" do |v|
-        v.name = "CentOSDocker"
+        v.vmname = "CentOSDocker"
         v.memory = 4096
         v.cpus = 2
     end
@@ -26,7 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
     config.vm.provision :shell, path: "scripts/images.sh"
   
-    config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/CentOSDocker/VoorbeeldProject", destination: "~/VoorbeeldProject"
+    config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/CentOSDocker/VoorbeeldProject", destination: "~/VoorbeeldProject"
   
     config.vm.provision :shell, path: "scripts/applicaties.sh"   
 end
