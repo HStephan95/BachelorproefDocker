@@ -4,18 +4,18 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
-ENV['VAGRANT_DEFAULT_PROVIDER'] = 'hyperv'
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-    #config.vm.network "private_network", ip: "192.168.1.158"
+    config.vm.network "private_network", ip: "192.168.56.15"
   
     config.vm.box = "centos/7"
   
-    config.vm.network "public_network"
+    # config.vm.network "public_network"
   
-    config.vm.provider "hyperv" do |v|
-        v.vmname = "CentOSDocker"
+    config.vm.provider "virtualbox" do |v|
+        v.name = "CentOSDocker"
         v.memory = 4096
         v.cpus = 2
     end
@@ -27,6 +27,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision :shell, path: "scripts/images.sh"
   
     config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/CentOSDocker/VoorbeeldProject", destination: "~/VoorbeeldProject"
+    
+    # config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/CentOSDocker/09solSportsStore-master", destination: "~/09solSportsStore-master"
   
     config.vm.provision :shell, path: "scripts/applicaties.sh"   
 end

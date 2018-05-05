@@ -4,7 +4,7 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
-ENV['VAGRANT_DEFAULT_PROVIDER'] = 'hyperv'
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
 # require reboot package
 # require './vagrant-provision-reboot-plugin'
@@ -13,14 +13,14 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'hyperv'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-    # config.vm.network "private_network", ip: "192.168.1.158"
+    config.vm.network "private_network", ip: "192.168.56.16"
 
     config.vm.box = "gusztavvargadr/w16s"
     
     config.vm.network "public_network"
     
-    config.vm.provider "hyperv" do |v|
-        v.vmname = "DockerForWinVM"
+    config.vm.provider "virtualbox" do |v|
+        v.name = "DockerForWinVM"
         v.memory = 4096
         v.cpus = 2
     end
