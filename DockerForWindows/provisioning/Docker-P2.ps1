@@ -13,6 +13,7 @@ Write-Host "#RUN TEST CONTAINER#"
 docker container run hello-world:nanoserver
 
 # Toevoegen poorten voor Docker
+Write-Host "#ADDING FIREWALL RULES#"
 netsh advfirewall firewall add rule name=mssqlin dir=in action=allow protocol=TCP localport=1433
 netsh advfirewall firewall add rule name=mssqlout dir=out action=allow protocol=TCP localport=1433
 

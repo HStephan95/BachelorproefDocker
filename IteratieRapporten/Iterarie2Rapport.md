@@ -71,15 +71,16 @@ We hebben geopteerd voor een meer robuuste variant van de plug-in. Waardoor de r
 Hierdoor konden voor de eerste keer de installatie volledig vanaf nul automatisch afronden zonder problemen. Docker for Windows is geïnstalleerd!
 
 Vervolgens hebben het SSH-probleem aangemaakt door via Chocolatey OpenSSH toe te voegen. Met deze packagemanager voor Windows blijft onze installatie ook volledig automatisch verder werken.
-Want, we ontdekten dat we hierna de Enviroment Variabele konden aanroepen die Docker toevoegt aan de installatie.
+Want, we ontdekten dat we hierna de Environment Variabele konden aanroepen die Docker toevoegd aan de installatie.
 
 Hierna gingen we al een stap verder en deployden we een eerste container met MSSQL.
 Aan de hand van de gevonden bronnen ging deze installatie vrij vlot. We hebben alleen nog de gebruikte `images` van [Docker Hub](https://hub.docker.com/) moeten aanpassen.
 
-Dockerfile layout overgenomen en aangepast
-CD problemen
-WORKDIR problemen
-COPY/ADD problemen `//?/`
+Vervolgens hebben we de layout van een .NET Dockerfile opgezocht, overgenomen en waar nodig aangepast. Want, de meeste uitleg gevonden online werken nog met oude .NET applicatie zonder rekening te houden met het nieuwe '.csproj'-project. Maar, enkele links die we vonden hielden hiermee rekening.
+
+Ten slotte, hebben we nog enige tijd nodig gehad om de Dockerfile volledig op orde te krijgen. Omdat we de locatie waarheen het script naartoe moest gaan met `Set-Location` niet paste met de locatie waar het project staat. Dit had als gevolg dat `WORKDIR`, `COPY`en `ADD` ook niet werkten.
+
+Dit zal moeten opgelost worden in de volgende iteratie. Maar, dit opgelost krijgen is op zich niet zo moeilijk.
 
 ## Test rapport
 
@@ -101,6 +102,8 @@ Maar, in het algemeen ben ik wel tevreden met het resultaat. Het laatste streefd
 
 [Windows Server 2016 box aanpassen](https://app.vagrantup.com/mwrock/boxes/Windows2016)
 
+[Alternatieve WS 2016 box](https://app.vagrantup.com/gusztavvargadr/boxes/w16s)
+
 [Vagrant reboot provision](https://github.com/exratione/vagrant-provision-reboot)
 
 [Vagrant Reload plugin](https://github.com/aidanns/vagrant-reload)
@@ -109,4 +112,8 @@ Maar, in het algemeen ben ik wel tevreden met het resultaat. Het laatste streefd
 
 [Dockerbuild](https://docs.docker.com/engine/reference/commandline/build/#examples)
 
-[Deploying a .Net-application](https://stormpath.com/blog/tutorial-deploy-asp-net-core-on-linux-with-docker)
+[Deploying a .NET-application](https://stormpath.com/blog/tutorial-deploy-asp-net-core-on-linux-with-docker)
+
+[microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/)
+
+[microsoft/mssql-server-linux](https://hub.docker.com/r/microsoft/mssql-server-linux/)

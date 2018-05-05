@@ -6,41 +6,50 @@ VAGRANTFILE_API_VERSION = "2"
 
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
-# require reboot package
-# require './vagrant-provision-reboot-plugin'
-
-
-
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.network "private_network", ip: "192.168.56.16"
-
-    config.vm.box = "gusztavvargadr/w16s"
+    
+    # full version WS2016
+    # config.vm.box = "gusztavvargadr/w16s"
+    
+    # nano server
+    config.vm.box = "mwrock/WindowsNano"
     
     config.vm.network "public_network"
     
+    # configuration for virtualbox
     config.vm.provider "virtualbox" do |v|
         v.name = "DockerForWinVM"
+        v.memory = 4096
+        v.cpus = 2
+    end
+  
+    # configuration for hyperv
+    config.vm.provider "hyperv" do |v|
+        v.vmname = "DockerForWinVM"
         v.memory = 4096
         v.cpus = 2
     end
    
     config.vm.hostname = "DockerForWinVM"
   
-    config.vm.provision :shell, path: "provisioning/Chocolatey.ps1"
+    # config.vm.provision :shell, path: "provisioning/Chocolatey.ps1"
  
-    config.vm.provision :shell, path: "provisioning/OpenSSH.ps1" 
+    # config.vm.provision :shell, path: "provisioning/OpenSSH.ps1" 
 
-    config.vm.provision :shell, path: "provisioning/Docker-P1.ps1"
+    # config.vm.provision :shell, path: "provisioning/Docker-P1.ps1"
     
-    config.vm.provision :reload
+    # reload plugin for restart during provision
+    # download from aidanns/vagrant-reload with 'vagrant plugin install vagrant-reload'
+    # config.vm.provision :reload
   
-    config.vm.provision :shell, path: "provisioning/Docker-P2.ps1"
+    # config.vm.provision :shell, path: "provisioning/Docker-P2.ps1"
   
-    config.vm.provision "file", source: "C:/Users/P&G/Documents/BP-SH/DockerForWindows/VoorbeeldProject", destination: "C:/Users/vagrant/VoorbeeldProject"
+    # config.vm.provision "file", source: "C:/Users/P&G/Documents/BP-SH/DockerForWindows/VoorbeeldProject", destination: "C:/Users/vagrant/VoorbeeldProject"
   
-    config.vm.provision :shell, path: "provisioning/images.ps1"
+    # config.vm.provision :shell, path: "provisioning/images.ps1"
   
-    config.vm.provision :shell, path: "provisioning/applicaties.ps1"
+    # config.vm.provision :shell, path: "provisioning/applicaties.ps1"
   
 end

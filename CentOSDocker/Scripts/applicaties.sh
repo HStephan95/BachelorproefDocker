@@ -6,10 +6,13 @@ set -o nounset
 # don't mask errors in piped commands
 set -o pipefail
 
+# Going to the directory which contains de .csproj-file
 cd /home/vagrant/VoorbeeldProject/DienstenCheques
 
 # cd /home/vagrant/09solSportsStore-master/SportsStore
 
+# Creates dockerfile
+echo "Creating dockerfile"
 cat > Dockerfile << EOF 
 FROM microsoft/dotnet:2.0.5-sdk-2.1.4
 
@@ -30,6 +33,8 @@ ENV ASPNETCORE_URLS http://*:5000
 ENTRYPOINT ["dotnet", "run"]
 EOF
 
+# Creates docker-compose.yml
+echo "Creating docker-compose-yml"
 cat > docker-compose.yml << EOF 
 version: "3"
 
@@ -47,6 +52,10 @@ services:
       ACCEPT_EULA: "Y"
 EOF
 
+# Building image
+echo "Building docker image"
 docker-compose build
 
+# Running container
+echo "Building container"
 docker-compose up
