@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    
     config.vm.hostname = "DockerForWinVM"
   
-    # config.vm.provision :shell, path: "provisioning/Chocolatey.ps1"
+    config.vm.provision :shell, path: "provisioning/Chocolatey.ps1"
  
     # config.vm.provision :shell, path: "provisioning/OpenSSH.ps1" 
 

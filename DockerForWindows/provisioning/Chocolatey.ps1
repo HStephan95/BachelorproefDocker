@@ -22,6 +22,6 @@ chocolatey feature enable -n=allowGlobalConfirmation
 Write-Host "#EXECUTIONRIGHTS SET#"
 
 #Ophalen en extracten OpenSSH 
-Write-Host "#GETTING OPENSSH FILES AND EXTRACTING#"
-choco install openssh
-Write-Host "#OPENSSH FILES EXTRACTED#"
+# Write-Host "#GETTING OPENSSH FILES AND EXTRACTING#"
+# choco install openssh
+# Write-Host "#OPENSSH FILES EXTRACTED#"

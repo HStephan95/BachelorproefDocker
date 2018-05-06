@@ -6,9 +6,9 @@
 \label{ch:opstelling}
 
 %% intro
-De set-up van beide machines werden geautomatiseerd door middel van Hyper-V, Vagrant en scripts. Hiermee kon er gegarandeerd worden dat, telkens er gewerkt werd aan de machines, deze consistent op dezelfde manier geïnstalleerd en aangepast werden.
-Een uitdaging hierbij was het vinden van gepaste Vagrant Boxes voor beide platformen. Want, hoewel CentOS wel een officiële Vagrant Image voorzag op Vagrant Cloud, de opslagplek van alle publieke images. Deed Microsoft dit niet. Hierdoor werd men gedwongen gebruik te maken van een onofficiële bron.
-Tenslotte, werd er ook aandacht besteed dat de middelen en werklading van beide machines evenredig was waar mogelijk. Natuurlijk waren er subtiele verschillen, maar waar het een optie was werden deze zoveel mogelijk weg gewerkt.
+De set-up van beide machines wordt geautomatiseerd door middel van Hyper-V, Vagrant en scripts. Hiermee kan men garanderen dat, telkens er gewerkt wordt aan de machines, deze op dezelfde manier worden geïnstalleerd en aangepast.
+Een uitdaging hierbij is het vinden van gepaste Vagrant Boxes voor beide platformen, want hoewel CentOS wel een officiële Vagrant Image voorziet op Vagrant Cloud, wat de opslagplek is van alle publieke images, doet Microsoft dit niet. Hierdoor wordt men gedwongen om gebruik te maken van onofficiële bronnen.
+Ten slotte is het belangrijk dat de middelen en de werklading van beide machines evenredig zijn waar mogelijk. Natuurlijk zijn er subtiele verschillen, maar deze worden maximaal weggewerkt indien mogelijk. 
 
 \section{Windows Server 2016}
 
@@ -18,63 +18,62 @@ Tenslotte, werd er ook aandacht besteed dat de middelen en werklading van beide 
 %% PowerShell (code + foto)
 
 \subsection{Vagrant}
-Voor de Windows-opstelling werd er gekozen om de 'w16s'-image te gebruiken van de gebruiker 'gusztavvargadr'. Deze Vagrant Image bevatte een Windows Server 2016 Standard 1607 (14393.2155). Verder stond op deze image ook al Chocolatey. Wat maakte dat er alleen nog maar gekeken moest worden of Chocolatey up to date was.
+Voor de Windows-opstelling wordt er gekozen om de 'w16s'-image te gebruiken van de gebruiker 'gusztavvargadr'. Deze Vagrant Image bevat een Windows Server 2016 Standard 1607 (14393.2155). Verder bevat deze image ook al Chocolatey, wat maakt dat er alleen nog maar gekeken moet worden of Chocolatey up to date is.
 
-Want, Chocolatey was een community-driven packet manager voor Windows, zoals APT voor Debian er bijvoorbeeld er een was. Met een packet manager kan men het installeren en beheren van applicaties automatiseren. Hiermee kon men de installatie vereenvoudigen.
+Chocolatey is namelijk een community-driven packet manager voor Windows, zoals APT er bijvoorbeeld een is voor Debian. Met een packet manager kan men het installeren en beheren van applicaties automatiseren. Hiermee kan men de installatie vereenvoudigen.
 
-Vervolgens werd er ingesteld dat deze Vagrant Box 2GB RAM en 2 cores kreeg bij het uitrollen. Zodat de installatie van Docker en uiteindelijke de containers vlot en snel zou kunnen verlopen. Daarnaast stelden we ook een naam in voor de VM en een host-naam. Dit maakte het makkelijker om de VM later aan te spreken.
+Vervolgens wordt er ingesteld dat deze Vagrant Box 4GB RAM en 2 cores krijgt bij het uitrollen, zodat de installatie van Docker en uiteindelijk de containers vlot en snel kan verlopen. Daarnaast stelt men ook een naam in voor de VM, evenals een host-naam. Dit maakt het makkelijker om de VM later aan te spreken.
 
 %% foto + code box en configuratie
 
-Uitzonderlijk voor de Windows Server werd er ook gebruik gemaakt van een plug-in voor Vagrant. Namelijk, de 'Vagrant-Reload'-plug-in van Aidan Nagorcka-Smith. Hiermee kon men het Vagrant Reload commando uitvoeren tijdens het uitrollen van de Vagrant Image naar een Box. Dit was een voorwaarde, want de Windows Server dient heropgestart te worden naar de installatie van Docker.
+Uitzonderlijk voor de Windows Server wordt er ook gebruik gemaakt van een plug-in voor Vagrant, namelijk, de 'Vagrant Reload'-plug-in van Aidan Nagorcka-Smith. Hiermee kan men het 'Vagrant Reload'-commando uitvoeren tijdens het uitrollen van de Vagrant Image naar een Box. Dit is een belangrijke voorwaarde, want de Windows Server dient heropgestart te worden naar de installatie van Docker.
 
 %% foto + code provision
 
-Tenslotte werd ook gebruik gemaakt van een reeks provision-commando's om het systeem te voorzien van de nodige scripts en een voorbeeld-project. Het voorbeeld-project bevatte een .NET-webapplicatie. Die deze startpagina zou moeten tonen:
+Ten slotte wordt er ook gebruik gemaakt van een reeks provision-commando's om het systeem te voorzien van de nodige scripts en een voorbeeld-project. Het voorbeeld-project bevat een .NET-webapplicatie, die de onderstaande startpagina zou moeten tonen:
 
 %% foto start pagina
 
 \subsection{PowerShell}
-De 6 scripts die voorzien werden configureren elk een component dat nodig was om de omgeving af te werken.
+De 6 scripts die voorzien worden, configureren elk een component dat nodig is om de omgeving af te werken.
 
 \begin{itemize}[noitemsep]
 	\item Chocolatey
 \end{itemize}
 
-In dit scripts werd er gekeken of Chocolatey als geïnstalleerd was. Zoja, werd er een check uitgevoerd of ze up to date was. Anders, installeerde het de packet manager.
+In dit script wordt er gekeken of Chocolatey al geïnstalleerd is. Zoja, wordt er gecontroleerd of Chocolatey reeds up to date is, en anders installeert het de packet manager.
 
 \begin{itemize}[noitemsep]
 	\item OpenSSH
 \end{itemize}
 
-Vervolgens werd het OpenSSH-scripts uitgevoerd. Dit installeerde OpenSSH op het systeem, voegde de nodige firewall rules toe en maakte dat de service opstart tezamen met het systeem.
+Vervolgens wordt het OpenSSH-script uitgevoerd. Dit installeert OpenSSH op het systeem, voegt de nodige firewall rules toe en zorgt ervoor dat de service opstart gelijktijdig met het systeem.
 
 \begin{itemize}[noitemsep]
 	\item Docker \#1
 \end{itemize}
 
-Hierna werd het eerste deel van de Docker installatiescripts uitgevoerd. Dit installeerde Docker en gaf een melding dat er hierna een reboot eraan kwam.
+Hierna wordt het eerste deel van de Docker installatiescripts uitgevoerd. Dit installeert Docker en geeft daarna een melding dat er een reboot aan komt.
 
-Want, nadat Docker geïnstalleerd werd vereist het systeem dat het heropgestart werd. Deze plug-in was de makkelijkst gevonden manier, zonder in te grijpen in het automatisatie-proces.
+Nadat Docker geïnstalleerd is, vereist het systeem namelijk dat het opnieuw wordt opgestart. Deze plug-in is de makkelijkst gevonden manier, zonder in te grijpen in het automatisatie-proces.
 
 \begin{itemize}[noitemsep]
 	\item Docker \#2
 \end{itemize}
 
-Daarna werd er Posh-Docker geïnstalleerd. Deze tool voorzag autocompletion van Docker-commanod's in de PowerShell terminal.
+Vervolgens wordt Posh-Docker geïnstalleerd. Deze tool voorziet autocompletion van Docker-commando's in de PowerShell terminal.
 
 \begin{itemize}[noitemsep]
 	\item Images
 \end{itemize}
 
-Vervolgens werd het Images.ps1-script uitgevoerd. Dit script was verantwoordelijk voor het installeren van de container waarin de databank werd gehost die de applicatie nodig had. Dit gebeurde aan de hand van een Microsoft SQL server Docker Image die van het internet werd gehaald en waar er vervolgens een container mee werd gebouwd. Uiteindelijk kon dit beter vervangen worden door Docker Compose.
+Hierna wordt het Images.ps1-script uitgevoerd. Dit script is verantwoordelijk voor het installeren van de container waarin de databank wordt gehost die de applicatie nodig heeft. Dit gebeurt aan de hand van een Microsoft SQL server Docker Image die van het internet wordt gehaald en waar vervolgens een container mee wordt gebouwd.
 
 \begin{itemize}[noitemsep]
 	\item Application
 \end{itemize}
 
-Tenslotte, haalde het laatste script die .NET-sdk Docker Image op die nodig was om de container te bouwen die de webapplicatie vereiste. Daarna maakte het script de Dockerfile aan en vulde deze op met de vereiste tekst die nodig was om de container te bouwen.
-Alsook de commando's om daarna de Docker Image en Container te bouwen.
+Ten slotte haalt het laatste script die specifieke .NET-sdk Docker Image op die nodig is om de container te bouwen die de webapplicatie vereist. Daarna maakt het script de Dockerfile aan en vult deze op met de vereiste tekst om de container te bouwen, alsook de commando's om daarna de Docker Image en Container te bouwen.
 
 \section{CentOS 7.4}
 %% hardware
@@ -83,15 +82,15 @@ Alsook de commando's om daarna de Docker Image en Container te bouwen.
 %% Bash (code + foto)
 
 \subsection{Vagrant}
-Om de CentOS-server te installeren werd er gebruik gemaakt van de officiële Vagrant Image die beschikbaar werd gesteld door de organisatie achter CentOS, Red Hat Enterprise Linux (RHEL). Deze voorzag alleen een basis installatie van een CentOS 7.4 server, voorzag wel de mogelijkheid om uitgerold te worden op alle populaire platformen.
+Om de CentOS-server te installeren wordt er gebruik gemaakt van de officiële Vagrant Image die beschikbaar wordt gesteld door de organisatie achter CentOS, namelijk Red Hat Enterprise Linux (RHEL). Deze voorziet alleen een basis installatie van een CentOS 7.4 server, maar voorziet wel de mogelijkheid om uitgerold te worden op alle populaire platformen.
 
 %% foto + code
 
-Ook hier kreeg het systeem 2GB RAM en 2 cores. Zodat er op een eerlijke manier naar de performantie van beide systemen kon gekeken worden. Verder kreeg het systeem ook een hostname en VMName.
+Ook hier krijgt het systeem 4GB RAM en 2 cores, zodat er op een eerlijke manier naar de performantie van beide systemen kan worden gekeken. Verder krijgt het systeem ook een hostname en VMName.
 
 %% foto + code
 
-Tenslotte werden er 3 primaire scripts voorzien bij het provision-gedeelte, zodanig dat alle componenten die nodig waren geïnstalleerd konden worden. Waaronder een script om die dezelfde webapplicatie voorzag als voor Windows.
+Ten slotte worden er 3 scripts voorzien bij het provision-gedeelte, zodat alle benodigde componenten kunnen worden geïnstalleerd. Hieronder behoort onder andere een script om dezelfde webapplicatie te voorzien als voor Windows.
 
 \subsection{Bash}
 
@@ -99,18 +98,18 @@ Tenslotte werden er 3 primaire scripts voorzien bij het provision-gedeelte, zoda
 	\item Dockerhost
 \end{itemize}
 
-In dit gedeelte van het script worden alle functionaliteiten voorzien die er nodig waren voordat we konden beginnen aan het uitrollen van de applicatie. Onder andere, werd hier ook Docker geïnstalleerd. Maar, verder ook nano, patch en git.
-Daarnaast werden er ook regels toegevoegd aan de firewall, zodanig dat de container beschikbaar zou zijn nadat deze was opgesteld.
+In dit gedeelte van het script worden alle functionaliteiten voorzien die nodig zijn voordat men kan beginnen aan het uitrollen van de applicatie, waaronder de installatie van Docker, Nano,Ppatch en Git.
+Daarnaast worden ook regels toegevoegd aan de firewall, zodat de container beschikbaar is nadat deze volledig is opgesteld.
 
 \begin{itemize}[noitemsep]
 	\item Images
 \end{itemize}
 
-Bij het volgende script werden alle Docker Images van Docker Hub, de officiële online repository van Docker waar alle beschikbare Docker Images op stonden.
+Bij het volgende script worden alle Docker Images van Docker Hub gehaald, wat de officiële online repository van Docker is waar alle beschikbare Docker Images op staan.
 
 \begin{itemize}[noitemsep]
 	\item Applicatie
 \end{itemize}
 
-Tenslotte, werd in het laatste script de benodigde databank en applicatie omhoog gebracht aan de hand van een Dockerfile, docker run- en docker build-commando's.
-De Dockerfile werd opgevuld met een 'EOF' identifier. Hierdoor bleef Bash de invoer pipen in de Dockerfile tot hij 'EOF' tegenkwam. Ook hier kon de databank beter gebouwd worden door gebruik te maken van docker compose.
+Ten slotte worden in het laatste script de benodigde databank en applicatie omhoog gebracht aan de hand van een dockerfile, docker run- en docker build-commando's.
+De dockerfile wordt opgevuld met een 'EOF' identifier. Hierdoor blijft Bash de invoer pipen in de dockerfile tot hij 'EOF' tegenkomt, waarna hij stopt zonder 'EOF' mee te nemen.
