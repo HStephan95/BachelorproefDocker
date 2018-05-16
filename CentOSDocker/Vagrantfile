@@ -32,14 +32,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    
     config.vm.hostname = "CentOSDocker"
   
-    config.vm.provision :shell, path: "scripts/prereq.sh"
+    config.vm.provision :shell, path: "Scripts/prereq.sh"
  
-    config.vm.provision :shell, path: "scripts/images.sh"
+    config.vm.provision :shell, path: "Scripts/images.sh"
   
-    config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/CentOSDocker/VoorbeeldProject", destination: "~/VoorbeeldProject"
+    # Verschil in connectiestring = User ID != User
+    config.vm.provision "file", source: "../VoorbeeldProjectLinux", destination: "~/VoorbeeldProject"
     
-    # config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/CentOSDocker/09solSportsStore-master", destination: "~/09solSportsStore-master"
+    # config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/09solSportsStore-master", destination: "~/09solSportsStore-master"
   
-    config.vm.provision :shell, path: "scripts/applicaties.sh"   
+    config.vm.provision :shell, path: "Scripts/applicaties.sh"   
 end
 

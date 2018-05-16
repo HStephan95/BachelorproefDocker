@@ -11,10 +11,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network "private_network", ip: "192.168.56.16"
     
     # full version WS2016
-    # config.vm.box = "gusztavvargadr/w16s"
+    config.vm.box = "gusztavvargadr/w16s"
+  
+    # alternative:
+    # config.vm.box = "mwrock/Windows2016"
     
     # nano server
-    config.vm.box = "mwrock/WindowsNano"
+    # config.vm.box = "mwrock/WindowsNano"
     
     config.vm.network "public_network"
     
@@ -34,22 +37,27 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    
     config.vm.hostname = "DockerForWinVM"
   
-    config.vm.provision :shell, path: "provisioning/Chocolatey.ps1"
- 
+    config.vm.provision :shell, path: "Provisioning/Chocolatey.ps1"
+  
+    # config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/DockerForWindows/provisioning/OpenSSH-Win64", destination: "~/OpenSSH-Win64"
+  
     # config.vm.provision :shell, path: "provisioning/OpenSSH.ps1" 
 
-    # config.vm.provision :shell, path: "provisioning/Docker-P1.ps1"
+    config.vm.provision :shell, path: "Provisioning/Docker-P1.ps1"
     
     # reload plugin for restart during provision
     # download from aidanns/vagrant-reload with 'vagrant plugin install vagrant-reload'
-    # config.vm.provision :reload
+    config.vm.provision :reload
   
-    # config.vm.provision :shell, path: "provisioning/Docker-P2.ps1"
+    config.vm.provision :shell, path: "Provisioning/Docker-P2.ps1"
   
-    # config.vm.provision "file", source: "C:/Users/P&G/Documents/BP-SH/DockerForWindows/VoorbeeldProject", destination: "C:/Users/vagrant/VoorbeeldProject"
+    # Verschil in connectiestring = User ID != User
+    config.vm.provision "file", source: "../VoorbeeldProjectWindows", destination: "~/VoorbeeldProject"
   
-    # config.vm.provision :shell, path: "provisioning/images.ps1"
+    # config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/09solSportsStore-master", destination: "~/09solSportsStore-master"
   
-    # config.vm.provision :shell, path: "provisioning/applicaties.ps1"
+    config.vm.provision :shell, path: "Provisioning/images.ps1"
+  
+    config.vm.provision :shell, path: "Provisioning/applicaties.ps1"
   
 end

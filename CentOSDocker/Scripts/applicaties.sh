@@ -22,9 +22,9 @@ WORKDIR /app
 
 COPY . /app
 
-RUN dotnet restore
+RUN ["dotnet", "restore"]
 
-RUN dotnet build
+RUN ["dotnet", "build"]
 
 EXPOSE 5000/tcp
 
@@ -58,4 +58,4 @@ docker-compose build
 
 # Running container
 echo "Building container"
-docker-compose up
+docker-compose up -d

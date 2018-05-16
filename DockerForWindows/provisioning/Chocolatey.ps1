@@ -12,7 +12,7 @@ if($CurrentPolicy -ne "Bypass")
 
 # Installeren Chocolatey
 Write-Host "#INSTALLING CHOCOLATEY#"
-iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco upgrade chocolatey
 Write-Host "#CHOCOLATEY INSTALLED#"
 
@@ -22,6 +22,6 @@ chocolatey feature enable -n=allowGlobalConfirmation
 Write-Host "#EXECUTIONRIGHTS SET#"
 
 #Ophalen en extracten OpenSSH 
-# Write-Host "#GETTING OPENSSH FILES AND EXTRACTING#"
-# choco install openssh
-# Write-Host "#OPENSSH FILES EXTRACTED#"
+#Write-Host "#GETTING OPENSSH FILES AND EXTRACTING#"
+#choco install openssh
+#Write-Host "#OPENSSH FILES EXTRACTED#"

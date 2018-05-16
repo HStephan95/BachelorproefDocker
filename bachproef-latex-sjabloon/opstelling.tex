@@ -85,31 +85,53 @@ Ten slotte haalt het laatste script die specifieke .NET-sdk Docker Image op die 
 Om de CentOS-server te installeren wordt er gebruik gemaakt van de officiële Vagrant Image die beschikbaar wordt gesteld door de organisatie achter CentOS, namelijk Red Hat Enterprise Linux (RHEL). Deze voorziet alleen een basis installatie van een CentOS 7.4 server, maar voorziet wel de mogelijkheid om uitgerold te worden op alle populaire platformen.
 
 %% foto + code
+\begin{center}
+	\includegraphics[scale=0.75]{img/centosvagrant01}
+\end{center}
 
 Ook hier krijgt het systeem 4GB RAM en 2 cores, zodat er op een eerlijke manier naar de performantie van beide systemen kan worden gekeken. Verder krijgt het systeem ook een hostname en VMName.
 
 %% foto + code
+\begin{center}
+	\includegraphics[scale=0.6]{img/centosvagrant02}
+\end{center}
 
 Ten slotte worden er 3 scripts voorzien bij het provision-gedeelte, zodat alle benodigde componenten kunnen worden geïnstalleerd. Hieronder behoort onder andere een script om dezelfde webapplicatie te voorzien als voor Windows.
 
 \subsection{Bash}
 
 \begin{itemize}[noitemsep]
-	\item Dockerhost
+	\item prereq
 \end{itemize}
 
-In dit gedeelte van het script worden alle functionaliteiten voorzien die nodig zijn voordat men kan beginnen aan het uitrollen van de applicatie, waaronder de installatie van Docker, Nano,Ppatch en Git.
+In dit gedeelte van het script worden alle functionaliteiten voorzien die nodig zijn voordat men kan beginnen aan het uitrollen van de applicatie, waaronder de installatie van Docker, docker-compose, Epel-Release, Git, Nano en anderen.
 Daarnaast worden ook regels toegevoegd aan de firewall, zodat de container beschikbaar is nadat deze volledig is opgesteld.
 
+\begin{center}
+	\includegraphics[scale=0.6]{img/centosprereq01}
+\end{center}
+
+\begin{center}
+	\includegraphics[scale=0.6]{img/centosprereq02}
+\end{center}
+
 \begin{itemize}[noitemsep]
-	\item Images
+	\item images
 \end{itemize}
 
 Bij het volgende script worden alle Docker Images van Docker Hub gehaald, wat de officiële online repository van Docker is waar alle beschikbare Docker Images op staan.
 
+\begin{center}
+	\includegraphics[scale=0.6]{img/centosimages01}
+\end{center}
+
 \begin{itemize}[noitemsep]
-	\item Applicatie
+	\item applicaties
 \end{itemize}
 
 Ten slotte worden in het laatste script de benodigde databank en applicatie omhoog gebracht aan de hand van een dockerfile, docker run- en docker build-commando's.
-De dockerfile wordt opgevuld met een 'EOF' identifier. Hierdoor blijft Bash de invoer pipen in de dockerfile tot hij 'EOF' tegenkomt, waarna hij stopt zonder 'EOF' mee te nemen.
+De dockerfile- en dockercompose.yml-bestand worden opgevuld met een 'EOF' identifier. Hierdoor blijft Bash de invoer pipen in de dockerfile tot hij 'EOF' tegenkomt, waarna hij stopt zonder 'EOF' mee te nemen.
+
+\begin{center}
+	\includegraphics[scale=0.6]{img/centosapplicaties01}
+\end{center}

@@ -20,6 +20,32 @@
 
 "In detail beschrijven hoe je de iteratie hebt afgewerkt, met de focus op het manuele werk. Zo min-mogelijk code, gebruik hyperlinks zoveel mogelijk als verwijzing."
 
+Mail gestuurd naar BVV
+
+Bericht op stackoverflow
+
+Boeken aangekocht
+
+Verder gewerkt aan BAP:
+* Opstelling afgewerkt
+* docker-compose toegevoegd
+
+VirtualBox uitleg toevoegen?
+
+Antwoord BVV
+
+Applicatie program.cs moeten aanpassen
+
+Werkt nu wel
+
+Eerste testen uitgevoerd
+
+Performantie: `time vagrant up`
+
+Integratie: ???
+
+Veiligheid: Kijken hoe Docker beveiligen op CentOS en welke opties er zijn voor Windows
+
 ## Test rapport
 
 "Door het lezen van het testrapport moet het duidelijk zijn in hoeverre de opdracht is uitgevoerd, wat het effectieve resultaat van de tests was. Je kan transcripties toevoegen van de terminal (gebruikhiervoor Markdown codeblokken). Het testrapport zou evenveel informatie moeten bevatten als de demo."

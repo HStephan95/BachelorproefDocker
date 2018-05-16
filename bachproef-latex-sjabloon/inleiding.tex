@@ -59,7 +59,7 @@ Docker is een tool om deze Containers te bouwen. Hiermee kan men het uitrollen v
 
 Om een Container op te bouwen van begin tot einde maakt men gebruik van de Docker Client. Via de Client kan men communiceren met de Docker Daemon. De Docker Daemon is een proces dat op de achtergrond draait tot het aangeroepen wordt door de gebruiker via de syntaxis van Docker. De Docker Daemon is uiteindelijk degene die de Docker commando's interpreteert en uitvoert, zoals het bouwen, draaien en onderhouden van containers.
 
-Bij het bouwen van een container via Docker zijn er 2 werkmethodes te onderscheiden, namelijk een standaardmethode en een minimalistische methode. De minimalistische methode wordt gebruikt bij installaties die geen customisation vereisen, bijvoorbeeld een SQL-server. De standaardmethode wordt gebruikt bij alle andere installaties, bijvoorbeeld een CentOS-server. De standaardmethode bestaat uit 4 stappen die hieronder meer uitgebreid besproken worden. Bij de minimalistische methode worden enkel de eerste en de laatste stap uitgevoerd. 
+Bij het bouwen van een container via Docker zijn er 23 werkmethodes te onderscheiden, namelijk een standaard-, minimalistische- of geautomatiseerde methode. De minimalistische methode wordt gebruikt bij installaties die geen customisation vereisen, bijvoorbeeld een SQL-server. De standaardmethode wordt gebruikt bij alle andere installaties, bijvoorbeeld een CentOS-server. De standaardmethode bestaat uit 4 stappen die hieronder meer uitgebreid besproken worden. Bij de minimalistische methode worden enkel de eerste en de laatste stap uitgevoerd.
 
 \begin{itemize}[noitemsep]
 	\item docker pull
@@ -81,7 +81,25 @@ De derde stap is docker build, waarmee men opnieuw de Docker Daemon aanspreekt. 
 \end{itemize}
 Ten slotte is er docker run, waarmee men het bevel geeft aan de Docker Daemon om de image uit te rollen tot een container. Hoe de image zich uitrolt, hangt af van de bevelen in het commando en van de image die gebruikt wordt. 
 
-Docker voorziet ook enkele commando's om de Docker Images en Boxes te beheren. De voornaamste staan hieronder beschreven.
+Bij de geautomatiseerde methode maakt men ook gebruik van de 4 hierboven beschreven stappen. Maar, voegt men een extra component toe in de vorm van docker-compose.yml. In dit bestand kan men meerdere services beschrijven waarvan Docker containers moet maken. Daarnaast dient dit bestand geplaatst te worden in dezelfde folder als het 'dockerfile'-bestand. Ten slotte, zullen alle services die hierin beschreven staan in orde gebracht worden door het 'docker-compose up'-commando uit te voeren.
+
+Docker-compose is daarom vooral handig wanneer men meerdere services wil in orde brengen die afhankelijk zijn van elkaar, zoals een webapplicatie en de bijhorende SQL-server. Hieronder ziet u een voorbeeld van een docker-compose.yml-bestand.
+
+backend: 
+	image: redis:3 
+	restart: always
+
+frontend: 
+	build: commander 
+	links: 
+		- backend:redis  
+	ports: 
+		- 8081:8081 
+	environment: 
+		- VAR1=value 
+	restart: always
+
+Docker voorziet ook commando's om de Docker Images en Boxes te beheren. De voornaamste staan hieronder beschreven.
 
 \begin{tabular}{ll}
 	\hline
