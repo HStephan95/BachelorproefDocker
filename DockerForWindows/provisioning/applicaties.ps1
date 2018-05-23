@@ -15,11 +15,13 @@ $DockerCommands = 'WORKDIR /app'
 $DockerCommands | Add-Content "Dockerfile"
 $DockerCommands = 'COPY . /app'
  $DockerCommands | Add-Content "Dockerfile"
-$DockerCommands = 'RUN dotnet restore'
+$DockerCommands = 'RUN ["dotnet", "restore"]'
  $DockerCommands | Add-Content "Dockerfile"
-$DockerCommands = 'RUN dotnet build'
+$DockerCommands = 'RUN ["dotnet", "build"]'
  $DockerCommands | Add-Content "Dockerfile"
-$DockerCommands = 'EXPOSE 80/tcp'
+$DockerCommands = 'EXPOSE 5000/tcp'
+ $DockerCommands | Add-Content "Dockerfile"
+$DockerCommands = 'ENV ASPNETCORE_URLS http://*:5000'
  $DockerCommands | Add-Content "Dockerfile"
 $DockerCommands = 'ENTRYPOINT ["dotnet", "run"]' 
  $DockerCommands | Add-Content "Dockerfile"
@@ -37,7 +39,7 @@ $ComposeCommand = '     build: .'
  $ComposeCommand | Add-Content "docker-compose.yml"
 $ComposeCommand = '     ports:'
  $ComposeCommand | Add-Content "docker-compose.yml"
-$ComposeCommand = '       - "8080:80"'
+$ComposeCommand = '       - "8080:5000"'
  $ComposeCommand | Add-Content "docker-compose.yml"
 $ComposeCommand = '     depends_on:'
  $ComposeCommand | Add-Content "docker-compose.yml"
@@ -45,7 +47,7 @@ $ComposeCommand = '       - db'
  $ComposeCommand | Add-Content "docker-compose.yml"
 $ComposeCommand = '   db:'
  $ComposeCommand | Add-Content "docker-compose.yml"
-$ComposeCommand = '     image: "microsoft/mssql-server-linux"'
+$ComposeCommand = '     image: "microsoft/mssql-server-windows-developer"'
  $ComposeCommand | Add-Content "docker-compose.yml"
 $ComposeCommand = '     environment:'
  $ComposeCommand | Add-Content "docker-compose.yml"
@@ -53,6 +55,14 @@ $ComposeCommand = '       SA_PASSWORD: "Vagrant123"'
  $ComposeCommand | Add-Content "docker-compose.yml"
 $ComposeCommand = '       ACCEPT_EULA: "Y"'
  $ComposeCommand | Add-Content "docker-compose.yml"
+$ComposeCommand = 'networks:'
+ $ComposeCommand | Add-Content "docker-compose.yml"
+$ComposeCommand = '  default:'
+  $ComposeCommand | Add-Content "docker-compose.yml"
+$ComposeCommand = '    external:'
+  $ComposeCommand | Add-Content "docker-compose.yml"
+$ComposeCommand = '      name: nat'
+  $ComposeCommand | Add-Content "docker-compose.yml"
 
 # Bouwt de image
 Write-Host "#BUIDLING IMAGE#"
@@ -60,4 +70,4 @@ docker-compose build
 
 # Bouwt de container
 Write-Host "#BUILDING CONTAINER#"
-docker-compose up
+docker-compose up -d

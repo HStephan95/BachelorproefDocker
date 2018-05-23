@@ -127,7 +127,11 @@ Door al deze redenen blijft Docker ook jaar na jaar groeien. Tijdens de recentst
 Docker heeft deze groei ook verdiend door constant in contact te blijven met zijn gebruikers. In het verleden kregen ze immers de klacht dat ze te snel of te traag updates toevoegden aan het systeem. Om dit te remediëren hebben ze naast Docker Community Edition, waarmee alles is begonnen, nu ook Docker Enterprise Edition ontworpen. Daarbovenop is er een verschuiving naar time-based updates. Hierbij kan men kiezen tussen een maandelijkse update, maar zonder garantie op stabiliteit van de runtime (Edge), ofwel voor een viermaandelijkse update voor gebruikers die meer stabiliteit prefereren, zowel op vlak van onderhoud als van beheer (Stable). Daarbovenop heeft de Enterprise Edition ook een meer uitgebreide ondersteuning met verschillende gradaties.
 
 \subsubsection{Docker CE}
-Zoals eerder aangehaald is Docker Community Edition het originele platform waarmee Docker begonnen is. Het is ideaal voor kleinere teams of onafhankelijke developers die willen experimenteren met Container-technologie. Deze technologie is beschikbaar voor zowel Linux als Windows als Mac, waardoor het perfect is als kleine en snelle installatie waarmee men direct aan de slag kan gaan. Daarbovenop biedt het ook ondersteuning voor het uitrollen naar Cloud-omgevingen, zoals Amazone Web Services of Azure. Ten slotte is Docker CE ook de versie die gebruikt werd voor deze bachelorproef.
+Zoals eerder aangehaald is Docker Community Edition het originele platform waarmee Docker begonnen is. Het is ideaal voor kleinere teams of onafhankelijke developers die willen experimenteren met Container-technologie. Deze technologie is beschikbaar voor zowel Linux als Mac, waardoor het perfect is als kleine en snelle installatie waarmee men direct aan de slag kan gaan. Ten slotte, biedt het ook ondersteuning voor het uitrollen naar Cloud-omgevingen, zoals Amazone Web Services of Azure. 
+
+\subsubsection{Docker CE for Windows}
+Daarnaast heeft Docker ook een versie ontwikkeld specifiek gericht voor Developers die gebruik willen maken van Windows als ontwikkel platform. Docker CE for Windows maakt gebruik van dezelfde Daemon en Client als Docker CE. Maar, met een paar verschillen zoals: Docker CE for Windows maakt gebruik van de Windows-native Hyper-V Virtualisatie. Wat betekent dat de gebruiker een Windows 10 Pro edition nodig heeft of een Windows Server 2016. Daarnaast is de enige manier om Docker CE for Windows te installeren door gebruik te maken van een GUI installatie. Men kan gebruik maken van PowerShell commando's zoals Invoke-Webrequest. Maar, er is geen native commando voor. Ten slotte wordt docker-compose ook geïnstalleerd, naast Docker CE. Docker CE for Windows de versie die gebruikt werd voor de Windows opstelling.
+
 
 \subsubsection{Docker EE}
 Docker Enterprise Edition is het volledige pakket voor zij die op een professionele manier met een Containers-as-a-Serivce-platform willen werken. Docker EE is een geïntegreerd en getest platform voor Linux- of Windows Enterprise en Cloud-providers, met door Docker gecertificeerde componenten en ondersteuning. In het bijzonder is het voor datacenters een handig dashboard waar men de zogenaamde multi-architecture orchestration, secure software supply chain en infrastructure independence aangeboden krijgt. Vooral aan dat laatste heeft Docker extra veel aandacht besteed., met kenmerken zoals trusted delivery.
@@ -137,7 +141,7 @@ Docker Enterprise Edition is het volledige pakket voor zij die op een profession
 \end{center}
 
 \subsection{Hyper-V}
-Hyper-V is de technologie die gekozen werd om de twee servers, CentOS en Windows Server 2016, op te laten draaien. Dit is het Microsoft-platform voor het virtualiseren van hardware. Het maakt gebruik van hypervisor-gebaseerde virtualisatie technologie om de interactie tussen de virtuele machine en de hardware te voorzien. Hierdoor is men in staat om een andere computer te laten werken bovenop het host-besturingssysteem. De voornaamste componenten en hun functies van dit platform zijn:
+Hyper-V is één van de technologie die gekozen werd om de twee servers, CentOS en Windows Server 2016, op te laten draaien. Dit is het Microsoft-platform voor het virtualiseren van hardware. Het maakt gebruik van hypervisor-gebaseerde virtualisatie technologie om de interactie tussen de virtuele machine en de hardware te voorzien. Hierdoor is men in staat om een andere computer te laten werken bovenop het host-besturingssysteem. De voornaamste componenten en hun functies van dit platform zijn:
 
 \begin{itemize}[noitemsep]
 	\item Windows Hypercall
@@ -196,19 +200,59 @@ Tenslotte heeft Hyper-V ook enkele tools voor het beheren van en verbinden met z
 	\item Windows PowerShell Direct
 \end{itemize}
 
-Om deze servers te verbinden met het internet werd ook gebruik gemaakt van de Hyper-V
-Virtual Switch. Deze laag 2 Ethernet netwerkswitch voorziet programmeer- en uitbreidbare
-mogelijkheden om het beheren van virtuele en fysieke netwerken te vergemakkelijken.
-Het voorziet veiligheid, isolatie en service levels om de nodige veiligheid af te dwingen.
+Om deze servers te verbinden met het internet wordt ook gebruik gemaakt van de Hyper-V Virtual Switch. Deze laag 2 Ethernet netwerkswitch voorziet programmeer- en uitbreidbare mogelijkheden om het beheren van virtuele en fysieke netwerken te vergemakkelijken. Het voorziet veiligheid, isolatie en service levels om de nodige veiligheid af te dwingen.
+
+Hyper-V is een type 1 Hypervisor. Dit betekent dat het opstarten van een virtuele machine als volgt gaat:
+\begin{itemize}[noitemsep]
+	\item Eerst wordt de fysieke machine opgestart.
+	\item Vervolgens wordt de controle van het boot systeem van de fysieke machine overgedragen aan Hyper-V, bijvoorbeeld BIOS of EUFI.
+	\item Daarna start Hyper-V het management operating system.
+	\item Ten slotte maakt Hyper-V partitions aan voor de virtuele machines, afhankelijk van de boot- of gebruikersinstructies.
+\end{itemize}
+Daarnaast draait een type 1 Hypervisor ook direct op de hardware. Daarom worden ze ook wel 'native', 'bare metal' of 'embedded' Hypervisors genoemd.
+
+\subsection{Virtual Box}
+Virtual Box is de tweede Hypervisor die ondersteund wordt in deze bachelorproef. Deze wordt ontwikkeld door Oracle Corporation, maar is wel een type 2 Hypervisor. Type 2 Hypervisors gedragen zich meer als een gewone software applicatie en worden daarom 'host' Hypervisors genoemd. Ze maken een abstractie van de verbinding met de hardware en moeten hiervoor requests sturen naar het host OS, net zoals gewone applicaties.
+
+De opstartvolgorde is hierdoor ook anders:
+\begin{itemize}[noitemsep]
+	\item Eerst wordt de fysieke machine gestart.
+	\item Vervolgens wordt de controle van het boot systeem van de fysieke machine overgedragen aan Virtual Box, bijvoorbeeld BIOS of EUFI.
+	\item Daarna start een gebruiker de Virtual Box applicatie op.
+	\item Ten slotte zal de gebruiker kiezen welke virtuele machines worden opgestart, waarbij Virtual Box de benodigde hosting processes aanmaakt.
+\end{itemize}
+
+Ten slotte bestaat Virtual Box uit een soortgelijke lijst van componenten, waarbij er toch kleine wijzigingen zijn omdat het een type 2 is.
+\begin{itemize}[noitemsep]
+	\item IPRT (a portable runtime library)
+	\item Virtual Machine Monitor
+	\item Execution Manager
+	\item Recompiled Execution Monitor
+	\item Trap Manager
+	\item Hardware Acceleration Manager
+	\item Guest Interface Manager
+	\item Pluggable Device Manager
+	\item Page Manager
+	\item Patch Manager
+	\item Time Manager
+	\item Configuration Manager
+	\item Saved State Manager
+	\item Virtual USB
+	\item Debug Facility
+\end{itemize}
 
 \subsection{Vagrant}
 Vagrant is een tool voor het bouwen en onderhouden van virtuele machines. Het maakt gebruik van een enkele workflow voor het automatiseren van ontwikkelomgevingen. Doordat het zo makkelijk te gebruiken is, verlaagt het de installatietijd en verhoogt het de productie. Dit is waarom het een geliefde tool is binnen DevOps-teams.
 
-Vagrant werkt aan de hand van yml-configuratiebestanden die uitgelezen moeten worden. Het belangrijkste configuratiebestand dat Vagrant nodig heeft, is een ’Vagrantfile’. Hierin wordt alles gedefinieerd wat nodig is: welke boxes, scripts en andere bestanden er nog nodig zijn voor de installatie. Een 'Vagrant Box' is een base image die een clone is van een virtuele machine. Een base image is het minimum van een besturingssysteem waarop er nog verschillende andere functies gebouwd kunnen worden, zoals bijvoorbeeld een GUI. Met deze boxes wordt gedefinieerd welk besturingssysteem en welke bijbehorende software dient te worden geïnstalleerd. Als de box goed is, maar er moeten nog verdere configuratie of installaties van de software gebeuren, kan men deze ook meegeven met het ’provision’-gedeelte. Met provisioning voegt men verdere configuratiemogelijkheden toe, zoals het uitvoeren van scripts, het uploaden van bestanden of folders tijdens de installatie, of het specificeren van een netwerkadres. Door provisioning kan men ook makkelijk wijzigingen aanbrengen aan het systeem tijdens de run-time. Er wordt ook gebruik gemaakt van een eigen syntax die aangeleerd dient te worden. Deze bestaat uit 'vagrant' en de functie die uitgevoerd dient te worden, bijvoorbeeld: met 'vagrant up' wordt geprobeerd om het systeem online te brengen. De configuratie van de 'Vagrantfile' heeft ook zijn eigen syntax, bestaande uit het woord ’config’ en de functie bepalen wat ermee moet gebeuren.
+Vagrant werkt aan de hand van een configuratiebestand dat uitgelezen moet worden. Dit configuratiebestand dat Vagrant nodig heeft, heet een 'Vagrantfile'. Hierin wordt alles gedefinieerd dat nodig is, meer bepaald: welke box, scripts en andere bestanden er nog nodig zijn voor de installatie.
+
+Een 'Vagrant Box' is een verpakte base image die een clone is van een virtuele machine. Een base image is het minimum van een besturingssysteem waarop er nog verschillende andere functies gebouwd kunnen worden, zoals bijvoorbeeld een GUI. Via deze box wordt een besturingssysteem en bijbehorende software geïnstalleerd. Deze boxes worden opgehaald door middel van 'config.vm.box = boxnaam'. Als de box nog niet eerder gebruikt werd, wordt deze eerst gedownload vanop Vagrant Cloud, waarna de box wordt opgeslagen zodat deze steeds beschikbaar is voor later gebruik.
+
+Als de box goed is, maar er moet nog verdere installatie of configuratie van de software gebeuren, kan men deze ook meegeven met het 'provision'-gedeelte. Met provisioning voegt men verdere configuratiemogelijkheden toe, zoals het uitvoeren van scripts, het uploaden van bestanden of folders tijdens de installatie, of het specificeren van een netwerkadres. Door provisioning kan men ook makkelijk wijzigingen aanbrengen aan het systeem tijdens de run-time. Er wordt ook gebruik gemaakt van een eigen syntax die aangeleerd dient te worden. Deze bestaat uit 'vagrant' en de functie die uitgevoerd dient te worden, bijvoorbeeld: met 'vagrant up' wordt geprobeerd om het systeem online te brengen. De configuratie van de 'Vagrantfile' heeft ook zijn eigen syntax, bestaande uit het woord ’config’ en de functie bepalend wat ermee moet gebeuren.
 
 Vagrant ondersteunt bovendien verschillende platformen om zijn installatie op uit te voeren, gaande van VirtualBox en Hyper-V tot Docker en AWS. Het grote aantal beschikbare platformen om op te releasen is ook een sterkte van Vagrant.
 
-Daarbovenop zijn er mogelijkheden om de functionaliteit van Vagrant zelf uit te breiden aan de hand van plug-ins die geschreven worden door andere gebruikers. Dit gebeurt meestal in de programmeertaal Ruby. Voor de gebruikte Windows Server-opstelling in deze bachelorproef is deze functionaliteit heel handig, omdat de Windows Server herstart dient te worden na de installatie van Docker. Hiervoor kan een plug-in gebruikt worden.
+Daarbovenop zijn er mogelijkheden om de functionaliteit van Vagrant zelf uit te breiden door gebruik te maken van plug-ins die geschreven worden door andere gebruikers, of door gebruik te maken van andere Configuration Management tools, zoals Ansible. Plug-ins worden meestal geschreven in de programmeertaal Ruby. Voor de gebruikte Windows Server-opstelling in deze bachelorproef is deze functionaliteit heel handig, omdat de Windows Server herstart dient te worden na de installatie van Docker. Hiervoor kan een plug-in gebruikt worden.
 
 Om al deze redenen werd geopteerd om gebruik te maken van deze technologie. Er zijn gelijkaardige zero-touch installatiemogelijkheden, zoals Chef, Puppet of Terraform. Echter geen van hen biedt hetzelfde gebruiksgemak of dezelfde mogelijkheden.
 

@@ -16,10 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # alternative:
     # config.vm.box = "mwrock/Windows2016"
     
-    # nano server
-    # config.vm.box = "mwrock/WindowsNano"
-    
-    config.vm.network "public_network"
+    config.vm.network "public_network", bridge: "Intel(R) Dual Band Wireless-AC 3160"
     
     # configuration for virtualbox
     config.vm.provider "virtualbox" do |v|
@@ -35,21 +32,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         v.cpus = 2
     end
    
+    config.vm.boot_timeout = 420
+    
     config.vm.hostname = "DockerForWinVM"
-  
+    
     config.vm.provision :shell, path: "Provisioning/Chocolatey.ps1"
-  
-    # config.vm.provision "file", source: "D:/Documenten/School/HoGent/StageEnBachelorproef/bachelorproef/BachelorproefDocker/DockerForWindows/provisioning/OpenSSH-Win64", destination: "~/OpenSSH-Win64"
-  
-    # config.vm.provision :shell, path: "provisioning/OpenSSH.ps1" 
 
     config.vm.provision :shell, path: "Provisioning/Docker-P1.ps1"
     
     # reload plugin for restart during provision
     # download from aidanns/vagrant-reload with 'vagrant plugin install vagrant-reload'
     config.vm.provision :reload
-  
+    
     config.vm.provision :shell, path: "Provisioning/Docker-P2.ps1"
+  
+    config.vm.provision :shell, path: "Provisioning/docker-compose.bat"
+  
+    # config.vm.provision :shell, path: "Provisioning/Restart-Network.ps1"
   
     # Verschil in connectiestring = User ID != User
     config.vm.provision "file", source: "../VoorbeeldProjectWindows", destination: "~/VoorbeeldProject"

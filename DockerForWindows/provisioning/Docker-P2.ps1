@@ -1,12 +1,11 @@
-﻿Write-Host "#PRE-INSTALL POSH DOCKER#"
-# Installeren posh-docker PowerShell module voor auto-completion
-Install-Module posh-docker -Force
-Write-Host "#POSH DOCKER INSTALLED#"
+﻿net start com.docker.service
 
-Write-Host "#IMPORT POSH DOCKER#"
-# Enable auto-completion
-Import-Module posh-docker
-Write-Host "#POSH DOCKER IMPORTED#"
+# Installeren Pip
+Write-Host "#INSTALLING PYTHON/PIP#"
+choco install -y python2
+setx PATH "$env:path;C:\tools\python2;C:\tools\python2\Scripts" -m
+$env:path += ";C:\tools\python2;C:\tools\python2\Scripts"
+choco install pip
 
 # Testen installatie
 Write-Host "#RUN TEST CONTAINER#"
@@ -22,3 +21,5 @@ netsh advfirewall firewall add rule name=dockerappout dir=out action=allow proto
 
 netsh advfirewall firewall add rule name=httpin dir=in action=allow protocol=TCP localport=80
 netsh advfirewall firewall add rule name=httpout dir=out action=allow protocol=TCP localport=80
+
+netsh advfirewall firewall add rule name="docker engine" dir=in action=allow protocol=TCP localport=2375
