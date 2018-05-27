@@ -5,97 +5,134 @@
 \chapter{Performantie test}
 \label{ch:performantietest}
 
-In dit hoofdstuk worden de resultaten besproken van de uitgevoerde performantietests. De performantie van beide opstellingen werden getests Door gebruik te maken van 'time vagrant up' en 'time vagrant provision'. Hierdoor werd er op het einde van de installatie de tijd getoond die Vagrant nodig had om het commando uit te voeren. Beide commando's werden elk 15 keer uitgevoerd.
+In dit hoofdstuk worden de resultaten besproken van de uitgevoerde performantietests.
 
-\subsection{CentOS 7.4}
+De performantie van beide systemen werden op twee manieren getest:
+Eerst werd de benodigde tijd gemeten voor het uitvoeren van het 'vagrant up'-commando. 'vagrant up' installeerde en configureerde het besturingssysteem, de applicaties en de containers vanaf nul.
 
-\subsubsection{Performantie installatie}
-Als eerste kan men hieronder de resultaten zien van 'time vagrant up' voor de CentOS-opstelling. Dit toont hoeveel tijd Vagrant nodig had om de CentOS opstelling te installeren vanaf nul tot een werkende webapplicatie.
+Vervolgens werd de benodigde tijd gemeten bij het uitvoeren van het 'vagrant provision'-commando. Hierbij waren het besturingssysteem en de applicaties al geïnstalleerd en geconfigureerd, en moesten alleen de containers nog tot stand gebracht worden. Om de internetsnelheid als factor te schrappen, waren de Docker Images ook al gedownload.
+
+Daarnaast werd 'time' als prefix aan het commando toegevoegd. Hierdoor werd er op het einde van de commando's de tijd getoond die nodig was voor het uitvoeren.
+
+Vervolgens werden beide commando's vijftien keer uitgevoerd op beide opstellingen. Hierdoor werd de invloed van outliers vermindert. Outliers zijn observatiepunten die ver van andere punten verwijdert liggen.
+
+Ten slotte werden deze resultaten genoteerd in een tabel in Rstudio. Zodanig dat deze resultaten konden worden gebruikt om het gemiddelde, de variantie en standaarddeviatie te gereken. Alsook voor het generen van een scatterplot en boxplot.
+
+\section{CentOS 7.4}
+
+\subsection{Performantie installatie}
+Hieronder kan men de eerste resultaten zien van het 'time vagrant up'-commando voor de CentOS-opstelling.
 
 %% plot
 \begin{center}
 	\includegraphics[scale=0.5]{img/centosplotfull.png}
 \end{center}
 
-%% gemiddelde
-\[ \mu = 12.06457 \]
- 
-%% variantie
-\[ \sigma^2 = 203.7204 \]
-
-%% standaarddeviatie
-\[ \sigma = 14.27307 \]
-
 %% boxplot
 \begin{center}
 	\includegraphics[scale=0.5]{img/centosboxplotfull.png}
 \end{center}
 
-De gemiddelde performatie-maat van de CentOS-opstelling is laag en vrijwel stabiel, met maar een paar uitschieters. De reden voor deze uitschieters komt omdat deze genomen zijn in een omgeving met een slechtere internetverbinding. Dit is dus de bottleneck bij deze opstelling en kan een grote impact hebben op de installatie, zoals te zien valt aan de hoge variatie en standaarddeviatie. Ondanks dit is de performantie van de CentOS-opstelling heel goed te noemen.
+%% gemiddelde
+$\mu = 12.06457$
 
-\subsubsection{Performantie applicatie}
-Daarnaast kan men hier de resultaten zien van 'time vagrant provision'. Bij deze resultaten moet het Operating System niet meer geïnstalleerd worden, alleen nog maar de containers voor de applicatie.
+%% variantie
+$\sigma^2 = 203.7204$
+
+%% standaarddeviatie
+$\sigma = 14.27307$
+
+De gemiddelde benodigde tijd voor het commando bij de CentOS-opstelling was laag en vrijwel stabiel, met maar een paar outliers. De reden voor deze outliers kwam omdat deze metingen genomen waren in een omgeving met een slechtere internetverbinding.
+
+Dit was dus de grootste bottleneck voor deze opstelling. De impact hiervan op de installatie was in dit geval groot, zoals te zien valt aan de hoge variatie en standaarddeviatie.
+
+Maar, in het algemeen valt was de performantie van de CentOS-opstelling goed te noemen.
+
+\subsection{Performantie containers}
+Vervolgens kan men hier de resultaten zien voor elke keer dat het 'time vagrant provision'-commando werd uitgevoerd op de CentOS-opstelling. Deze keer uitgedrukt in seconden.
+
+Bij deze resultaten moest het Operating System niet meer geïnstalleerd worden en ook de Docker Image moeten niet meer gedownload worden. Er werd alleen gekeken hoelang de Docker Daemon nodig had om de orders te interpreteren en de container tot staand te brengen.
 
 %% plot
 \begin{center}
 	\includegraphics[scale=0.5]{img/centosplotprovision.png}
 \end{center}
 
+%% boxplot
+\begin{center}
+	\includegraphics[scale=0.5]{img/centosboxplotprovision.png}
+\end{center}
+
 %% gemiddelde
-\[ \mu = 5.972333 \]
+$\mu = 5.972333$
 
 %% variantie
-\[ \sigma^2 = 0.1150491 \]
+$\sigma^2 = 0.1150491$
 
 %% standaarddeviatie
-\[ \sigma = 0.3391889 \]
+$\sigma = 0.3391889$
+
+De installatie van alleen de container ging vlot, met een stabielere gemiddelde tijd, en een kleinere variantie en standaarddeviatie. Dit kwam doordat de applicaties en Docker Images niet meer gedownload diende te worden. Hierdoor lagen de tijden veel lager en was er geen invloed meer van de bottleneck.
+
+\section{Windows Server 2016}
+\subsection{Performantie installatie}
+Vervolgens kan men ook de resultaten zien van 'time vagrant up' voor de Windows-opstelling.
+
+%% plot
+\begin{center}
+	\includegraphics[scale=0.5]{img/centosboxplotprovision.png}
+\end{center}
 
 %% boxplot
 \begin{center}
 	\includegraphics[scale=0.5]{img/centosboxplotprovision.png}
 \end{center}
 
-Ook het opstellen van alleen de container gaat vlot. Met een stabielere gemiddelde tijd en een kleinere variantie en standaarddeviatie. Doordat er geen tijd meer nodig was om de Docker Images te downloaden lagen de tijden veel lager.
-
-\subsection{Windows Server 2016}
-\subsubsection{Performantie installatie}
-Vervolgens kan men ook de resultaten zien van 'time vagrant up' voor de Windows-opstelling.
-
-%% plot
-
 %% gemiddelde
+$\mu = 5.972333$
 
 %% variantie
+$\sigma^2 = 0.1150491$
 
 %% standaarddeviatie
+$\sigma = 0.3391889$
 
-%% boxplot
-
-De Windows opstelling brengt het er veel slechter vanaf dan de Linux opstelling. De gemiddelde tijd is immers 45 minuten en de variantie en standaarddeviatie liggen veel groter. Hier zijn er verschillende redenen voor:
+De installatie van de Windows opstelling duurde gemiddeld 10 keer langer dan de centOS-opstelling. De gemiddelde tijd voor een volledige installatie was immers 45 minuten. De variantie en standaarddeviatie lagen ook . Hier waren verschillende redenen voor:
 
 \begin{itemize}[noitemsep]
 	\item Installatie Windows OS
 \end{itemize}
 
-De installatie van het besturingssysteem zelf duurt langer omdat de Docker CE for Windows een GUI vereist. Met een Windows Server core zou de performantie al sterk verbeterd kunnen worden. Windows Server nano is helaas geen optie, omdat deze niet ondersteund wordt door Docker CE for Windows.
+Om te beginnen duurde de installatie van het besturingssysteem langer omdat er een GUI gebruikt werd. Als Windows Server Core werd gebruikt zou de performantie al sterk verbeteren. Maar, dan kon men geen Docker CE for Windows installeren. Windows Server Nano was helaas ook geen optie, omdat deze helemaal niet ondersteund werd door Docker for Windows, zelfs niet voor Docker EE. Ten slotte hoefde CentOS ook niet heropgestart te worden na de installatie van Docker.
 
 \begin{itemize}[noitemsep]
 	\item Microsoft SQL server container
 \end{itemize}
 
-De MSSQL server container voor Windows is meer dan 10 keer zo groot als de Linux variant,  6GBs tegenover 479MBs. Hierdoor is het systeem een groot deel van zijn tijd bezig met downloaden van de Docker Image.
+De MSSQL server container voor Windows was meer dan 10 keer zo groot als de Linux variant,  6GBs tegenover 479MBs. Hierdoor was de installatie een groot deel van zijn tijd bezig met het downloaden van deze Docker Image.
 
-\subsubsection{Performantie applicatie}
+\subsection{Performantie applicatie}
 Ten slotte kan men hieronder ook de resultaten zien van 'time vagrant provision' voor de Windows-opstelling van alleen de benodigde tijd om de containers te installeren.
 
 %% plot
-
-%% gemiddelde
-
-%% variantie
-
-%% standaarddeviatie
+\begin{center}
+	\includegraphics[scale=0.5]{img/centosboxplotprovision.png}
+\end{center}
 
 %% boxplot
+\begin{center}
+	\includegraphics[scale=0.5]{img/centosboxplotprovision.png}
+\end{center}
 
-Hier zijn de resultaten al iets meer genormaliseerd tegenover de CentOS-opstelling. Omdat de Windows-opstelling nu de extra bestanden voor de grafische interface of gigantische MSSQL image moet binnenhalen.
+%% gemiddelde
+$\mu = 5.972333$
+
+%% variantie
+$\sigma^2 = 0.1150491$
+
+%% standaarddeviatie
+$\sigma = 0.3391889$
+
+Hier waren de resultaten al iets meer gelijk aan de CentOS-opstelling. Doordat de Windows-opstelling nu niet meer tijd verloor met het installeren van een GUI, heropstarten of downloaden van grotere Docker Images.
+
+\section{Conclusie}

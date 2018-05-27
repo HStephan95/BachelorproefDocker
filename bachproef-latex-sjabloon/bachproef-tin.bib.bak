@@ -25,73 +25,107 @@
   year = {2009}
 }
 
-@Electronic{OpenSourceContainers,
-  title = {What are Linux containers?},
-  url   = {https://opensource.com/resources/what-are-linux-containers?intcmp=7016000000127cYAAQ},
+@Electronic{InfoWorldContainers,
+  author = {Wang Chenxi},
+  editor = {InfoWorld},
+  title  = {What is Docker? Linux containers explained},
+  year   = {2017},
+  date   = {2017-06-29},
+  url    = {https://www.infoworld.com/article/3204171/linux/what-is-docker-linux-containers-explained.html},
 }
 
-@Electronic{OpenSourceDocker,
-  title = {What is Docker?},
-  url   = {https://opensource.com/resources/what-docker},
+@Electronic{ZdnetDocker,
+  author = {Vaughan-Nichols J. Steven},
+  editor = {Linux and Open Source},
+  title  = {What is Docker and why is it so darn popular?},
+  year   = {2018},
+  date   = {2018-03-21},
+  url    = {https://www.zdnet.com/article/what-is-docker-and-why-is-it-so-darn-popular/},
 }
 
 @Electronic{DockerContainer,
-  title = {What is a container?},
-  url   = {https://www.docker.com/what-container},
+  author = {Kasireddy Preethi},
+  editor = {freeCodeCamp},
+  title  = {What is a container?},
+  year   = {2016},
+  date   = {2016-05-04},
+  url    = {https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b},
 }
 
 @Electronic{SoftwareTesting,
-  title = {Software Testing: Quality From the Beginning},
-  url   = {https://www.atlassian.com/software-testing},
+  author = {Siteur Maurice},
+  editor = {Siteur Maurice},
+  title  = {Software testing terminologies explained},
+  year   = {2018},
+  date   = {2018-04-05},
+  url    = {https://www.capgemini.com/2018/04/software-testing-terminologies-explained/#},
 }
 
 @Electronic{PerformanceTesting,
-  title = {Performance Testing Tutorial: Types, Process \& Important Metrics},
-  url   = {https://www.guru99.com/performance-testing.html},
+  author = {Cohen Noga},
+  editor = {Cohen Noga},
+  title  = {Performance Testing vs. Load Testing vs. Stress Testing},
+  year   = {2016},
+  date   = {2016-12-01},
+  url    = {https://www.blazemeter.com/blog/performance-testing-vs-load-testing-vs-stress-testing},
 }
 
-@Electronic{IntegrationTesting,
-  title = {INTEGRATION Testing Tutorial: Big Bang, Top Down \& Bottom Up},
-  url   = {https://www.guru99.com/integration-testing.html},
-}
-
-@Electronic{SecurityTesting,
-  title = {What is Security Testing: Complete Tutorial},
-  url   = {https://www.guru99.com/what-is-security-testing.html},
+@Electronic{SecurityTestingExplained,
+  author = {Hrynczak Mark},
+  editor = {Hrynczak Mark},
+  title  = {13 Steps to Learn \& Perfect Security Testing in your Org},
+  year   = {2012},
+  date   = {2012-01-18},
+  url    = {https://www.atlassian.com/blog/archives/13-steps-to-learn-perfect-security-testing-in-your-org},
 }
 
 @Electronic{Docker,
-  title = {What is Docker?},
-  url   = {https://www.docker.com/what-docker},
+  author = {Kaur Ramandeep},
+  editor = {D Zone/Cloud Zone},
+  title  = {What is Docker?},
+  year   = {2018},
+  date   = {2018-04-16},
+  url    = {https://dzone.com/articles/what-is-docker-1},
 }
 
 @Electronic{DockerDevOps,
-  title = {Docker Datacenter Enables DevOps},
-  url   = {https://www.docker.com/use-cases/devops#/quote},
-}
-
-@Electronic{DockerFAQ,
-  title = {Frequently asked questions (FAQ)},
-  url   = {https://docs.docker.com/docker-for-windows/faqs/#can-i-use-virtualbox-alongside-docker-4-windows},
+  author = {Williams Alex},
+  editor = {Williams Alex},
+  title  = {Docker Datacenter Enables DevOps},
+  year   = {2014},
+  date   = {2014-05-06},
+  url    = {https://thenewstack.io/how-docker-fits-into-the-devops-ecosystem/},
 }
 
 @Electronic{ContainerVsVM,
-  title = {Containers are not VMs},
-  url   = {https://blog.docker.com/2016/03/containers-are-not-vms/},
+  author = {Coleman Mike},
+  editor = {Docker},
+  title  = {Containers are not VMs},
+  year   = {2016},
+  date   = {2018-03-24},
+  url    = {https://blog.docker.com/2016/03/containers-are-not-vms/},
 }
 
 @Electronic{WhatIsDevOps,
-  title = {What Is DevOps?},
-  url   = {https://theagileadmin.com/what-is-devops/},
+  author = {Mueller Ernest},
+  editor = {Mueller Ernest},
+  title  = {What Is DevOps?},
+  year   = {2017},
+  date   = {2017-07-24},
+  url    = {https://theagileadmin.com/what-is-devops/},
 }
 
 @Electronic{CemKaner2006,
-  title = {Exploratory Testing},
-  url   = {http://www.kaner.com/pdfs/ETatQAI.pdf},
+  author = {Cem Kaner},
+  editor = {Cem Kaner},
+  title  = {Exploratory Testing},
+  year   = {2006},
+  date   = {2006-11-17},
+  url    = {http://www.kaner.com/pdfs/ETatQAI.pdf},
 }
 
 @Article{Maes2017,
-  author  = {Jean-François Maes},
+  author  = {Maes Jean-François},
   title   = {Een introductie tot Docker, veelgemaakte fouten en hoe ze te voorkomen},
   journal = {Scriptie},
   year    = {2017},
@@ -105,23 +139,57 @@
 }
 
 @Electronic{DevOpsContainers,
-  title = {What Do Containers Have to Do with DevOps, Anyway?},
-  url   = {https://containerjournal.com/2017/01/11/containers-devops-anyway/},
+  author = {Tozzi Christopher},
+  editor = {Container Journal},
+  title  = {What Do Containers Have to Do with DevOps, Anyway?},
+  year   = {2017},
+  date   = {2017-01-11},
+  url    = {https://containerjournal.com/2017/01/11/containers-devops-anyway/},
 }
 
 @Electronic{DockerNumbers,
-  title = {Docker by the Numbers: DockerCon Shines Light on Containers in the Enterprise},
-  url   = {http://electric-cloud.com/blog/2017/05/docker-numbers-dockercon-shines-light-containers-enterprise/},
+  author = {Electric Cloud},
+  editor = {Electric Cloud},
+  title  = {Docker by the Numbers: DockerCon Shines Light on Containers in the Enterprise},
+  year   = {2017},
+  date   = {2017-05-01},
+  url    = {http://electric-cloud.com/blog/2017/05/docker-numbers-dockercon-shines-light-containers-enterprise/},
 }
 
 @Electronic{DockerEE,
-  title = {Docker Enterprise Edition (EE)},
-  url   = {https://www.docker.com/enterprise-edition},
+  author = {Saraswat Vivek},
+  editor = {Docker},
+  title  = {Announcing Docker Enterprise Edition 2.0},
+  year   = {2018},
+  date   = {2018-04-17},
+  url    = {https://blog.docker.com/2018/04/announcing-docker-enterprise-edition-2-0/},
 }
 
 @Electronic{DockerCE,
-  title = {Docker Community Edition},
-  url   = {https://www.docker.com/community-edition},
+  author = {Janetakis Nick},
+  editor = {Janetakis Nick},
+  title  = {Docker Community Edition},
+  year   = {2017},
+  date   = {2017-09-26},
+  url    = {https://nickjanetakis.com/blog/docker-community-edition-vs-enterprise-edition-and-their-release-cycle},
 }
 
-@Comment{jabref-meta: databaseType:bibtex;}
+@Electronic{EEvCE,
+  author = {Friis Michael},
+  editor = {Docker Community},
+  title  = {Announcing Docker Enterprise Edition},
+  year   = {2017},
+  date   = {2017-03-02},
+  url    = {https://blog.docker.com/2017/03/docker-enterprise-edition/},
+}
+
+@WWW{SecurityTestingStrategy,
+  author = {ThinkSys},
+  editor = {ThinkSys},
+  title  = {Strategies for Security Testing},
+  year   = {2017},
+  date   = {2017-06-29},
+  url    = {https://www.thinksys.com/qa-testing/strategies-for-security-testing/},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

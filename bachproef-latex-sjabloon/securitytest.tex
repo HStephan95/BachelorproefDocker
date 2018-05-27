@@ -5,5 +5,80 @@
 \chapter{Security test}
 \label{ch:securitytest}
 
-\lipsum[21-25]
+Dit hoofdstuk vergelijkt de verschillende manieren waarop beide besturingssystemen, Linux en Window, in staat zijn om hun systemen te beschermen. Deze security review vergelijkt welke industrie standaarden beide systemen kunnen implementeren om hun systemen te harden tegen aanvallen.
 
+Zoals eerder gezegd is een container automatisch veiliger dan een klassieke VM, doordat er een laag van isolatie ligt tussen de container en het besturingssysteem waarop het draait. Maar, als men toch via de container toegang zou kunnen verkrijgen tot het host systeem wat dan? Elk systeem is immers maar even sterk als zijn zwakste schakel. Dit werd ook bevestigd voor Solomon Hykes, CTO van Docker op DockerCon 2017 in Austin, USA op vlak van Linux beveiliging. Hij zei: "We denken dat Docker niet de verantwoordelijkheid is om Linux subsystemen te beveiligen. Sterker nog, we denken niet dat deze verantwoordelijkheid bij één bedrijf in het bijzonder moeten liggen. Linux us té groot and té belangrijk. Dus, daarom is het zó belangrijk dat veiligheid vanuit de community komt. En de community is goed bezig. Iedereen werkt samen, en niet elk in zijn donker hoekje".
+
+Het is daarom dat deze security review zal vertrekken vanuit de populairste veiligheidsopties voor het harden van een CentOS machine, en deze vergelijkt met equivalente opties voor Windows.
+
+\section{CentOS}
+\subsection{Linux containers}
+Als eerste werd er gekeken naar hoe Linux containers tot staan gebracht worden en hoe sterk het isolatie niveau ervan is.
+
+Zoals in de inleiding verteld hebben Linux containers hun eigen netwerk resources, geheugen geïsoleerde CPU, geheugen en I/O block. Maar, maken ze wel gebruik van dezelfde kernel als het host besturingssysteem. Dit zorgt ervoor dat containers licht en gestroomlijnd kunnen zijn containers. Maar, hierin zitten er sterktes en zwaktes.
+
+Om te beginnen is het veel moeilijker om diepe toegang te krijgen tot de hoogste mogelijke privileges bij een container. Dit is een direct gevolg van de isolatie die er is tussen de container en zijn host. Maar, als dit wel lukt is er een reëel probleem. De Linux Container deelt immers de kernel met zijn host systeem. Waardoor system calls een groot probleem is. Door een geminimaliseerde OS te gebruiken kan men dit probleem verlagen, maar niet verhelpen.
+
+Daarnaast is er wel het voordeel dat Root-toegang tot de container niet automatisch betekent dat je Root-toegang hebt op het host systeem. Maar, dan moet je wel oppassen met privileged containers. Deze worden wel standaard gebonden aan het host uid 0. Waardoor deze containers niet root-safe zijn, en ook niet root-safe kunnen gemaakt worden. Daarom maakt men best gebruik van Mandatory Access Control, zoals SELinux of AppArmor, seccomp filters en het laten vallen van namespaces.
+
+Vervolgens is er het probleem dat heeft Cgroups standaard geen limiet. Waardoor men makkelijk een Denial of Service-attack kan uitvoeren op een CentOS-systeem. Dit risico kan verlaagt worden door memory, cpu and pods aand te passen in de configuratie van lxc.cgroup.
+
+Ten slotte zijn aanvallers vaak vrij teleurgesteld als men in een container geraken. Want, best practise zegt: Geen data in containers. Waardoor de grootste reden om te aanvallen niet veel zal opleveren. Kijk immers maar naar de ransomware attacks die steeds populairder aan het worden zijn. Deze hebben als doen om data 'gevangen' te nemen tot het losgeld ervoor betaald is.
+
+\subsection{SELinux}
+SELinux of Security-Enhanced Linux gebruikt Linux Security Modules (LSM) om een Linux systeem te harden tegen aanvallen. De verschillende modules kunnen worden aan of uit gezet via een reeks van boolean. Daarnaast kan men ook handgemaakte waardes toevoegen aan deze lijst om ze te blokkeren of door te laten.
+
+SELinux bestaat uit onderwerpen zoals users of applicatie processen, objecten zoals bestanden en folders, en een set van regels. Deze regels bepalen wat er een onderwerp mag doen met een object.
+
+Voor Docker bestaat er ook een SEModule. Deze module moet eerst enabled worden via 'semodule -v -e docker'. Daarna dient Docker herstart te worden met de volgende waarde: --selinux-enabled. Deze waarde dient geplaatst te worden in docker.service configuratiebestand. Ten slotte dient men Docker herop te starten, waarna Docker altijd met SELinux enabled zal opstarten.
+
+De invloed van deze module is veelvoudig, de belangrijkste hiervan zijn:
+Beperken tot welke folders Docker toegang heeft, de 'privileged' Docker processen krijgen niet dezelfde privileges als andere privileged processen en via het 'docker run'-commando kan men de kernel mogelijkheden beperken door er '--cap-drop=' aan toe te voegen.
+
+Van alle tools die beschikbaar zijn om een Linux server te beveiligen is SELinux veruit de krachtigste. Maar, SELinux heeft wel een prijs te betalen voor al deze functionaliteit. De gebruikersvriendelijkheid ervan kun je op zijn minst 'moeilijk' noemen.
+
+Ondanks loont het om vaardig te worden in deze module.
+
+\subsection{Firewalld}
+Daarnaast kan men op CentOS Firewalld configureren om bepaalde poorten te openen of blokkeren. Want, in essentie gebruikt Firewalld gewoon IpTables met een XML-overlay. Wat het gebruik ervan veel vergemakkelijkt heeft. 
+
+Hiermee kan men dan de verschillende zones en poorten instellen die men wilt blokkeren of doorlaten. Maar, men kan ook gekende services toevoegen aan Firewalld. Waarbij deze automatisch de standaard poorten ervoor open of toe zet. Standaard is de zone 'public' en worden de meeste poorten geblokkeerd. 
+
+\subsection{Seccomp}
+Ten slotte kan men ook Secure Computing gebruiken (Seccomp) gebruiken. Hiermee kan men de system calls beperken dat een process kan maken. Hierdoor kan het systeem beschermt tegen hackers, wanneer ze system calls willen maken die niet eerder gedeclareerd zijn.
+
+Hoewel Seccomp in het verleden stroef was om te gebruiken, is het gebruik (Libseccomp) ervan sterk gegroeid. Door onder andere het toe voegen van BPF (Berkeley Packet Filters). BPF werd in het verleden gebruikt om netwerk pakketten te filteren, maar door het potentieel ervan groeide de potentiële toepassingen ervoor ook.
+
+Seccomp zijn voordelen liggen vooral in het blokkeren van system calls vanuit de containers naar het host systeem als deze niet van toepassingen zijn. Daardoor kunnen aanvallen vanuit de container end-points tegen gehouden worden.
+
+\section{Windows}
+\section{Hyper-V containers}
+Hyper-V Containers, zoals ze gebruikt word door Docker for Windows, verschilt op één belangrijke manieren van Linux Containers. Namelijk, Hyper-V containers gebruiken de base image om een VM aan te maken, door deze in de Hyper-V partition wrapper te steken. Waarna er in deze VM een Windows container wordt aangemaakt om de applicatie in te steken. Hierdoor is er een extra isolatielaag tussen de container en de kernel, namelijk de Hypervisor van de VM. Dit verhelpt veel van de problemen die de Linux Containers hebben op vlak van kwetsbaarheden.
+
+Maar, hier staat er wel een kost tegenover: dit zorgt er namelijk voor dat de Hyper-V containers in het algemeen groter zullen zijn dan Linux Containers en meer tijd zullen nodig hebben om opgezet te worden. Maar, doordat Hyper-V een type 1 Hypervisor is en dus rechtstreeks op de hardware draait, is de last niet al te groot.
+
+Ten slotte bestaat er ook het gevaar dat de VM crasht wanneer men in de container zit, en men niet meer uit de container boundaries kan geraken.
+
+\section{Integrity levels}
+Windows Integrity Levels (WIC) is het Windows equivalent van SELinux. Deze functie zat reeds al ingebouwd in Windows Vista. Waar het als doel had om objecten te beschermen, zoals: bestanden, printers en pipes. WIC werkt door de betrouwbaarheid van alle objecten en de interactie hiermee een waarde te geven, een level of trustworthiness. Als men een actie wilt uitvoeren op dit object, zal men het niveau op zijn minst moeten evenaren. WIC heeft een grotere prioriteit dan normale permissies.
+
+Er zijn in totaal zes niveaus die WIC kan geven aan objecten. Van hoog naar laag zijn dit: untrusted (anonieme processen), low (interactie met het internet), meduim (meest objecten, onder andere de shell), high (Administrators), system (system) of installer (speciaal voor .EXE's).
+
+Hoewel deze functie praktisch onopgemerkt is gegaan. Heeft dit de veiligheid van Windows wel sterk verbeterd. Want, hiervoor had Windows geen manier om aan Mandatory Access Control te doen.
+
+Helaas is er wel nog werk aan de winkel. Er is bijvoorbeeld een gebrek aan management of configuratie tool voor administrators en het systeem is ook niet feilloos. Zoals er in Vyacheslav Rusakov wordt aangetoond.
+
+\section{Windows Defender}
+Windows Defender is begonnen als een anti-spyware systeem, waarnaast men nog andere anti-virus functies moest installeren zoals Microsoft Security Essentials om een complete verdediging te hebben. Maar, sinds Windows 8 heeft het ook definitief deze rol overgenomen.
+
+Qua performantie krijgt Windows Defender gemengde reviews. Vooral de firewall van Windows Defender kan een last vormen op de CPU. Daardoor is de meest gezochte term voor Windows Defender hoe je het uitschakelt. Vaak is men beter af om een extra third-party systeem te gebruiken voor firewall. Zoals een PFSense of een WatchGuard.
+
+\subsection{ACL}
+Het Windows equivalent voor Seccomp is Windows Access Control Lists.
+
+De ACL bestaat uit een lijst van Access Control Entries (ACE's). Waarbij elke ACE een trustee aanduidt en bepaald welke Access Rights deze heeft.
+
+Helaas wordt het niet aangeraden om rechtstreeks met de inhoud van een ACL te werken. Er zijn functies en modules om deze te wijzigen, maar ook hier kan de administrator geen rechtstreekse invloed hebben op het systeem.
+
+\section{Conclusie}
+Linux heeft een meer hands-on aanpak voor zijn systemen te beveiligen, waarbij de administrator van het Linux-systeem veel zelf kan en moet bepalen. Maar, dit betekent wel dat de veiligheid van een Linux-opstelling even goed is als de kennis van zijn administrator. Wat ofwel ijzersterk is of gatenkaas. Windows daarentegen neemt veel controle van de administrator weg, en doet het voor hem. Dit betekent dat er een basisniveau is qua veiligheid. Maar, dat dit niveau ver onder het niveau van een Linux-opstelling kan liggen, als de administrator ervan weet wat hij hoort te doen.

@@ -25,9 +25,11 @@ Het zou namelijk een vergissing zijn om Docker zomaar te negeren als men de DevO
 \label{sec:devops-uitleg}
 DevOps is een samenstelling van de woorden ’Development’ en ’Operations’: ontwikkeling en beheer. Voorheen werkten deze IT-groeperingen strikt gescheiden, waardoor je ofwel bij de ene groep zat ofwel bij de andere. Dit zorgde ervoor dat, als men een applicatie wou maken, de developers deze dan eerst ontwikkelden, waarna de systeembeheerders de applicatie uitrolden. Als de systeembeheerders hierna nog problemen hadden met het uitrollen, verliep de communicatie veelal stroef. De applicatie werkte immers op de computers van de developers, dus waarom zou dat niet het geval zijn bij de systeembeheerders? Echter, aangezien beide groeperingen onvoldoende kennis hadden over elkaars werkveld, was er veel onbegrip.
 
-\begin{center}
-	\includegraphics[scale=0.5]{img/devopsmuur.jpg}
-\end{center}
+\begin{figure}
+	\caption{Links ziet men hoe de communicatie in klassieke ontwikkelomgevingen gebeurt, rechts in DevOps teams}
+	\includegraphics[scale=0.6]{img/devopsmuur.jpg}
+	\label{fig:devopsmuren}
+\end{figure}
 
 Als éénduidige definitie voor DevOps gebruikt met het acroniem 'CALMS'.
 \begin{itemize}[noitemsep]
@@ -129,16 +131,26 @@ Docker heeft deze groei ook verdiend door constant in contact te blijven met zij
 \subsubsection{Docker CE}
 Zoals eerder aangehaald is Docker Community Edition het originele platform waarmee Docker begonnen is. Het is ideaal voor kleinere teams of onafhankelijke developers die willen experimenteren met Container-technologie. Deze technologie is beschikbaar voor zowel Linux als Mac, waardoor het perfect is als kleine en snelle installatie waarmee men direct aan de slag kan gaan. Ten slotte, biedt het ook ondersteuning voor het uitrollen naar Cloud-omgevingen, zoals Amazone Web Services of Azure. 
 
-\subsubsection{Docker CE for Windows}
-Daarnaast heeft Docker ook een versie ontwikkeld specifiek gericht voor Developers die gebruik willen maken van Windows als ontwikkel platform. Docker CE for Windows maakt gebruik van dezelfde Daemon en Client als Docker CE. Maar, met een paar verschillen zoals: Docker CE for Windows maakt gebruik van de Windows-native Hyper-V Virtualisatie. Wat betekent dat de gebruiker een Windows 10 Pro edition nodig heeft of een Windows Server 2016. Daarnaast is de enige manier om Docker CE for Windows te installeren door gebruik te maken van een GUI installatie. Men kan gebruik maken van PowerShell commando's zoals Invoke-Webrequest. Maar, er is geen native commando voor. Ten slotte wordt docker-compose ook geïnstalleerd, naast Docker CE. Docker CE for Windows de versie die gebruikt werd voor de Windows opstelling.
-
-
 \subsubsection{Docker EE}
 Docker Enterprise Edition is het volledige pakket voor zij die op een professionele manier met een Containers-as-a-Serivce-platform willen werken. Docker EE is een geïntegreerd en getest platform voor Linux- of Windows Enterprise en Cloud-providers, met door Docker gecertificeerde componenten en ondersteuning. In het bijzonder is het voor datacenters een handig dashboard waar men de zogenaamde multi-architecture orchestration, secure software supply chain en infrastructure independence aangeboden krijgt. Vooral aan dat laatste heeft Docker extra veel aandacht besteed., met kenmerken zoals trusted delivery.
+
+\subsubsection{Docker for Windows}
+Daarnaast heeft Docker ook een versie ontwikkeld specifiek gericht voor Developers die gebruik willen maken van Windows als ontwikkel platform. Docker for Windows maakt gebruik van dezelfde Daemon en Client als Docker for Linux. Maar, met een paar verschillen zoals: Docker for Windows maakt gebruik van de Windows-native Hyper-V Virtualisatie. Wat betekent dat de gebruiker een Windows 8+ Pro edition of een Windows Server 2008+ nodig heeft. Aangezien alleen deze versies van Windows Hyper-V hebben. Daarnaast is de enige manier om Docker CE for Windows te installeren door gebruik te maken van een GUI installatie. Men kan gebruik maken van PowerShell commando's zoals Invoke-Webrequest. Maar, er is geen native PowerShell commando voor het installeren van Docker for Windows. Docker EE for Windows kan dan weer wel via de commandline geinstalleerd worden. Ten slotte, wordt docker-compose ook automatisch geïnstalleerd als men Docker CE for Windows installeert. Het maakt deel uit van het totaal pakket. Dit in tegenstelling tot Docker EE for Windows, waarbij docker-compose wél nog apart geïnstalleerd moet worden.
 
 \begin{center}
 	\includegraphics[scale=0.2]{img/dockerce.png}
 \end{center}
+
+\subsection{Linux Containers}
+Docker CE for Linux maakt gebruik van de technologie achter Linux Container voor het maken van zijn Docker Containers.
+
+Linux containers hebben hun eigen netwerk resources, geheugen geïsoleerde CPU, geheugen en I/O block. Maar, ze gebruiken wel dezelfde kernel als het host besturingssysteem. Hierdoor kunnen ze lichte en gestroomlijnde containers bouwen. Cgroups en Namespaces maakt dit mogelijk.
+
+\subsubsection{Cgroups}
+
+
+\subsubsection{Namespaces}
+
 
 \subsection{Hyper-V}
 Hyper-V is één van de technologie die gekozen werd om de twee servers, CentOS en Windows Server 2016, op te laten draaien. Dit is het Microsoft-platform voor het virtualiseren van hardware. Het maakt gebruik van hypervisor-gebaseerde virtualisatie technologie om de interactie tussen de virtuele machine en de hardware te voorzien. Hierdoor is men in staat om een andere computer te laten werken bovenop het host-besturingssysteem. De voornaamste componenten en hun functies van dit platform zijn:
@@ -211,6 +223,14 @@ Hyper-V is een type 1 Hypervisor. Dit betekent dat het opstarten van een virtuel
 \end{itemize}
 Daarnaast draait een type 1 Hypervisor ook direct op de hardware. Daarom worden ze ook wel 'native', 'bare metal' of 'embedded' Hypervisors genoemd.
 
+\subsection{Windows Job objects}
+=cgroups
+process grouping en resource controls
+
+\subsection{Silos}
+= namespaces
+isolation execution environment voor file system, geistry en object namespaces.
+
 \subsection{Virtual Box}
 Virtual Box is de tweede Hypervisor die ondersteund wordt in deze bachelorproef. Deze wordt ontwikkeld door Oracle Corporation, maar is wel een type 2 Hypervisor. Type 2 Hypervisors gedragen zich meer als een gewone software applicatie en worden daarom 'host' Hypervisors genoemd. Ze maken een abstractie van de verbinding met de hardware en moeten hiervoor requests sturen naar het host OS, net zoals gewone applicaties.
 
@@ -276,13 +296,11 @@ Bij software testing ligt de focus op kwaliteit in alle delen van de organisatie
 
 Verder zegt REF over software testing dat het een empirische en technische manier is om software of services te testen, doordat men op een objectieve manier kijkt naar de kwaliteit van een software of service. Dit is de voornaamste reden waarom voor deze methode gekozen is in deze bachelorproef. Daarnaast sluit het heel goed aan bij de principes van het DevOps manifesto.
 
-Meer specifiek wordt er gebruik gemaakt worden van performantie-, integratie- en veiligheidstesten.
+Meer specifiek wordt er gebruik gemaakt worden van performantie- en veiligheidstesten.
 
-Performantietesten zijn testen waarbij men gaat kijken hoe het systeem presteert wanneer het een bepaalde werkdruk moet verwerken, met de focus op snelheid, schaalbaarheid en stabiliteit. (PerformanceTesting)
+Performantietesten zijn testen waarbij men gaat kijken hoe het systeem presteert wanneer het een bepaalde werkdruk moet verwerken, met de focus op snelheid, schaalbaarheid en stabiliteit.
 
-Bij integratietesten ligt de focus op de datacommunicatie tussen de verschillende modules. In dit geval tussen Docker, het besturingssysteem van de host en de uitgerolde applicatie. (IntegrationTesting)
-
-Bij veiligheidstesten wordt er gekeken naar alle verschillende veiligheidsmaatregelen, en in hoeverre ze in staat zijn om de zwaktes van het systeem te beschermen. (SecurityTesting)
+Bij veiligheidstesten wordt er gekeken naar alle verschillende veiligheidsmaatregelen, en in hoeverre ze in staat zijn om de zwaktes van het systeem te beschermen.
 
 \begin{center}
 	\includegraphics[scale=0.5]{img/testingprocess.png}
@@ -308,7 +326,6 @@ De onderzoeksvragen die uit deze probleemstelling voortvloeien zijn de volgende:
 	\item Hoe vlot kan men een Docker-opstelling maken op een Windows-besturingssysteem tegenover een Linux-besturingssysteem?
 	\item Hoe is het gesteld met de documentatie voor Docker for Windows tegenover de bestaande documentatie voor Linux?
 	\item Hoe groot is de snelheidswinst bij Linux tegenover Windows?
-	\item Hoe goed is de technologie geïntegreerd met Hyper-V en met het Windows besturingssysteem in het algemeen?
 	\item Hoe is het gesteld met de veiligheid? Hoe pakt men deze aan vanuit een Windows administrator perspectief?
 \end{itemize}
 
@@ -332,8 +349,6 @@ In Hoofdstuk~\ref{ch:documentatie} wordt de documentatie van beide platformen be
 In Hoofdstuk~\ref{ch:opstelling} worden beide opstellingen bekeken en besproken, meer specifiek hoe het is om beide op te bouwen, en hoe het zit met gelijkenissen en verschillen.
 
 In Hoofdstuk~\ref{ch:performantietest} wordt gekeken naar het resultaat van de werklading dat beide systeem te verduren hebben gekregen en hoe ze beide gepresteerd hebben.
-
-In Hoofdstuk~\ref{ch:integratietest} wordt bekeken hoe goed de Docker-module integreert met het hostsysteem, welke resources Docker beschikbaar heeft op het systeem en hoe Docker hiervan gebruik maakt.
 
 In Hoofdstuk~\ref{ch:securitytest} worden de beschikbare veiligheidsmaatregelen voor Docker besproken binnen beide systemen en hoe effectief deze zijn.
 

@@ -32,6 +32,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         v.cpus = 2
     end
    
+    config.windows.halt_timeout = 15
+  
+    config.winrm.max_tries = 30
+  
     config.vm.boot_timeout = 420
     
     config.vm.hostname = "DockerForWinVM"
