@@ -1,0 +1,79 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {dutch}{}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Links ziet men hoe de communicatie in klassieke ontwikkelomgevingen gebeurt, rechts in DevOps-teams.}}{20}{figure.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces De DevOps manier van werken.}}{21}{figure.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces In onderstaande afbeeldingen ziet u het verschil tussen containers en VM's}}{22}{figure.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces De modules van Docker CE}}{26}{figure.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Hoe men te werk gaat bij software testing}}{31}{figure.2.5}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Het eerste deel van de configuratie van het Vagrantfile-bestand voor de Windows-opstelling}}{40}{figure.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Het tweede deel van de configuratie van het Vagrantfile-bestand voor de Windows-opstelling}}{41}{figure.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces De index-pagina van het voorbeeldproject wanneer de containers opgezet zijn.}}{41}{figure.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces De inhoud van het Chocolatey script}}{42}{figure.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces De inhoud van het eerste Docker script. Deze installeert Docker.}}{42}{figure.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces De inhoud van het tweede Docker script. Deze installeert Python en Pip, cre\IeC {\"e}ert een test-container en voegt de Firewall-regels toe}}{43}{figure.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Pip wordt aangeroepen om docker-compose te installeren.}}{43}{figure.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Hiermee worden de Docker Images opgehaald van de Cloud}}{43}{figure.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Het cre\IeC {\"e}eren van het Dockerfile-bestand en docker-compose-bestand. Alsook het opvullen van het Dockerfile-bestand.}}{44}{figure.5.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Het opvullen van het docker-compose-bestand. Alsook het aanroepen van 'docker-compose build' en 'docker-compose up -d'.}}{44}{figure.5.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Het eerste deel van de configuratie van het Vagrantfile-bestand voor de CentOS-opstelling.}}{45}{figure.5.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Het tweede deel van de configuratie van het Vagrantfile-bestand voor de CentOS-opstelling.}}{45}{figure.5.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Het eerste deel van de vereiste functies voor de CentOS-opstelling.}}{46}{figure.5.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Het tweede deel van de vereiste functies voor de CentOS-opstelling.}}{47}{figure.5.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Hier worden de Docker Images opgehaald.}}{47}{figure.5.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Hier wordt het Dockerfile- en docker-compose-bestand opgevuld. Waarna 'docker-compose build' en 'docker-compose up -d' wordt uitgevoerd.}}{48}{figure.5.16}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces De scatterplot voor de resulaten van 'time vagrant up' voor de CentOS-opstelling}}{50}{figure.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces De boxplot voor de resulaten van 'time vagrant up' voor de CentOS-opstelling}}{51}{figure.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces De scatterplot voor de resulaten van 'time vagrant provision' voor de CentOS-opstelling}}{52}{figure.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces De boxplot voor de resulaten van 'time vagrant provision' voor de CentOS-opstelling}}{52}{figure.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces De scatterplot voor de resulaten van 'time vagrant up' voor de Windows-opstelling}}{53}{figure.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces De boxplot voor de resulaten van 'time vagrant up' voor de Windows-opstelling}}{54}{figure.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces De scatterplot voor de resulaten van 'time vagrant provision' voor de Windows-opstelling}}{55}{figure.6.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces De boxplot voor de resulaten van 'time vagrant provision' voor de Windows-opstelling}}{55}{figure.6.8}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\contentsfinish 

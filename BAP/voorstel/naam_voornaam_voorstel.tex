@@ -1,0 +1,85 @@
+%==============================================================================
+% Sjabloon onderzoeksvoorstel bachelorproef
+%==============================================================================
+% Gebaseerd op LaTeX-sjabloon ‘Stylish Article’ (zie voorstel.cls)
+% Auteur: Jens Buysse, Bert Van Vreckem
+
+\documentclass[fleqn,10pt]{voorstel}
+
+%------------------------------------------------------------------------------
+% Metadata over het voorstel
+%------------------------------------------------------------------------------
+
+\JournalInfo{HoGent Bedrijf en Organisatie}
+\Archive{Bachelorproef 2017 - 2018} % Of: Onderzoekstechnieken
+
+%---------- Titel & auteur ----------------------------------------------------
+
+% TODO: geef werktitel van je eigen voorstel op
+\PaperTitle{Docker for Windows Server}
+\PaperType{Onderzoeksvoorstel Bachelorproef} % Type document
+
+% TODO: vul je eigen naam in als auteur, geef ook je emailadres mee!
+\Authors{Stephan Heirbaut\textsuperscript{1} Gert Schepens\textsuperscript{2}} % Authors
+%\CoPromotor{Piet Pieters\textsuperscript{2}}
+\affiliation{\textbf{Contact:}
+  \textsuperscript{1} \href{mailto:stephan.heirbaut.w1409@student.hogent.be}{stephan.heirbaut.w1409@student.hogent.be};
+  \textsuperscript{2} \href{mailto:schepens.gert@gmail.com}{schepens.gert@gmail.com};
+}
+
+%---------- Abstract ----------------------------------------------------------
+
+\Abstract{ Docker for Windows Server 2016 is beschikbaar sinds september 2016, maar het heeft nog geen doorbraak gehad bij de DevOps. Dit ondanks het feit dat het een krachtige tool is voor hen, zeker als men ook een Microsoft Certified Partner wil zijn. Het voorstel van deze bachelorproef is om een onderzoek uit te voeren naar hoe krachtig Docker kan zijn op een Windows Server 2016, teneinde zo meer opties te hebben om deze technologie te deployen. Er zal dus een opstelling gebeuren van een Windows Server 2016 en een CentOS server met Docker, waarbij beiden de taak zullen krijgen om dezelfde applicaties te deployen. De verwachting is dat Docker het op beide platformen er even goed van af brengt, maar ook dat er zeker nog werk aan de winkel is op vlak van documentatie. DevOps is namelijk een groeiend principe, en terecht. Hoe meer opties zij dus hebben, hoe beter.
+}
+
+%---------- Onderzoeksdomein en sleutelwoorden --------------------------------
+% TODO: Sleutelwoorden:
+%
+% Het eerste sleutelwoord beschrijft het onderzoeksdomein. Je kan kiezen uit
+% deze lijst:
+%
+% - Mobiele applicatieontwikkeling
+% - Webapplicatieontwikkeling
+% - Applicatieontwikkeling (andere)
+% - Systeembeheer
+% - Netwerkbeheer
+% - Mainframe
+% - E-business
+% - Databanken en big data
+% - Machineleertechnieken en kunstmatige intelligentie
+% - Andere (specifieer)
+%
+% De andere sleutelwoorden zijn vrij te kiezen
+
+\Keywords{Systeem- en netwerkbeheer. Docker --- Windows Server 2016 --- Linux} % Keywords
+\newcommand{\keywordname}{Sleutelwoorden} % Defines the keywords heading name
+
+%---------- Titel, inhoud -----------------------------------------------------
+
+\begin{document}
+
+\flushbottom % Makes all text pages the same height
+\maketitle % Print the title and abstract box
+\tableofcontents % Print the contents section
+\thispagestyle{empty} % Removes page numbering from the first page
+
+%------------------------------------------------------------------------------
+% Hoofdtekst
+%------------------------------------------------------------------------------
+
+% De hoofdtekst van het voorstel zit in een apart bestand, zodat het makkelijk
+% kan opgenomen worden in de bijlagen van de bachelorproef zelf.
+\input{voorstel-inhoud}
+
+%------------------------------------------------------------------------------
+% Referentielijst
+%------------------------------------------------------------------------------
+% TODO: de gerefereerde werken moeten in BibTeX-bestand ``voorstel.bib''
+% voorkomen. Gebruik JabRef om je bibliografie bij te houden en vergeet niet
+% om compatibiliteit met Biber/BibLaTeX aan te zetten (File > Switch to
+% BibLaTeX mode)
+
+\phantomsection
+\printbibliography[heading=bibintoc]
+
+\end{document}

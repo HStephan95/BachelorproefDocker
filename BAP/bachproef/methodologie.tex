@@ -1,0 +1,34 @@
+%%=============================================================================
+%% Methodologie
+%%=============================================================================
+
+\chapter{Methodologie}
+\label{ch:methodologie}
+
+%% TODO: Hoe ben je te werk gegaan? Verdeel je onderzoek in grote fasen, en
+%% licht in elke fase toe welke stappen je gevolgd hebt. Verantwoord waarom je
+%% op deze manier te werk gegaan bent. Je moet kunnen aantonen dat je de best
+%% mogelijke manier toegepast hebt om een antwoord te vinden op de
+%% onderzoeksvraag.
+
+In dit hoofdstuk wordt uitgelegd hoe er te werk is gegaan. Elke titel stelt een grote fase voor in deze bachelorproef. Er wordt kort toegelicht welke stappen er ondernomen zijn in deze fasen en vooral waarom.
+
+\section{Literatuurstudie}
+Het startpunt van deze bachelorproef was een literatuurstudie over Docker for Windows, waarvan het resultaat zichtbaar is in de inleiding. Specifiek werd opgezocht hoe Docker werkt en welke requirements nodig zijn om het succesvol te installeren op een Windows Server 2016 en CentOS 7.4.
+
+\section{Bekijken van documentatie}
+Vervolgens werd de verzamelde documentatie voor beide omgevingen bekeken en beoordeeld op volledigheid. Op basis van deze gegevens werd een conclusie getrokken.
+
+\section{Opzetten van de servers}
+Hierna werd een Windows Server 2016 en CentOS 7.4 gemaakt met op beide Docker geïnstalleerd, door middel van Vagrant en PowerShell voor Windows Server, en Bash voor CentOS. Op deze twee omgevingen werden uiteindelijk ook de software tests uitgevoerd. Deze omgevingen werden daarna geüpload op GitHub zodat de code vrij beschikbaar was voor iedereen.
+
+\section{Uitvoeren van de verschillende tests}
+Nadat het opstellen van beide omgevingen was afgerond en de systemen volledig automatisch vanaf nul naar draaiend konden worden gebracht aan de hand van een werkende applicatie, werden op beide 2 manieren van software testing uitgevoerd, namelijk:
+\begin{itemize}[noitemsep]
+	\item Performance testing
+	\item Security testing
+\end{itemize}
+Deze manieren werden verschillende malen uitgevoerd, zodat het populatiegemiddelde groot genoeg was om een kleinere invloed te ondervinden van outliers.
+
+\section{Vergelijkende studie uitvoeren}
+Ten slotte werden alle resultaten van de testresultaten verzameld en verwerkt, om het gemiddelde, de variantie en de standaardafwijking te verkrijgen. Deze waarden werden nadien gebruikt om een grafische weergave te creëren van de resultaten.

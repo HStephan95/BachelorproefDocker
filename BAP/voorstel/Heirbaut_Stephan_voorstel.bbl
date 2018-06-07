@@ -1,0 +1,197 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Container2016}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=f2d25961e4d509fbf864407ccec9ce89}{%
+           family={Barillas},
+           familyi={B\bibinitperiod},
+           given={Ender},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Microsoft}%
+      }
+      \strng{namehash}{f2d25961e4d509fbf864407ccec9ce89}
+      \strng{fullhash}{f2d25961e4d509fbf864407ccec9ce89}
+      \strng{bibnamehash}{f2d25961e4d509fbf864407ccec9ce89}
+      \strng{authorbibnamehash}{f2d25961e4d509fbf864407ccec9ce89}
+      \strng{authornamehash}{f2d25961e4d509fbf864407ccec9ce89}
+      \strng{authorfullhash}{f2d25961e4d509fbf864407ccec9ce89}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Een uitgebreide gids door Windows voor Windows Containers}
+      \field{title}{Windows Containers on Windows Server}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-server
+      \endverb
+      \verb{url}
+      \verb https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-server
+      \endverb
+    \endentry
+    \entry{Salman2016}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=fa77fb0bc775765217f8a960d0f8286e}{%
+           family={Baset},
+           familyi={B\bibinitperiod},
+           given={Salman},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fa77fb0bc775765217f8a960d0f8286e}
+      \strng{fullhash}{fa77fb0bc775765217f8a960d0f8286e}
+      \strng{bibnamehash}{fa77fb0bc775765217f8a960d0f8286e}
+      \strng{authorbibnamehash}{fa77fb0bc775765217f8a960d0f8286e}
+      \strng{authornamehash}{fa77fb0bc775765217f8a960d0f8286e}
+      \strng{authorfullhash}{fa77fb0bc775765217f8a960d0f8286e}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In deze paper worden de voordelen van Docker op vlak van beveiliging besproken.}
+      \field{day}{15}
+      \field{month}{7}
+      \field{title}{Docker and Container Security White Paper}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://domino.watson.ibm.com/library/CyberDig.nsf/1e4115aea78b6e7c85256b360066f0d4/040f7f7d5e62f0e58525804500433733!OpenDocument&Highlight=0,RC25625
+      \endverb
+      \verb{url}
+      \verb http://domino.watson.ibm.com/library/CyberDig.nsf/1e4115aea78b6e7c85256b360066f0d4/040f7f7d5e62f0e58525804500433733!OpenDocument&Highlight=0,RC25625
+      \endverb
+    \endentry
+    \entry{Boettiger2014}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=b23d21a39d596cb65c7411216d994660}{%
+           family={Boettiger},
+           familyi={B\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b23d21a39d596cb65c7411216d994660}
+      \strng{fullhash}{b23d21a39d596cb65c7411216d994660}
+      \strng{bibnamehash}{b23d21a39d596cb65c7411216d994660}
+      \strng{authorbibnamehash}{b23d21a39d596cb65c7411216d994660}
+      \strng{authornamehash}{b23d21a39d596cb65c7411216d994660}
+      \strng{authorfullhash}{b23d21a39d596cb65c7411216d994660}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Een paper voor het gebruiken van Docker voor het maken van repliceerbare omgeving voor onderzoek in uit te voeren.}
+      \field{day}{2}
+      \field{month}{10}
+      \field{title}{An introduction to Docker for reproducible research, with examples from the R environment}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1410.0846
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1410.0846
+      \endverb
+    \endentry
+    \entry{Docker2016}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=c5fd214cdd0d2b3b4272e73b022ba5c2}{%
+           family={Docker},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{fullhash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{bibnamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authorbibnamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authornamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authorfullhash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{De officiële website van Docker met een lijst van alle features van Docker voor Windows Server 2016.}
+      \field{day}{26}
+      \field{month}{9}
+      \field{title}{Docker for Windows Server}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.docker.com/docker-windows-server#/
+      \endverb
+      \verb{url}
+      \verb https://www.docker.com/docker-windows-server#/
+      \endverb
+    \endentry
+    \entry{Friis2016}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=4cb76675ea00527e319bab41ca73d897}{%
+           family={Friis},
+           familyi={F\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4cb76675ea00527e319bab41ca73d897}
+      \strng{fullhash}{4cb76675ea00527e319bab41ca73d897}
+      \strng{bibnamehash}{4cb76675ea00527e319bab41ca73d897}
+      \strng{authorbibnamehash}{4cb76675ea00527e319bab41ca73d897}
+      \strng{authornamehash}{4cb76675ea00527e319bab41ca73d897}
+      \strng{authorfullhash}{4cb76675ea00527e319bab41ca73d897}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Een uitgebreide blog-post over het opzetten van een Docker omgeving op Windows Server 2016.}
+      \field{day}{26}
+      \field{month}{9}
+      \field{title}{Introducing Docker for Windows Server 2016}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://blog.docker.com/2016/09/dockerforws2016/
+      \endverb
+      \verb{url}
+      \verb https://blog.docker.com/2016/09/dockerforws2016/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,45 @@
+%%=============================================================================
+%% Documentatie
+%%=============================================================================
+
+\chapter{Documentatie}
+\label{ch:documentatie}
+
+Docker is al enkele jaren beschikbaar voor Linux en in die tijdspanne hebben de verschillende gebruikers van het systeem al gretig onderzocht hoe ze deze nieuwe technologie het beste kunnen gebruiken. Echter, nog belangrijker is dat de gebruikers ook documenteren wat ze doen en hoe ze bepaalde resultaten behalen, bijvoorbeeld via blogs of issues op GitHub. Hierdoor wordt er niet alleen een indrukwekkende hoeveelheid documentatie gecreëerd over het Docker systeem, maar verlaagt ook de instapdrempel voor nieuwe gebruikers. Tezamen met de officiële documentatie die Docker zelf voorziet, kan men vorm geven aan een reeks van best practices om optimaal gebruik te maken van Docker. In dit hoofdstuk wordt er gekeken in hoeverre Microsoft, Docker en hun gebruikers al in staat zijn om de literaire kloof te dichten in vergelijking met Linux.
+
+\section{Requirements}
+Er is weinig info te vinden over de vereisten die nodig zijn om Docker met succes te installeren en uit te voeren.
+
+Voor CentOS komt dit neer op drie lijnen tekst die eisen dat men gebruik maakt van een maintained version, dat 'centos-extras' repository enabled is en dat men gebruik maakt van de 'overlay2' storage driver. \autocite{Docker2018a}
+
+Windows is op dit vlak een klein beetje beter. Het heeft een hele pagina speciaal toegewijd aan de installatie van Docker, waarin één hoofdstuk beschrijft wat er specifiek nodig is om Docker te installeren: Hyper-V enabled, virtualisatie in de BIOS aanzetten, 64bit Windows 10 Pro, Enterprise en Education of Windows Server 2016 en een beschrijving van hoe de container zou werken met andere gebruikers en parallel instances. \autocite{Docker2018}
+
+\section{Installatie}
+Docker installeren is ook heel verschillend op beide systemen, wat op zich niet zo verbazend is gezien het verleden van beide apparaten.
+
+Voor CentOS focust men puur op de command-line interface. Dit is ook logisch, aangezien er bij de basisinstallatie van CentOS geen GUI inbegrepen is. Daarom gaat Docker er meteen van uit dat men gebruik zal maken van Bash, wat een CLI is. De gids die Docker hiervoor aanbiedt is ook vrij compleet. Men vertrekt zelfs vanuit het idee dat de gebruiker al een oudere versie kan hebben staan, met als gevolg dat het ook Bash-commando's installeert die eerst de oude versie verwijderen en vervolgens vanaf nul alle nodige stappen ondernemen. \autocite{Mays2015}
+
+Ook hierin verschilt Windows sterk. Docker gaat er bij het Windows-platform van uit dat men gebruik wil maken van de GUI en biedt bijkomend de mogelijkheid om de installatie via PowerShell te laten gebeuren, wat ook een CLI is. Normaal gesproken zou het een bonus moeten zijn dat er twee verschillende benaderingsmethodes zijn, maar in dit geval is het eerder een nadeel omdat de focus op de GUI ligt. Dit is een minpunt omdat de meeste gebruikers zich liever focussen op automatisatie, wat bij de GUI geen optie is. Verder is dit ook een rare keuze, aangezien PowerShell een moderne en flexibele taal is omdat het met objecten werkt. Dit zou het beheren van de Docker-applicatie moeten vergemakkelijken, wat niet het geval is. \autocite{Rickard2018}
+
+\section{Container tot stand brengen}
+De installatie van een container vereist bij de beide platformen grotendeels dezelfde logica, namelijk via Docker-commando's. Het enige verschil is het aanmaken, invullen en uitlezen van de Dockerfile.
+
+Zoals eerder aangehaald maakt CentOS gebruik van Bash om Docker te installeren. Deze trend zet zich ook voort bij het aanmaken van de Dockerfile. De in- en uitvoer van Bash is tekstgebaseerd, wat uitstekend past bij de vereiste voor het succesvol uitvoeren van een Dockerfile, namelijk Docker-commando's. \autocite{Cezar2016}
+
+Voor Windows maakt Docker gebruik van PowerShell om de Dockerfile aan te maken. Zodoende kan men in de CLI-omgeving blijven en daarin verder werken nadat het bestand is aangemaakt. Zoals eerder aangehaald maakt PowerShell gebruik van objecten, C\# om precies te zijn. Om een tekstbestand aan te maken, zoals een Dockerfile, is dit geen probleem, maar het is wel spijtig dat Docker hier niet beter gebruik van maakt. \autocite{Rickard2018}
+
+\section{Automatisatie}
+Rekening houdend met de doelgroep van deze bachelorproef is automatisatie zeker geen punt dat genegeerd mag worden. Automatisatie is immers één van de pijlers van DevOps.
+
+CentOS heeft hierbij een streepje voor. Aangezien Docker meteen vertrekt vanuit Bash, dient men alleen deze commando's nog in een script te steken met de extensie .sh of .bash en dit vervolgens aan te roepen. \autocite{Mays2015}
+
+Ook hier is het wat moeilijker voor Windows. Een groot struikelblok is namelijk dat de nadruk minder op automatisatie ligt en meer op GUI, waardoor automatiseren moeilijker gaat. Echter, het grootste struikelblok is dat het Windows-platform een heropstart vereist na de installatie van Docker. Via plug-ins en scripting kan men hier nog rond werken, maar het maakt de automatisatie wel wat moeilijker. \autocite{Rickard2018}
+
+\section{Conclusie}
+De voornaamste informatiebron, zowel voor Docker for Windows als voor CentOS, is de documentatie op de officiële websites van Docker, RedHat en Microsoft. Docker en Microsoft doen hun best om de literaire kloof te sluiten, in tegenstelling tot CentOS. Zowel Docker als Microsoft proberen hierbij gretig gebruik te maken van hun communities om artikels te publiceren die door gebruikers worden geschreven of aangepast. Op deze manier hopen ze om het platform te promoten, zodat toekomstige gebruikers in staat zijn om hun eigen Docker-omgeving op te starten.
+
+Ondanks deze inhaalbeweging gaat de meeste documentatie er nog steeds van uit dat men Docker wil draaien op Linux. Aangezien Docker voor Linux al beschikbaar is sinds 13 maart 2013 en pas recent voor Windows (22 februari 2017) is dit ook geen verrassing.
+
+Het voordeel hiervan is wel dat de documentatie voor Docker for Windows vaker up-to-date is, omdat deze pas recent geschreven is en dan nog vaak door mensen die doorheen de jaren meegegroeid zijn met de technologie. Hoewel Container-technologie al lang bestaat, is het gebruik ervan tot recent vrij onbestaand geweest. Hierdoor heeft Docker for Windows de eerste moeilijke jaren van het uitzoeken naar een gepaste werkwijze vermeden. 
+
+Ten slotte is er wel één groot voordeel betreffende de documentatie voor Docker for Linux, namelijk troubleshooting. Doordat er al meer mee geëxperimenteerd is, zijn er al oplossingen gevonden voor verschillende problemen. Dit is van onschatbare waarde voor de CentOS-opstelling en is tegelijkertijd een hekelpunt voor de Windows-opstelling.

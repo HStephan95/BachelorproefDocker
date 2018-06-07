@@ -1,0 +1,695 @@
+% Encoding: UTF-8
+
+@book{Pollefliet2011,
+  author = {Pollefliet, Leen},
+  title = {Schrijven van verslag tot eindwerk: do's en don'ts},
+  year = {2011},
+  publisher = {Academia Press},
+  address = {Gent}
+}
+
+@Electronic{Ernest2017,
+  author = {Mueller Ernest},
+  editor = {Mueller Ernest},
+  title  = {What Is DevOps?},
+  year   = {2017},
+  date   = {2017-07-24},
+  url    = {https://theagileadmin.com/what-is-devops/},
+}
+
+@Electronic{Steven2018,
+  author = {Vaughan-Nichols J. Steven},
+  editor = {Linux and Open Source},
+  title  = {What is Docker and why is it so darn popular?},
+  year   = {2018},
+  date   = {2018-03-21},
+  url    = {https://www.zdnet.com/article/what-is-docker-and-why-is-it-so-darn-popular/},
+}
+
+@Electronic{Maurice2018,
+  author = {Siteur Maurice},
+  editor = {Siteur Maurice},
+  title  = {Software testing terminologies explained},
+  year   = {2018},
+  date   = {2018-04-05},
+  url    = {https://www.capgemini.com/2018/04/software-testing-terminologies-explained/#},
+}
+
+@WWW{ThinkSys2017,
+  author = {ThinkSys},
+  editor = {ThinkSys},
+  title  = {Strategies for Security Testing},
+  year   = {2017},
+  date   = {2017-06-29},
+  url    = {https://www.thinksys.com/qa-testing/strategies-for-security-testing/},
+}
+
+@Electronic{Mark2012,
+  author = {Hrynczak Mark},
+  editor = {Hrynczak Mark},
+  title  = {13 Steps to Learn \& Perfect Security Testing in your Org},
+  year   = {2012},
+  date   = {2012-01-18},
+  url    = {https://www.atlassian.com/blog/archives/13-steps-to-learn-perfect-security-testing-in-your-org},
+}
+
+@Electronic{Noga2016,
+  author = {Cohen Noga},
+  editor = {Cohen Noga},
+  title  = {Performance Testing vs. Load Testing vs. Stress Testing},
+  year   = {2016},
+  date   = {2016-12-01},
+  url    = {https://www.blazemeter.com/blog/performance-testing-vs-load-testing-vs-stress-testing},
+}
+
+@Article{Maes2017,
+  author  = {Maes Jean-François},
+  title   = {Een introductie tot Docker, veelgemaakte fouten en hoe ze te voorkomen},
+  journal = {Scriptie},
+  year    = {2017},
+}
+
+@Book{Knuth1998,
+  author    = {Knuth, Donald E.},
+  title     = {The art of computer programming, volume 3: (2nd ed.) sorting and searching},
+  year      = {1998},
+  publisher = {Addison Wesley Longman Publishing Co., Inc.},
+  address   = {Redwood City, CA, USA},
+}
+
+@Electronic{Michael2017,
+  author = {Friis Michael},
+  editor = {Docker Community},
+  title  = {Announcing Docker Enterprise Edition},
+  year   = {2017},
+  date   = {2017-03-02},
+  url    = {https://blog.docker.com/2017/03/docker-enterprise-edition/},
+}
+
+@Electronic{Cloud2017,
+  author = {Electric Cloud},
+  editor = {Electric Cloud},
+  title  = {Docker by the Numbers: DockerCon Shines Light on Containers in the Enterprise},
+  year   = {2017},
+  date   = {2017-05-01},
+  url    = {http://electric-cloud.com/blog/2017/05/docker-numbers-dockercon-shines-light-containers-enterprise/},
+}
+
+@Electronic{Vivek2018,
+  author = {Saraswat Vivek},
+  editor = {Docker},
+  title  = {Announcing Docker Enterprise Edition 2.0},
+  year   = {2018},
+  date   = {2018-04-17},
+  url    = {https://blog.docker.com/2018/04/announcing-docker-enterprise-edition-2-0/},
+}
+
+@Electronic{Alex2014,
+  author = {Williams Alex},
+  editor = {Williams Alex},
+  title  = {Docker Datacenter Enables DevOps},
+  year   = {2014},
+  date   = {2014-05-06},
+  url    = {https://thenewstack.io/how-docker-fits-into-the-devops-ecosystem/},
+}
+
+@Electronic{Preethi2016,
+  author = {Kasireddy Preethi},
+  editor = {freeCodeCamp},
+  title  = {What is a container?},
+  year   = {2016},
+  date   = {2016-05-04},
+  url    = {https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b},
+}
+
+@Electronic{Nick2017,
+  author = {Janetakis Nick},
+  editor = {Janetakis Nick},
+  title  = {Docker Community Edition},
+  year   = {2017},
+  date   = {2017-09-26},
+  url    = {https://nickjanetakis.com/blog/docker-community-edition-vs-enterprise-edition-and-their-release-cycle},
+}
+
+@Electronic{Ramandeep2018,
+  author = {Kaur Ramandeep},
+  title  = {What is Docker},
+  year   = {2018},
+  date   = {2018-04-16},
+  url    = {https://dzone.com/articles/what-is-docker-1},
+}
+
+@Electronic{Christopher2017,
+  author = {Tozzi Christopher},
+  editor = {Container Journal},
+  title  = {What Do Containers Have to Do with DevOps, Anyway?},
+  year   = {2017},
+  date   = {2017-01-11},
+  url    = {https://containerjournal.com/2017/01/11/containers-devops-anyway/},
+}
+
+@Electronic{Mike2016,
+  author = {Coleman Mike},
+  editor = {Docker},
+  title  = {Containers are not VMs},
+  year   = {2016},
+  url    = {https://blog.docker.com/2016/03/containers-are-not-vms/},
+}
+
+@Electronic{CemKaner2006,
+  author = {Cem Kaner},
+  editor = {Cem Kaner},
+  title  = {Exploratory Testing},
+  year   = {2006},
+  date   = {2006-11-17},
+  url    = {http://www.kaner.com/pdfs/ETatQAI.pdf},
+}
+
+@Article{Cassaert2017,
+  author  = {Cassaert Thomas},
+  title   = {Docker security en orchestration},
+  journal = {Scriptie},
+  year    = {2017},
+}
+
+@Book{Grubor2017,
+  author = {Sdrjan Grubor},
+  title  = {Deployment with Docker},
+  year   = {2017},
+  date   = {2017-11-01},
+}
+
+@Book{Krochmalski2017,
+  author = {Jaroslaw Krochmalski},
+  title  = {Docker and Kubernetes for Java Developers},
+  year   = {2017},
+  date   = {2017-08-01},
+}
+
+@Book{Felsen2017,
+  author = {Nathaniel Felsen},
+  title  = {Effective DevOps with AWS},
+  year   = {2017},
+  date   = {2018-07-01},
+}
+
+@Book{Giridhar2017,
+  author = {Chetan Giridhar},
+  title  = {Automate it!},
+  year   = {2017},
+  date   = {2017-01-01},
+}
+
+@Report{Baset2016,
+  author      = {Salman Baset},
+  title       = {Docker and Container Security White Paper},
+  type        = {resreport},
+  institution = {IBM},
+  year        = {2016},
+}
+
+@Book{Docker2016,
+  author = {Docker},
+  title  = {Docker for the Virtualization Admin},
+  year   = {2016},
+}
+
+@Online{Wang2017,
+  author = {Chenxi Wang},
+  editor = {InfoWorld},
+  title  = {What is Docker? Linux containers explained},
+  year   = {2017},
+  date   = {2017-06-29},
+  url    = {https://www.infoworld.com/article/3204171/linux/what-is-docker-linux-containers-explained.html},
+}
+
+@Online{Hoffman2014,
+  author = {Chriss Hoffman},
+  editor = {How To Geek},
+  title  = {What You Need to Know About Creating System Image Backups},
+  year   = {2014},
+  date   = {2014-06-29},
+  url    = {https://www.howtogeek.com/192115/what-you-need-to-know-about-creating-system-image-backups/},
+}
+
+@Online{Barbetitini2016,
+  author = {Nate Barbetitini},
+  editor = {Stormpath},
+  title  = {Tutorial: Deploy an ASP.NET Core Application on Linux with Docker},
+  year   = {2016},
+  date   = {2016-07-21},
+  url    = {https://stormpath.com/blog/tutorial-deploy-asp-net-core-on-linux-with-docker},
+}
+
+@Online{Jones2017,
+  author = {John Alexander Maira Wenzel Mike Jones},
+  editor = {Microsoft},
+  title  = {Learn Docker Basics with .NET Core},
+  year   = {2017},
+  date   = {2017-06-11},
+  url    = {https://docs.microsoft.com/en-us/dotnet/core/docker/docker-basics-dotnet-core},
+}
+
+@Online{Roman2016,
+  author = {Pierre Roman},
+  editor = {Canitpro.net},
+  title  = {Step-by-Step: Setup Docker on your Windows 2016 Server},
+  year   = {2016},
+  date   = {2016-10-26},
+  url    = {https://blogs.technet.microsoft.com/canitpro/2016/10/26/step-by-step-setup-docker-on-your-windows-2016-server/},
+}
+
+@Online{Nagorcka-Smith2013,
+  author = {Aidan Nagorcka-Smith},
+  editor = {GitHub},
+  title  = {Vagrant Reload Provisioner},
+  year   = {2013},
+  date   = {2013-10-15},
+  url    = {https://github.com/aidanns/vagrant-reload},
+}
+
+@Online{Hilton2017,
+  author = {Floyd Hilton},
+  editor = {Floyd Hilton},
+  title  = {Understanding Docker "Container Host" vs. "Container OS" for Linux and Windows Containers},
+  year   = {2017},
+  date   = {2017-03-31},
+  url    = {http://www.floydhilton.com/docker/2017/03/31/Docker-ContainerHost-vs-ContainerOS-Linux-Windows.html},
+}
+
+@Online{Rickard2018,
+  author = {Josh Rickard},
+  editor = {4sysops},
+  title  = {Install Docker and run containers on Windows},
+  year   = {2018},
+  date   = {2018-01-03},
+  url    = {https://4sysops.com/archives/install-docker-and-run-containers-on-windows/},
+}
+
+@Online{Cooley2018,
+  author = {Sarah Cooley},
+  editor = {Microsoft},
+  title  = {Introduction to Hyper-V on Windows 10},
+  year   = {2018},
+  date   = {2018-04-07},
+  url    = {https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/},
+}
+
+@Online{Terry2018,
+  author = {Sarah Cooley Justin Terry Hannah Juarez},
+  editor = {Microsoft},
+  title  = {Hyper-V Architecture},
+  year   = {2018},
+  date   = {2018-01-11},
+  url    = {https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-architecture},
+}
+
+@Online{Baker2018,
+  author = {Ian Milligan James Baker},
+  editor = {The Programming Historian},
+  title  = {Introduction to the Bash Command Line},
+  year   = {2018},
+  date   = {2018-05-16},
+  url    = {https://programminghistorian.org/en/lessons/intro-to-bash},
+}
+
+@Online{Billemont2018,
+  author = {Maarten Billemont},
+  editor = {Maarten Billemont},
+  title  = {What is bash, and where does it live?},
+  year   = {2018},
+  date   = {2018-05-16},
+  url    = {https://guide.bash.academy/inception/},
+}
+
+@Online{Janetakis2017,
+  author = {Nick Janetakis},
+  editor = {Nick Janetakis},
+  title  = {Differences between a Dockerfile, Docker Image and Docker Container},
+  year   = {2017},
+  date   = {2017-08-08},
+  url    = {https://nickjanetakis.com/blog/differences-between-a-dockerfile-docker-image-and-docker-container},
+}
+
+@Online{TutorialsPoint2018,
+  author = {TutorialsPoint},
+  editor = {TutorialsPoint},
+  title  = {Docker - Images},
+  year   = {2018},
+  url    = {https://www.tutorialspoint.com/docker/docker_images.htm},
+}
+
+@Online{Uhrig2014,
+  author = {Thomas Uhrig},
+  editor = {Alex Telon},
+  title  = {What is the difference between a Docker image and a container?},
+  year   = {2014},
+  date   = {2014-05-19},
+  url    = {https://stackoverflow.com/questions/23735149/what-is-the-difference-between-a-docker-image-and-a-container},
+}
+
+@Online{OSTezer2013,
+  author = {OSTezer},
+  editor = {DigitalOcean},
+  title  = {Docker Explained: Using Dockerfiles to Automate Building of Images},
+  year   = {2013},
+  date   = {2013-12-13},
+  url    = {https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images},
+}
+
+@Online{Anderson2017,
+  author = {Melissa Anderson},
+  editor = {DigitalOcean},
+  title  = {How To Remove Docker Images, Containers, and Volumes},
+  year   = {2017},
+  date   = {2017-12-21},
+  url    = {https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes},
+}
+
+@Online{Pichardo2014,
+  author = {Denny Pichardo},
+  editor = {The Wondrous Life of a Software Architect},
+  title  = {Provisioning Vagrant Windows Environments with PowerShell Desired State Configuration},
+  year   = {2014},
+  date   = {2014-12-02},
+  url    = {https://dennypc.wordpress.com/2014/12/02/vagrant-provisioning-powershell-dsc/},
+}
+
+@Online{xlegalles2017,
+  author = {xlegalles},
+  editor = {GitHub},
+  title  = {Support Windows Nano Server},
+  year   = {2017},
+  url    = {https://github.com/chocolatey/choco/issues/1371},
+}
+
+@Online{Siron2017,
+  author = {Eric Siron},
+  editor = {Altaro},
+  title  = {Client Hyper-V vs. VirtualBox},
+  year   = {2017},
+  date   = {2017-01-31},
+  url    = {https://www.altaro.com/hyper-v/client-hyper-v-vs-virtualbox/},
+}
+
+@Online{Moon2017,
+  author = {Sungwook Moon},
+  editor = {twright-msft},
+  title  = {SQL container image size is 10x bigger for Windows than Linux},
+  year   = {2017},
+  date   = {2017-10-20},
+  url    = {https://github.com/Microsoft/mssql-docker/issues/186},
+}
+
+@Online{Fulton2017,
+  author = {Scott M. Fulton},
+  editor = {The New Stack},
+  title  = {Dockercon 2017: How Docker Changed Windows So Windows Could Change Docker},
+  year   = {2017},
+  date   = {2017-04-24},
+  url    = {https://thenewstack.io/docker-changed-windows-windows-change-docker/},
+}
+
+@Online{Fulton2015,
+  author = {Scott M. Fulton},
+  editor = {The New Stack},
+  title  = {The Windows and Linux Container Era is Here},
+  year   = {2015},
+  date   = {2015-08-19},
+  url    = {https://thenewstack.io/the-windows-and-linux-container-era-is-here/},
+}
+
+@Conference{Brown2016,
+  author    = {John Starks Taylor Brown},
+  title     = {Windows Server and Docker - The Internals Behind Bringing Docker and Containers to Windows by Taylor Brown and John Starks},
+  booktitle = {Windows Server and Docker - The Internals Behind Bringing Docker and Containers to Windows by Taylor Brown and John Starks},
+  year      = {2016},
+}
+
+@Online{Fulton2017a,
+  author = {Scott M. Fulton},
+  editor = {The New Stack},
+  title  = {Finally, Linux Containers Could Run on Windows with Docker’s LinuxKit},
+  year   = {2017},
+  date   = {2017-04-18},
+  url    = {https://thenewstack.io/finally-linux-containers-really-will-run-windows-linuxkit/},
+}
+
+@Online{Brown2017,
+  author = {Taylor Brown},
+  editor = {Microsoft},
+  title  = {Containers - Bringing Docker To Windows Developers with Windows Server Containers},
+  year   = {2017},
+  url    = {https://msdn.microsoft.com/en-us/magazine/mt797649.aspx},
+}
+
+@Online{Hart2010,
+  author = {Johnson M. Hart},
+  editor = {InformIT},
+  title  = {Windows System Programming: Process Management},
+  year   = {2010},
+  url    = {http://www.informit.com/articles/article.aspx?p=1564827&seqNum=14},
+}
+
+@Online{Olinsky2011,
+  author = {Andrew Baumann Brian Zull Galen Hunt Jay Lorch Reuben Olinsky},
+  editor = {Microsoft},
+  title  = {Drawbridge},
+  year   = {2011},
+  url    = {https://www.microsoft.com/en-us/research/project/drawbridge/},
+}
+
+@Online{Weissig2013,
+  author = {Justin Weissig},
+  editor = {Sysadmin asts},
+  title  = {Episode 14 - Introduction to Linux Control Groups (Cgroups)},
+  year   = {2013},
+  url    = {https://sysadmincasts.com/episodes/14-introduction-to-linux-control-groups-cgroups},
+}
+
+@Online{Evans2016,
+  author = {Julia Evans},
+  editor = {Julia Evans},
+  title  = {What even is a container: namespaces and cgroups},
+  year   = {2016},
+  url    = {https://jvns.ca/blog/2016/10/10/what-even-is-a-container/},
+}
+
+@Online{Savill2015,
+  author = {John Savill},
+  editor = {ITProToday},
+  title  = {The differences between Windows Containers and Hyper-V Containers in Windows Server 2016},
+  year   = {2015},
+  url    = {http://www.itprotoday.com/windows-8/differences-between-windows-containers-and-hyper-v-containers-windows-server-2016},
+}
+
+@Online{Delimarsky2016,
+  author = {Taylor Brown Ryan Wike Andrew Childs Rick Anderson Den Delimarsky},
+  editor = {Microsoft},
+  title  = {Windows Containers},
+  year   = {2016},
+  url    = {https://docs.microsoft.com/en-us/virtualization/windowscontainers/about/index},
+}
+
+@Online{Hall2017,
+  author = {Brian Lich Justin Hall},
+  editor = {Microsoft},
+  title  = {Windows Defender Firewall with Advanced Security},
+  year   = {2017},
+  url    = {https://docs.microsoft.com/en-us/windows/security/identity-protection/windows-firewall/windows-firewall-with-advanced-security},
+}
+
+@Online{Lefferts2017,
+  author = {Rob Lefferts},
+  editor = {Microsoft},
+  title  = {Introducing Windows Defender Security Center},
+  year   = {2017},
+  url    = {https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/},
+}
+
+@Online{Bradley2007,
+  author = {Tony Bradley},
+  editor = {Symantec Connect},
+  title  = {Introduction to Windows Integrity Control},
+  year   = {2007},
+  url    = {https://www.symantec.com/connect/articles/introduction-windows-integrity-control},
+}
+
+@Online{Khanse2009,
+  author = {Anand Khanse},
+  editor = {The Windows Club},
+  title  = {Mandatory Integrity Control in Windows 10/8/7},
+  year   = {2009},
+  url    = {http://www.thewindowsclub.com/mandatory-integrity-control},
+}
+
+@Online{Rusakov2016,
+  author = {Vyacheslav Rusakov},
+  editor = {SecureList},
+  title  = {Malicious code and the Windows integrity mechanism},
+  year   = {2016},
+  url    = {https://securelist.com/malicious-code-and-the-windows-integrity-mechanism/76751/},
+}
+
+@Online{Corbet2009,
+  author = {Jonathan Corbet},
+  editor = {LWN.net},
+  title  = {Seccomp and sandboxing},
+  year   = {2009},
+  url    = {https://lwn.net/Articles/332974/},
+}
+
+@Online{Reno2016,
+  author = {Jim Reno},
+  editor = {InfoWorld},
+  title  = {Linux containers vs. VMs: A security comparison},
+  year   = {2016},
+  url    = {https://www.infoworld.com/article/3071679/linux/linux-containers-vs-vms-a-security-comparison.html},
+}
+
+@Online{Arora2012,
+  author = {Himanshu Arora},
+  editor = {IBM},
+  title  = {Linux system calls},
+  year   = {2012},
+  url    = {https://www.ibm.com/developerworks/community/blogs/58e72888-6340-46ac-b488-d31aa4058e9c/entry/linux_system_calls20?lang=en},
+}
+
+@Online{Rashid2016,
+  author = {Fahmida Y. Rashid},
+  editor = {InfoWorld},
+  title  = {Linux zero-day hangs heaviest over Android and IoT},
+  year   = {2016},
+  url    = {https://www.infoworld.com/article/3024260/security/linux-zero-day-hangs-heaviest-over-android-and-iot.html},
+}
+
+@Online{Spijkers2013,
+  author = {Drs. Albert Spijkers},
+  editor = {Drs. Albert Spijkers},
+  title  = {Linux Kernel Security (it is necessary)},
+  year   = {2013},
+  url    = {http://drsalbertspijkers.blogspot.be/2013/06/linux-kernel-security-it-is-necessary.html},
+}
+
+@Online{Juggery2017,
+  author = {Luc Juggery},
+  editor = {Luc Juggery},
+  title  = {Docker \& SELinux: 30.000 foot view},
+  year   = {2017},
+  url    = {https://medium.com/lucjuggery/docker-selinux-30-000-foot-view-30f6ef7f621},
+}
+
+@Online{Walsh2013,
+  author = {Daniel J. Walsh},
+  editor = {OpenSource},
+  title  = {Your visual how-to guide for SELinux policy enforcement},
+  year   = {2013},
+  url    = {https://opensource.com/business/13/11/selinux-policy-guide},
+}
+
+@Online{Henry-Stocker2012,
+  author = {Sandra Henry-Stocker},
+  editor = {NetworkWorld},
+  title  = {Why SELinux is more work, but well worth the trouble},
+  year   = {2012},
+  url    = {https://www.networkworld.com/article/2717423/security/why-selinux-is-more-work--but-well-worth-the-trouble.html},
+}
+
+@Online{James2015,
+  author = {James},
+  editor = {hogarthuk},
+  title  = {Firewalld configuration and usage},
+  year   = {2015},
+  url    = {https://www.hogarthuk.com/?q=node/9},
+}
+
+@Online{Brown2014,
+  author = {Korbin Brown},
+  editor = {How-To Geek},
+  title  = {The Beginner’s Guide to iptables, the Linux Firewall},
+  year   = {2014},
+  url    = {https://www.howtogeek.com/177621/the-beginners-guide-to-iptables-the-linux-firewall/},
+}
+
+@Online{Ellingwood2015,
+  author = {Justin Ellingwood},
+  editor = {DigitalOcean},
+  title  = {How To Set Up a Firewall Using FirewallD on CentOS 7},
+  year   = {2015},
+  url    = {https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7},
+}
+
+@Online{Yemelianov2017,
+  author = {Andrej Yemelianov},
+  editor = {Selectel},
+  title  = {Containers and Security: Seccomp},
+  year   = {2017},
+  url    = {https://blog.selectel.com/containers-security-seccomp/},
+}
+
+@Online{Jackson2015,
+  author = {Joab Jackson},
+  editor = {The New Stack},
+  title  = {Microsoft Secures the Windows Docker Container},
+  year   = {2015},
+  url    = {https://thenewstack.io/microsoft-secures-the-windows-docker-container/},
+}
+
+@Online{Sherer2018,
+  author = {Tim D. Sherer},
+  editor = {Windows Driver Developer Doc Team},
+  title  = {Windows Kernel-Mode Security Reference Monitor},
+  year   = {2018},
+  date   = {2018-03-14},
+  url    = {https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-security-reference-monitor},
+}
+
+@Online{Rapid72017,
+  author = {Rapid7},
+  editor = {Rapid7 Blog},
+  title  = {Understanding Access Control Lists},
+  year   = {2017},
+  url    = {https://blog.rapid7.com/2017/01/11/understanding-access-control-lists/},
+}
+
+@Online{Sturgeon2012,
+  author = {Philip Sturgeon},
+  editor = {Envatotuts+},
+  title  = {Vagrant: What, Why, and How},
+  year   = {2012},
+  url    = {https://code.tutsplus.com/tutorials/vagrant-what-why-and-how--net-26500},
+}
+
+@Online{Docker2018,
+  author = {Docker},
+  editor = {Docker},
+  title  = {Install Docker for Windows},
+  year   = {2018},
+  url    = {https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install},
+}
+
+@Online{Docker2018a,
+  author = {Docker},
+  editor = {Docker},
+  title  = {Install Docker CE from binaries},
+  year   = {2018},
+  url    = {https://docs.docker.com/install/linux/docker-ce/binaries/},
+}
+
+@Online{Mays2015,
+  author = {J. Mays},
+  editor = {Liquid Web},
+  title  = {How To Install Docker on CentOS 7},
+  year   = {2015},
+  url    = {https://www.liquidweb.com/kb/how-to-install-docker-on-centos-7/},
+}
+
+@Online{Cezar2016,
+  author = {Matei Cezar},
+  editor = {TecMint},
+  title  = {Install Docker and Learn Basic Container Manipulation in CentOS and RHEL 7/6 – Part 1},
+  year   = {2016},
+  url    = {https://www.tecmint.com/install-docker-and-learn-containers-in-centos-rhel-7-6/},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

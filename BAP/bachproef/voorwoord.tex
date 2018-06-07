@@ -1,0 +1,38 @@
+%%=============================================================================
+%% Voorwoord
+%%=============================================================================
+
+\chapter*{Woord vooraf}
+\label{ch:voorwoord}
+
+%% TODO:
+%% Het voorwoord is het enige deel van de bachelorproef waar je vanuit je
+%% eigen standpunt (``ik-vorm'') mag schrijven. Je kan hier bv. motiveren
+%% waarom jij het onderwerp wil bespreken.
+%% Vergeet ook niet te bedanken wie je geholpen/gesteund/... heeft
+
+%De eerste zinnen van het voorwoord vertellen waar het boek, de scriptie of het verslag inhoudelijk over gaat.
+%Daarna volgt de aanleiding tot het schrijven van het boek, de scriptie of het verslag.
+%Vervolgens vertelt u uw ervaringen als schrijver van de geschreven tekst.
+%U bedankt alle mensen die erbij betrokken waren en/of waar u mee heeft samengewerkt. Hierbij kunt u denken aan de vertaler, begeleider of proeflezer.
+%Daarna bedankt u vrienden en familie voor de steun die zij u hebben gegeven tijdens het schrijven.
+%Vervolgens ondertekent u het voorwoord met uw naam; het is tenslotte een persoonlijk stuk.
+%U sluit af met de datum en de plaats.
+
+Deze bachelorproef voert een vergelijkende studie uit tussen Docker for Windows en Docker for Linux. Specifiek wordt er gebruik gemaakt van een Windows Server 2016 met GUI, waarop Docker for Windows wordt geïnstalleerd. Deze Linux-omgeving bestaat uit een CentOS 7.4 waarop Docker for Linux wordt geïnstalleerd. Op beide platformen worden daarna twee containers uitgerold. De eerste container is een Microsoft SQL server en de tweede container bevat een .NET webapplicatie.
+
+Ten eerste werd de documentatie vergeleken tussen beide omgevingen op vlak van volledigheid en gebruiksgemak.
+Vervolgens werden beide systemen getest op de uitvoeringstijd bij een volledige installatie en bij de installatie van de containers. Voor de installatie van beide systemen werd gebruik gemaakt van Vagrant, zodat de installatie van het besturingssysteem, de benodigde applicaties en de containers zoveel mogelijk geautomatiseerd werd. Dit maakte het mogelijk om op een methodologische manier de performantie te testen van beide systemen.
+Nadien werd er een vergelijkende studie uitgevoerd tussen de veiligheid van de CentOS-omgeving en van de Windows-omgeving. Van Linux is geweten dat de veiligheid goed is als men alle functionaliteiten ervan gebruikt. De vraag was dus: welke mogelijkheden heeft Windows om dit te evenaren?
+Ten slotte volgt er een conclusie over welk systeem het beste past binnen DevOps-teams en hoe men het beste met beide omgaat.
+
+De redenen waarom ik dit onderwerp koos zijn meervoudig. Eerst en vooral vind ik de Container-technologie uitermate fascinerend en ga ik hier zeker verder mee experimenteren na deze bachelorproef. Daarnaast was ik aangenaam verrast toen Docker besloot samen te werken met Microsoft om hun technologie beschikbaar te stellen voor het Windows OS. Dit past natuurlijk wel binnen het manifesto van Microsoft CEO Satya Nadella om het bedrijf een nieuwe richting te doen inslaan. Ten slotte leek dit mij een uitermate geschikt onderwerp voor een bachelorproef. Er zijn namelijk al verschillende Blog-posts en artikels hierover verschenen, maar de meeste raken alleen maar de oppervlakte van de zaak of erger: leveren geen concreet cijfermateriaal, maar slechts suggestieve meningen.
+
+Het uitwerken van de bachelorproef ging vrij vlot, buiten een paar problemen met de webapplicatie en het automatiseren van de Windows-omgeving. Het schrijven verliep wat moeilijker, omdat ik nooit sterk ben geweest met taal. Echter, ondanks het moeilijke schrijven vond ik dit wel een aangename ervaring. Ik had namelijk nog nooit eerder een werk van zo'n kaliber mogen opleveren en hoewel het zwaar werken was, ben ik wel tevreden over het eindresultaat.
+
+Ten slotte zou ik nog graag enkele mensen willen bedanken:
+
+Als eerste zou ik mijn promotor Steven Vermeulen willen bedanken. Hij heeft me vooral op literair vlak een stevige duw in de goede richting gegeven met zijn feedback. Daarnaast zou ik ook graag mijn co-promotor willen bedanken: Gert Schepens. Zelfs tijdens drukke momenten heeft hij tijd kunnen vrijmaken voor mij en mijn bachelorproef. Vervolgens wil ik ook even mijn vriendin, Gwynn Brewee, in de bloemetjes zetten. Ze heeft mij meerdere malen geholpen bij het verbeteren van mijn tekst. Ook wil ik mijn mama bedanken voor haar onvoorwaardelijke steun doorheen mijn woelige schoolperiode. Ten slotte wil ik ook Bert Van Vreckem bedanken voor zijn hulp bij dit onderwerp. Zonder zijn hulp zou de webapplicatie misschien nog steeds niet werken. Via hem ben ik ook op het idee gekomen om dit onderwerp te behandelen.
+
+Stephan Heirbaut
+25 mei 2018, Lokeren

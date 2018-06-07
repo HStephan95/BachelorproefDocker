@@ -1,0 +1,41 @@
+%---------- Inleiding ---------------------------------------------------------
+
+\section{Introductie} % The \section*{} command stops section numbering
+\label{sec:introductie}
+
+Voorheen kon men Docker enkel installeren op Linux servers. Veel keuze had men dus niet wat betreft het OS waarop men het wou deployen. Maar recent werd Docker ook geïntroduceerd voor Windows Server 2016, waarin men handig gebruik maakt van de Hyper-V containers die er ingebouwd in zitten.
+In de afgelopen 4 jaar waarin Docker op de markt is gekomen, heeft het veel gedaan voor DevOps-teams. Het is dus zeker de moeite waard om eens te kijken of de Hyper-V containers mooi integreren in Docker en hoe dat precies gebeurt.
+Het doel en de onderzoeksvraag van deze bachelorproef is dus: Hoe vlot werkt Docker op Windows Server 2016, zeker voor het deployen van .Net-applicaties, ten opzichte van Docker voor Linux?
+
+%---------- Stand van zaken ---------------------------------------------------
+
+\section{State-of-the-art}
+\label{sec:state-of-the-art}
+
+Er werden reeds verschillende tests uitgevoerd met Docker, ~\autocite{Boettiger2014}, waarin het gebruikt werd om makkelijk reproduceerbaar onderzoek uit te voeren. In de conclusie worden verschillende best practices voorgesteld. Er zal in deze bachelorproef onderzocht worden in hoeverre het mogelijk is om deze na te bootsen op een Windows Server. Het uiteindelijke doel is om te proberen de volledige opstelling te repliceren.
+Een andere studie, ~\autocite{Salman2016}, heeft ook al de voordelen besproken van het werken met containers op vlak van beveiliging, zoals bijvoorbeeld Sandboxing. Ook dit is een goede studie om te proberen reproduceren in de Windows omgeving, echter met een grotere uitdaging. In hun conclusie vermeldt men vooral cgroups en SELinux, functies die uniek voor Linux bestaan. Er zal dus onderzocht worden hoe deze nagebootst kunnen worden op een Windows Server.
+Verder zal in deze bachelorproef de beschikbare literatuur ook grondig worden getest, aangezien Docker nog maar sinds september 2016 beschikbaar is voor Windows en dat deze misschien nog dient te worden bijgewerkt.
+De belangrijkste officiële bronnen hiervoor zijn: ~\autocite{Docker2016}, ~\autocite{Friis2016} en ~\autocite{Container2016}. Deze zullen één voor één bekeken en getest worden op hun compleetheid.
+
+%---------- Methodologie ------------------------------------------------------
+\section{Methodologie}
+\label{sec:methodologie}
+
+Eerst en vooral zal er gestart worden met een literatuurstudie van de beschikbare informatie op de website en blogs van Docker. Daarbovenop zullen er ook verschillende onafhankelijke Ops-bronnen geraadpleegd worden, om na te gaan hoe zij hun Docker hebben opgesteld.
+Vervolgens zullen er een Windows Server 2016 en een CentOS-server met Docker worden opgesteld en zal er vergeleken worden hoe goed beiden het doen in het opstellen van containers.
+Als virtualisatie-platform zal VirtualBox gebruikt worden, waarbij de Windows Server opgesteld zal worden via Vagrant, Chocolatey en Powershell, en de CentOS met Vagrant en Ansible.
+
+%---------- Verwachte resultaten ----------------------------------------------
+\section{Verwachte resultaten}
+\label{sec:verwachte_resultaten}
+
+De verwachting is dat de Windows Server het op zijn minst even goed zal doen als Linux. Zeker op vlak van .Net-applicatie zou Windows met de Hyper-V containers geen problemen mogen hebben.
+De benodigde resources voor het efficiënt draaien van de Windows Server zullen waarschijnlijk wel hoger liggen dan de Linux Server.
+
+%---------- Verwachte conclusies ----------------------------------------------
+\section{Verwachte conclusies}
+\label{sec:verwachte_conclusies}
+
+De documentatie voor de Windows Server zal wel moeilijker te verkrijgen zijn, aangezien de technologie hierop vrij nieuw is en de meeste mensen hiervoor nog steeds Linux gebruiken.
+Echter de installatie zou vrij vlot moeten gaan via Powershell en Chocolatey. Beide zijn namelijk krachtige tools in hun eigen recht.
+

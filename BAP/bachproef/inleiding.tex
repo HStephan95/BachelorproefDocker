@@ -1,0 +1,83 @@
+%%=============================================================================
+%% Inleiding
+%%=============================================================================
+
+\chapter{Inleiding}
+\label{ch:inleiding}
+
+%%De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+
+%%\begin{itemize}
+%%  \item context, achtergrond
+%%  \item afbakenen van het onderwerp
+%%  \item verantwoording van het onderwerp, methodologie
+%%  \item probleemstelling
+%%  \item onderzoeksdoelstelling
+%%  \item onderzoeksvraag
+%%  \item \ldots
+%%\end{itemize}
+
+Ten eerst zal in deze inleiding het onderwerp van deze bachelorproef worden afgebakend. Vervolgens wordt de context en nood van de bachelorproef uitlegt. Daarnaast zullen de probleemstelling, onderzoeksvragen en onderzoeksdoelstelling besproken worden. Ten slotte wordt ook de opzet van deze bachelorproef worden toegelicht. 
+
+\section{Probleemstelling}
+\label{sec:probleemstelling}
+
+%%Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's,'' systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+
+Het grootste probleem bij Docker is dat het op zich nog een relatief jonge technologie is, die bovendien een eigen syntaxis heeft. Daarnaast is er een andere denk- en werkwijze vereist om Docker te beheersen. Doorheen de tijd zijn Linux-administrators reeds vertrouwd geraakt met deze technologie, maar voor Windows-administrators is deze technologie nog gloednieuw.
+
+Dit onderzoek zal vooral een meerwaarde bieden voor DevOps-teams of bedrijven die op zoek zijn naar Windows-oplossingen voor hun problemen in verband met automatisatie en continue oplevering. Zoals bijvoorbeeld mijn stagebedrijf Orbid. \autocite{Steven2018}
+
+\section{Onderzoeksvraag}
+\label{sec:onderzoeksvraag}
+
+%%Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+
+De onderzoeksvragen die uit deze probleemstelling voortvloeien zijn de volgende:
+
+\begin{itemize}[noitemsep]
+	\item Hoe vlot kan men een Docker-opstelling maken op een Windows-besturingssysteem tegenover een Linux-besturingssysteem?
+	\item Hoe is het gesteld met de documentatie voor Docker for Windows tegenover de bestaande documentatie voor Linux?
+	\item Hoe groot is de snelheidswinst bij Linux tegenover Windows?
+	\item Hoe is het gesteld met de veiligheid? Hoe pakt men dit aan vanuit een Windows-administrator perspectief?
+\end{itemize}
+
+Op al deze vragen kon tot op heden geen afdoend antwoord worden gegeven. Men heeft in het verleden wel al Docker for Windows uitgetest en vergeleken met Linux, maar nooit op een concrete en methodische manier. Vaak benaderde men deze technologie ook vanuit een bestaande mening, en niet vanuit een neutraal perspectief.
+
+\section{Onderzoeksdoelstelling}
+\label{sec:onderzoeksdoelstelling}
+
+%%Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk.
+
+Het beoogde resultaat van deze bachelorproef is een concrete vergelijkende studie tussen Docker for Linux en Docker for Windows. Waarbij er vooral gekeken wordt naar de volgende aspecten:
+\begin{itemize}[noitemsep]
+	\item Documentatie
+	\item Performatie
+	\item Veiligheid
+\end{itemize}
+
+\section{Opzet van deze bachelorproef}
+\label{sec:opzet-bachelorproef}
+
+% Het is gebruikelijk aan het einde van de inleiding een overzicht te
+% geven van de opbouw van de rest van de tekst. Deze sectie bevat al een aanzet
+% die je kan aanvullen/aanpassen in functie van je eigen tekst.
+
+De rest van deze bachelorproef is als volgt opgebouwd:
+
+In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand van zaken binnen het onderzoeksdomein, op basis van een literatuurstudie.
+
+In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
+
+% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
+
+In Hoofdstuk~\ref{ch:documentatie} wordt de documentatie van beide platformen besproken. Er wordt gekeken naar volledigheid, interne en externe bronnen, en hoeveel ondersteuning er is vanuit de hoofdorganisatie.
+
+In Hoofdstuk~\ref{ch:opstelling} worden beide opstellingen bekeken en besproken, meer specifiek hoe het is om beide op te bouwen en hoe het zit met gelijkenissen en verschillen.
+
+In Hoofdstuk~\ref{ch:performantietest} wordt gekeken naar het resultaat van de werklading die beide systeem te verduren hebben gekregen en hoe beide gepresteerd hebben.
+
+In Hoofdstuk~\ref{ch:securitytest} worden de beschikbare veiligheidsmaatregelen voor Docker besproken binnen beide systemen en hoe effectief deze zijn.
+
+In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
+

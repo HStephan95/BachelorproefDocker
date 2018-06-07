@@ -1,0 +1,43 @@
+%%=============================================================================
+%% Conclusie
+%%=============================================================================
+
+\chapter{Conclusie}
+\label{ch:conclusie}
+
+%% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
+%% onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
+%% hoe biedt dit meerwaarde aan het vakgebied/doelgroep? Reflecteer kritisch
+%% over het resultaat. Had je deze uitkomst verwacht? Zijn er zaken die nog
+%% niet duidelijk zijn? Heeft het onderzoek geleid tot nieuwe vragen die
+%% uitnodigen tot verder onderzoek?
+
+%%Inleiding
+De onderzoeksvraag voor deze bachelorproef luidde als volgt: "Hoe goed presteert Docker for Windows op vlak van performantie en veiligheid tegenover Docker for Linux?" Hiervoor werden er twee systemen opgesteld, waarbij de eerste opstelling een Windows Server 2016 met Docker for Windows is. De tweede opstelling bevatte een CentOS 7.4 met Docker for Linux. Vervolgens werd de performantie van beide systemen vergeleken door te kijken hoe lang beide nodig hadden om een volledige installatie uit te voeren en hoeveel tijd ze nodig hadden voor enkel de containers. Ten slotte werd de beveiliging van beide systemen onder de loop genomen, waarbij er vertrokken werd uit de veiligheidsmaatregelen die men kan nemen bij CentOS, en of Windows hier een equivalent voor had. 
+
+%%Concrete resultaten/cijfers van Docker for Windows voor DevOps
+%%Performantie
+Welk systeem de betere performantie had was duidelijk. Bij de volledige installatie had Windows namelijk tot wel 10 keer meer tijd nodig om alles te installeren. Dit komt onder andere omdat Docker for Windows een GUI nodig heeft om te installeren. Daarnaast zijn de containers en base images groter dan die bij Linux. Dit zijn twee hekelpunten die zeker nog weggewerkt moeten worden door Docker en Microsoft, zeker als men Docker for Windows ook verkocht wil krijgen aan DevOps teams.
+
+Aan de andere kant maakt deze grafische interface Docker wel veel toegankelijker voor beginnende developers die op een Windows OS werken. Deze hebben immers geen nood aan een volledig geautomatiseerde omgeving, maar hechten veel meer waarde aan een toegankelijke applicatie. Daarnaast zijn deze developers niet meer verplicht om een Linux VM te draaien op hun systeem. Ten slotte zullen deze beginnende developers ook niet evenveel containers draaien als een professionele onderneming, waardoor de grootte ervan minder belangrijk is.
+
+Mijn conclusie voor performantie is dat Docker for Linux meer geschikt zal zijn voor bedrijven die op een professionele manier willen omgaan met container-technologie, maar dat Docker for Windows meer geschikt is voor beginnende developers; zeker als men al werkt op een Windows-systeem.
+
+%%Veiligheid
+Op vlak van veiligheid ligt de bal een beetje meer in het midden. Linux heeft enkele sterke voordelen, zoals SELinux, Firewalld en Seccomp, maar deze vereisen wel al enige voorkennis. De beveiliging van Linux is dus voor een groot deel afhankelijk van de kennis van zijn administrator. Daartegenover is de beveiliging van Windows veel meer basic, maar is er wel slechts een minimum aan veiligheid doordat Microsoft bepaalde beslissingen uit de handen van zijn administrators neemt en deze instelt voor hem. Dit is zowel een voor- als een nadeel, want ook Microsoft is niet feilloos. Hyper-V Containers zijn dan wel weer een pak veiliger dan de Linux Containers, doordat ze een extra niveau van isolatie hebben.
+
+%%Resultaat werk
+%%Nee, Windows veel trager.
+De resultaten van dit onderzoek vallen min of meer binnen de lijnen van de verwachtingen. Alleen de performantie kan ietwat schokkend genoemd worden. Als Docker en Microsoft Docker for Windows even competitief willen maken als Docker for Linux, is er nog werk aan de winkel. Op vlak van veiligheid zijn beide systemen equivalent aan elkaar, waar vooral de kennis van de administrator een grote rol speelt.
+
+%%Veiligheid kan verder uitgebreid worden
+%%PowerShell en Docker
+%%Hoe verder automatiseren van Docker for Windows en beter
+Verdere onderzoeksvragen die uit deze bachelorproef oprijzen zijn:
+\begin{itemize}[noitemsep]
+	\item Hoe goed integreert Docker for Linux met het Windows-besturingssysteem?
+	\item Kun je de installatie van Docker for Windows beter automatiseren door PowerShell-modules aan te maken?
+	\item Zijn er manieren om de grootte van de Hyper-V containers te verkleinen?
+\end{itemize}
+
+
