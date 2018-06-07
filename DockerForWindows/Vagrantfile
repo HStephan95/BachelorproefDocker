@@ -52,8 +52,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
     config.vm.provision :shell, path: "Provisioning/docker-compose.bat"
   
-    # config.vm.provision :shell, path: "Provisioning/Restart-Network.ps1"
-  
     # Verschil in connectiestring = User ID != User
     config.vm.provision "file", source: "../VoorbeeldProjectWindows", destination: "~/VoorbeeldProject"
   
