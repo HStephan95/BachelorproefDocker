@@ -51,11 +51,11 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[t]{0.75\linewidth}
-\VeryHuge \color{HoGentAccent1} \textbf{Titel van uw bachelorproef} \color{Black}\\ % Title
-\Huge\textit{Ondertitel (eventueel)}\\[2.4cm] % Subtitle
-\huge \textbf{Naam Voornaam, co-promotor, promotor}\\[0.5cm] % Author(s)
+\VeryHuge \color{HoGentAccent1} \textbf{Docker for Windows} \color{Black}\\ % Title
+%\Huge\textit{Ondertitel (eventueel)}\\[2.4cm] % Subtitle
+\huge \textbf{Heirbaut Stephan, Schepens Gert, Vermeulen Steven}\\[0.5cm] % Author(s)
 \huge Hogeschool Gent, Valentin Vaerwyckweg 1, 9000 Gent\\[0.4cm] % University/organization
-\Large \texttt{voornaam.naam@hogent.be} \\
+\Large \texttt{stephan.heirbaut.w1409@student.hogent.be} \\
 \end{minipage}
 %
 \begin{minipage}[t]{0.25\linewidth}
@@ -76,9 +76,7 @@
 \color{HoGentAccent1} % Navy color for the abstract
 
 \begin{abstract}
-It's only a model.
-You don't vote for kings. Who's that then? We found them. Ni! Ni! Ni! Ni!
-The nose? On second thoughts, let's not go there. It is a silly place. Bloody Peasant! And the hat. She's a witch! Where'd you get the coconuts?
+Docker for Windows Server 2016 is beschikbaar sinds september 2016, maar het heeft nog geen doorbraak gehad bij de DevOps. Dit ondanks het feit dat het een krachtige tool is voor hen, zeker als men ook een Microsoft Certified Partner wil zijn. Het voorstel van deze bachelorproef is om een onderzoek uit te voeren naar hoe krachtig Docker kan zijn op een Windows Server 2016, teneinde zo meer opties te hebben om deze technologie te deployen. Er zal dus een opstelling gebeuren van een Windows Server 2016 en een CentOS server met Docker, waarbij beiden de taak zullen krijgen om dezelfde applicaties te deployen. De verwachting is dat Docker het op beide platformen er even goed van af brengt, maar ook dat er zeker nog werk aan de winkel is op vlak van documentatie. DevOps is namelijk een groeiend principe, en terecht. Hoe meer opties zij dus hebben, hoe beter.
 \end{abstract}
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -88,15 +86,7 @@ The nose? On second thoughts, let's not go there. It is a silly place. Bloody Pe
 \section*{Introductie}
 \color{black}
 \color{black}
-Be quiet! Found them? In Mercia?! The coconut's tropical! But you are dressed as one… Well, what do you want? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.
-
-Well, what do you want? It's only a model. Camelot! We found them. We shall say 'Ni' again to you, if you do not appease us.
-
-The nose? Shut up! Burn her! I am your king. You don't vote for kings.
-
-You can't expect to wield supreme power just 'cause some watery tart threw a sword at you! Well, we did do the nose. I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
-
-Why do you think that she is a witch? We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
+Voorheen kon men Docker enkel installeren op Linux servers. Veel keuze had men dus niet wat betreft het OS waarop men het wou deployen. Maar recent werd Docker ook geïntroduceerd voor Windows Server 2016, waarin men handig gebruik maakt van de Hyper-V containers die er ingebouwd in zitten. In de afgelopen 4 jaar waarin Docker op de markt is gekomen, heeft het veel gedaan voor DevOps-teams. Het is dus zeker de moeite waard om eens te kijken of de Hyper-V containers mooi integreren in Docker en hoe dat precies gebeurt. Het doel en de onderzoeksvraag van deze bachelorproef is dus: Hoe vlot werkt Docker op Windows Server 2016, zeker voor het deployen van .Net-applicaties, ten opzichte van Docker voor Linux?
 %----------------------------------------------------------------------------------------
 %	GEOLOGY
 %----------------------------------------------------------------------------------------
@@ -105,24 +95,32 @@ Why do you think that she is a witch? We want a shrubbery!! I don't want to talk
 \color{HoGentAccent1} 
 \section*{Experimenten}
 \color{black}
-A newt? Camelot! Why? No, no, no! Yes, yes. A bit. But she's got a wart.
 
-Shut up! I dunno. Must be a king. Who's that then? Look, my liege! On second thoughts, let's not go there. It is a silly place.
+Als eerste werd de gevonden en gebruikte documentatie vergelijken op vlak van volledigheid en bruikbaarheid.
 
-Shut up! Will you shut up?! No, no, no! Yes, yes. A bit. But she's got a wart. He hasn't got shit all over him. It's only a model. It's only a model.
+Vervolgens werden er 2 opstellingen opgebouwd, één voor Docker for Windows en één voor Docker for Linux. De installatie van deze omgevingen werden geautomatiseerd door gebruik te maken van Vagrant en scripting talen zodat deze telkens op dezelfde manier geïnstalleerd werden. Zonder variantie van invloed door gebruikersinvoer.
 
-Bring her forward! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave 
+Daarnaast werden beide opstelling getest op snelheid door gebruik te maken van het 'time vagrant up'- en 'time vagrant provision'-commando. Via 'up' mat de benodigde tijd om een volledige installatie uit te voeren. 'provision' mat alleen de benodigde tijd om een container te installeren.
 
-
+Ten slotte, werd er ook een security review uitgevoerd. Waarbij er gekeken werd naar welke mogelijkheden er waren om beide opstelling te beveiligen dat ze voldoen aan industrie standaarden.
 
 \color{HoGentAccent1} 
 \section*{Sectie met figuur}
 \color{black}
 
+\begin{center}\vspace{1cm}
+	\includegraphics[width=0.4\linewidth]{centosfullboxplot}
+	\captionof{figure}{\color{HoGentAccent5} Resultaten benodige voor de volledige installaties van Docker for Linux op CentOS 7.4}
+\end{center}\vspace{1cm}
 
 \begin{center}\vspace{1cm}
-\includegraphics[width=1.0\linewidth]{grail}
-\captionof{figure}{\color{HoGentAccent5} He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say 'Ni' again to you, if you do not appease us}
+	\includegraphics[width=0.4\linewidth]{windowsboxplotfull}
+	\captionof{figure}{\color{HoGentAccent5} Resultaten benodige voor de volledige installaties van Docker for Windows op Windows Server 2016}
+\end{center}\vspace{1cm}
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=1.0\linewidth]{poster03}
+\captionof{figure}{\color{HoGentAccent5} Een vergelijkende studie tussen Docker for Linux en Docker for Windows}
 \end{center}\vspace{1cm}
 
 %------------------------------------------------
@@ -132,7 +130,16 @@ Bring her forward! I don't want to talk to you no more, you empty-headed animal 
 \color{HoGentAccent1} 
 \section*{Conclusies}
 \color{black}
-on't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
+De resultaten van dit onderzoek waren min of meer verwacht met enkele interessante ontdekkingen, zoals:
+Het grote verschil in benodigde tijd om een installatie van het besturingssysteem en/of container uit te voeren. Dit komt door 3 grote pijnpunten:
+\begin{itemize}
+	\item Docker CE for Windows vereist een GUI.
+	\item Automatisatie is veel moeilijker voor Docker for Windows.
+	\item Images en containers zijn groter bij Docker for Windows.
+\end{itemize}
+Daarnaast zit het qua beveiliging bij beide systemen goed. Voor Docker for Windows vooral omdat Hyper-V containers een extra scheidingslaag heeft tussen de containers en de kernel. Waarbij bij Linux er meer vrijheid is voor de administrator om zelf dingen in te stellen.
+Ten slotte, in de context van deze bachelorproef, kan men daarom stellen dat Docker for Linux toch nog steeds beter geschikt is voor DevOps teams of bedrijven die professioneel met containers willen werken. Docker for Windows is wel een geschikte tool voor individuele developers die al op een Windows computer aan het werken zijn.
+
 %----------------------------------------------------------------------------------------
 %	FORTHCOMING RESEARCH
 %----------------------------------------------------------------------------------------
@@ -140,10 +147,12 @@ on't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this
 \section*{Toekomstig onderzoek}
 \color{black}
 
-I care. So, what do you think of her, Han? No! Alderaan is peaceful. We have no weapons. You can't possibly… I have traced the Rebel spies to her. Now she is my only link to finding their secret base.
-
-Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. You are a part of the Rebel Alliance and a traitor! Take her away! 
-
+Verdere onderzoeksvragen die uit deze bachelorproef oprijzen zijn:
+\begin{itemize}
+	\item Hoe goed integreert Docker for Linux met het Windows-besturingssysteem?
+	\item Kun je de installatie van Docker for Windows beter automatiseren door PowerShell modules aan te maken?
+	\item Zijn er manieren om de grootte van de Hyper-V containers te verkleinen?
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 
